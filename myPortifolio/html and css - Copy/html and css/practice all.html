@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EDOT Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Navigation styling */
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 10px;
+      list-style-type: none;
+      margin: 0;
+    }
+
+    nav li {
+      margin: 5px 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      background-color: #0066cc;
+      color: yellow;
+    }
+
+    footer {
+      background-color: #004080;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav li {
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header style="background-color: #f0f8ff; padding: 10px;">
+    <img src="c:\Users\kenenisa\Downloads\edot platform.png" alt="EDOT Logo" width="80" style="vertical-align: middle;">
+    <h1 style="display: inline; margin-left: 10px;">EDOT Platform</h1>
+    <p style="margin-top: 5px;">Education Digital Online Tutorials — Learning for All</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav style="background-color: #004080;">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#objectives">Objectives</a></li>
+      <li><a href="#solutions">Solutions</a></li>
+      <li><a href="#past-exams">Past Exams</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- Home -->
+    <section id="home" style="padding: 20px;">
+      <h2>Welcome to EDOT</h2>
+      <p>EDOT is a digital learning platform designed to improve access to quality education across Ethiopia — urban, semi-urban, and rural areas.</p>
+    </section>
+
+    <!-- About -->
+    <section id="about" style="padding: 20px;">
+      <h2>About</h2>
+      <ul>
+        <li>Lack of enough tutorials</li>
+        <li>Lack of quality materials</li>
+        <li>Unemployment of trained educators</li>
+        <li>Lack of family engagement in learning</li>
+      </ul>
+    </section>
+
+    <section id="teachers" style="padding: 20px;">
+  <h2>Skilled Teacher Directory</h2>
+  <p>Meet our trusted and verified teachers. Click "Request Help" to connect with one.</p>
+
+  <div class="teacher-grid">
+    <div class="teacher-card">
+      <img src="https://via.placeholder.com/150" alt="Kenenisa" />
+      <h3>Kenenisa Beyan</h3>
+      <p>Subject: Mathematics</p>
+      <p>Kenenisa currently study Computer Science and Engineering at ASTU and additionally study Management at Arsi University</p>
+      <button>Request Help</button>
+    </div>
+
+    <div class="teacher-card">
+      <img src="https://via.placeholder.com/150" alt="Mahlet" />
+      <h3>Mahlet Zena</h3>
+      <p>Subject: English</p>
+      <p>Mahlet currently study Computer Science and Engineering at ASTU and additionally study Accounting at Harambe University</p>
+      <button>Request Help</button>
+    </div>
+
+        <div class="teacher-card">
+      <img src="https://via.placeholder.com/150" alt="Firomsa" />
+      <h3>Firomsa Guteta</h3>
+      <p>Subject: Biology</p>
+      <p>Firomsa currently study Computer Science and Engineering at ASTU</p>
+      <button>Request Help</button>
+    </div>
+
+    <div class="teacher-card">
+      <img src="https://via.placeholder.com/150" alt="Yobsan" />
+      <h3>Yobsan Girma</h3>
+      <p>Subject: Physics</p>
+      <p>Yobsan currently study Electronis and Communication Engineering at ASTU</p>
+      <button>Request Help</button>
+    </div>
+
+        <div class="teacher-card">
+      <img src="https://via.placeholder.com/150" alt="Yohannes" />
+      <h3>Yohannes Belete</h3>
+      <p>Subject: Chemistry</p>
+      <p>Yohannes currently study Computer Science and Engineering at ASTU</p>
+      <button>Request Help</button>
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- Objectives -->
+    <section id="objectives" style="padding: 20px;">
+      <h2>Objectives</h2>
+      <p>Our main purpose is to improve the quality of education by providing accessible, affordable, and accurate learning tools for all.</p>
+    </section>
+
+    <!-- Solutions -->
+    <section id="solutions" style="padding: 20px;">
+      <h2>Our Solutions</h2>
+      <ul>
+        <li>Personalized Learning at your own pace</li>
+        <li>Instant Support ask and receive answers fast</li>
+        <li>Past Exam Practice real past year questions</li>
+        <li>Skilled Teacher Access verified instructors</li>
+      </ul>
+    </section>
+
+    <!-- Past Exam Practice Section -->
+    <section id="past-exams" style="padding: 20px;">
+      <h2>Past Exam Practice</h2>
+      <p>Access previous national exam questions to practice and improve your performance.</p>
+
+      <div>
+        <label for="subject">Choose Subject:</label>
+        <select id="subject">
+          <option>Mathematics</option>
+          <option>English</option>
+          <option>Biology</option>
+          <option>Physics</option>
+          <option>Chemistry</option>
+        </select>
+
+        <label for="year">Choose Year:</label>
+        <select id="year">
+          <option>2024</option>
+          <option>2023</option>
+          <option>2022</option>
+          <option>2021</option>
+        </select>
+
+        <button>Search</button>
+      </div>
+
+      <div style="margin-top: 20px;">
+        <h3>Results:</h3>
+        <ul>
+          <li><a href="#">2024 Mathematics National Exam (PDF)</a></li>
+          <li><a href="#">2024 English National Exam (PDF)</a></li>
+          <li><a href="#">2024 Biology National Exam (PDF)</a></li>
+          <li><a href="#">2024 Physics National Exam (PDF)</a></li>
+          <li><a href="#">2024 Chemistry National Exam (PDF)</a></li>
+          <li><a href="#">2023 Mathematics National Exam (PDF)</a></li>
+          <li><a href="#">2023 English National Exam (PDF)</a></li>
+          <li><a href="#">2023 Biology National Exam (PDF)</a></li>
+          <li><a href="#">2023 Physics National Exam (PDF)</a></li>
+          <li><a href="#">2023 Chemistry National Exam (PDF)</a></li>
+          <li><a href="#">2022 Mathematics National Exam (PDF)</a></li>
+          <li><a href="#">2022 English National Exam (PDF)</a></li>
+          <li><a href="#">2022 Biology National Exam (PDF)</a></li>
+          <li><a href="#">2022 Physics National Exam (PDF)</a></li>
+          <li><a href="#">2022 Chemistry National Exam (PDF)</a></li>
+          <li><a href="#">2021 Mathematics National Exam (PDF)</a></li>
+          <li><a href="#">2021 English National Exam (PDF)</a></li>
+          <li><a href="#">2021 Biology National Exam (PDF)</a></li>
+          <li><a href="#">2021 Physics National Exam (PDF)</a></li>
+          <li><a href="#">2021 Chemistry National Exam (PDF)</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="planner" style="padding: 20px;">
+  <h2>Study Planner</h2>
+  <p>Create your weekly study plan. Stay organized and consistent!</p>
+
+  <form id="planner-form" style="max-width: 500px;">
+    <label for="subject">Subject:</label><br>
+    <input type="text" id="subject" name="subject" placeholder="inter your choice subject"><br><br>
+
+    <label for="day">Day:</label><br>
+    <select id="day" name="day">
+      <option>Monday</option>
+      <option>Tuesday</option>
+      <option>Wednesday</option>
+      <option>Thursday</option>
+      <option>Friday</option>
+      <option>Saturday</option>
+      <option>Sunday</option>
+    </select><br><br>
+
+    <label for="time">Time:</label><br>
+    <input type="time" id="time" name="time"><br><br>
+
+    <button type="submit">Add to Schedule</button>
+  </form>
+
+  <div id="schedule-list" style="margin-top: 20px;">
+    <h3>My Weekly Plan:</h3>
+    <ul id="plan-output">
+      <!-- List items will appear here -->
+    </ul>
+  </div>
+</section>
+
+
+    <!-- Team -->
+    <section id="team" style="padding: 20px;">
+      <h2>👥 Our Team</h2>
+      <ul>
+        <li>Kenenisa Beyan:-CEO</li>
+        <li>Mahlet Zena:-Marketing Manager</li>
+        <li>Yobsan Girma:-Operations Supervisor</li>
+        <li>Firomsa Guteta:-Finance Manager</li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" style="padding: 20px;">
+      <h2>Contact Us</h2>
+      <form>
+        <label for="name">Your Name:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="30"></textarea><br><br>
+
+        <input type="submit" value="Send">
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 EDOT Platform. All rights reserved.</p>
+    <p>Developed by Kenenisa Beyan & Team</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Performance Evaluation System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    form {
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    input,
+    textarea,
+    button {
+      display: block;
+      width: 100%;
+      margin: 8px 0;
+      padding: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background: #f0f0f0;
+    }
+
+    .actions button {
+      margin-right: 5px;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: darkblue;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Performance Evaluation Management System</h1>
+
+  <!-- Evaluation Form -->
+  <form id="evalForm">
+    <input type="text" id="name" placeholder="Employee Name" required>
+    <input type="text" id="criteria" placeholder="Criteria (e.g. Teamwork)" required>
+    <input type="number" id="score" placeholder="Score (1-10)" min="1" max="10" required>
+    <textarea id="comment" placeholder="Comment"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- Table to show results -->
+  <h2>Evaluations</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Criteria</th>
+        <th>Score</th>
+        <th>Comment</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="evalTable"></tbody>
+  </table>
+
+  <!-- Average Scores -->
+  <h2>Average Scores</h2>
+  <ul id="averageList"></ul>
+
+  <script>
+    const form = document.getElementById("evalForm");
+    const table = document.getElementById("evalTable");
+    const averageList = document.getElementById("averageList");
+
+    let evaluations = [];
+    let editIndex = -1; // keep track if we are editing
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const criteria = document.getElementById("criteria").value;
+      const score = parseInt(document.getElementById("score").value);
+      const comment = document.getElementById("comment").value;
+
+      const evaluation = { name, criteria, score, comment };
+
+      if (editIndex === -1) {
+        evaluations.push(evaluation); // add new
+      } else {
+        evaluations[editIndex] = evaluation; // update existing
+        editIndex = -1;
+      }
+
+      renderTable();
+      renderAverages();
+      form.reset();
+    });
+
+    function renderTable() {
+      table.innerHTML = "";
+      evaluations.forEach((evalItem, index) => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+          <td>${evalItem.name}</td>
+          <td>${evalItem.criteria}</td>
+          <td>${evalItem.score}</td>
+          <td>${evalItem.comment}</td>
+          <td class="actions">
+            <button onclick="editEvaluation(${index})">Edit</button>
+            <button onclick="deleteEvaluation(${index})">Delete</button>
+          </td>
+        `;
+
+        table.appendChild(row);
+      });
+    }
+
+    function editEvaluation(index) {
+      const evalItem = evaluations[index];
+      document.getElementById("name").value = evalItem.name;
+      document.getElementById("criteria").value = evalItem.criteria;
+      document.getElementById("score").value = evalItem.score;
+      document.getElementById("comment").value = evalItem.comment;
+      editIndex = index;
+    }
+
+    function deleteEvaluation(index) {
+      evaluations.splice(index, 1);
+      renderTable();
+      renderAverages();
+    }
+
+    function renderAverages() {
+      averageList.innerHTML = "";
+      const scoresByName = {};
+
+      evaluations.forEach(evalItem => {
+        if (!scoresByName[evalItem.name]) {
+          scoresByName[evalItem.name] = [];
+        }
+        scoresByName[evalItem.name].push(evalItem.score);
+      });
+
+      for (let name in scoresByName) {
+        const scores = scoresByName[name];
+        const avg = (scores.reduce((a, b) => a + b, 0) / scores.length).toFixed(2);
+
+        const li = document.createElement("li");
+        li.innerHTML = `<span class="highlight">${name}</span>: Average Score = ${avg}`;
+        averageList.appendChild(li);
+      }
+    }
+  </script>
+</body>
+
+</html>

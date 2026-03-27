@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript function</title>
+</head>
+<body>
+  <script>
+    function greet() {
+      console.log("Helllo, Kenenisa!");
+    }
+
+    greet();// This runs (calls) the function
+    function greett(name) {
+      console.log('Hello,' + name + '!');
+     }
+
+    greett('Kenenisa!'); //Output: Hello, Kenenisa!
+    
+    greett('Gutema!'); //Output: Hello, Gutema!
+
+    function add(x , y) {
+      return x + y;
+     }
+
+    let result = add(5, 6);
+    console.log(result); // Output: 11
+
+    function squere(number) {
+      return number * number;
+     }
+
+    console.log(squere(3)); //Output: 9
+    console.log(squere(5)); //Output: 25
+
+    function reverseString(text) {
+      return text.split("").reverse().join("");
+    }
+
+    console.log(reverseString("Kenenisa")); // Output: "asineneK"
+
+    function greetTime(hour) {
+      if (hour < 12) {
+        return "Good morning!";
+      } else if (hour < 18) {
+        return "Good afternoon!";
+      } else {
+        return "Good evening!";
+      }
+    }
+
+    console.log(greetTime(10)); // Good morning!
+    console.log(greetTime(15)); // Good afternoon!
+    console.log(greetTime(20)); // Good evening!
+
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+grammer for english syntax for programming language
+Exraspaces are ignored in html
+Etra new lines are also ignored (in HTML)
+Indent not affect the html structure
+for html the syntax is tag not ignore tag but in css it is called CSS Selector = wich elements we're targeting
+#background-color: CSS Porerty 
+red :- CSS Value
+
+
+
+hover; transtion; and shadow
+
+text styling
+
+HTML structure
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body></body>
+</html>
+
+
+nested layouts Technique
+    Vertical layouts
+    Horizontal Layout

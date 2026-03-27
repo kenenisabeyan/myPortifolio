@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <p id="myText"> Hello</p>
+    <button onclick="changeText()">Click me</button>
+
+    <p id="output">practice one</p>
+    <button onclick="sayHi()">when you need to change the text <b>Click me</b></button>
+
+    <h2>Question</h2>
+    <button onclick="toggleAnswer()">Show Answer</button>
+    <p id="answer" style="display: none;">the capital city of ethiopian is addis ababa</p>
+
+
+    <h2>Message Box</h2>
+    <textarea name="" id="messageBox" rows="4" cols="40" oninput="countChars()"></textarea>
+    <p>You have typed: <span id="charCount">0</span>characters</p>
+
+    <script>
+      function changeText () {
+        document.getElementById("myText").textContent = "You clicked me!";
+      }
+      //changeText();
+
+      function sayHi() {
+        document.getElementById("output").textContent = "Hi, fron EDOT";
+      }
+      //sayHi();
+
+      let isVisible = false;
+      function toggleAnswer() {
+        const answer = document.getElementById("answer");
+
+        if (isVisible) {
+          answer.style.display = "none";
+          isVisible = false;
+        } else {
+          answer.style.display = "block";
+          isVisible = true;
+        }
+      }
+
+
+
+      function countChars() {
+        const inputText = document.getElementById("messageBox").value;
+        const charLength = inputText.length;
+        document.getElementById("charCount").textContent = charLength;
+      }
+    </script>
+  </body>
+</html>

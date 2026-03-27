@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="courses.css">
+</head>
+<body>
+   <!-- Header (same style as home) -->
+  <header>
+    <div class="container">
+      <h1>EDOT Platform</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="courses.html" class="active">Courses</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <!-- small enroll badge -->
+      <div class="inline-info">
+        <span id="enrolledCount">Enrolled: 0</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero small-hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h2>Explore Our Courses</h2>
+        <p>Practical, teacher-led courses for primary & secondary students — pick a course and start learning today.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Controls: search + filter -->
+  <section class="course-controls container">
+    <input id="searchInput" type="search" placeholder="Search courses (e.g. Math, Python)" />
+    <select id="categoryFilter">
+      <option value="all">All categories</option>
+      <option value="math">Mathematics</option>
+      <option value="science">Science</option>
+      <option value="language">Language</option>
+      <option value="cs">Computer Science</option>
+    </select>
+  </section>
+
+  <!-- Courses grid (JS will render cards here) -->
+  <section class="courses container" id="coursesGrid">
+    <!-- course cards injected here by JS -->
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 EDOT Platform. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="courses.js"></script>
+</body>
+</html>
