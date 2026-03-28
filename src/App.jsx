@@ -1,10 +1,33 @@
-const App = () => {
+import React from 'react'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Stats from './components/Stats'
+import Work from './components/Work'
+import Experience from './components/Experience'
+import Skills from './components/Skills'
+import Testimonials from './components/Testimonials'
+import Contact from './components/Contact'
+import Footer from './components/Footer'
+import Background3D from './components/Background3D'
+import ScrollArrow from './components/ScrollArrow'   // <-- new import
+
+function App() {
   return (
-    <main>
-      <div>
-        <h1 className="text-3xl underline">Welcome my Portifolio!</h1>
+    <div className="relative">
+      <Background3D />
+      <div className="relative z-10">
+        <Navbar />
+        <Hero />
+        <Stats />
+        <Work />
+        <Experience />
+        <Skills />
+        <Testimonials />
+        <Contact />
+        <Footer />
+        <ScrollArrow />   {/* floating arrow */}
       </div>
-    </main>
+    </div>
   )
 }
 
