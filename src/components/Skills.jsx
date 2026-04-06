@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaReact, FaPython, FaServer, FaPaintBrush, FaTasks, FaNodeJs, FaDatabase, FaGitAlt } from 'react-icons/fa'
-import { SiTailwindcss, SiMongodb, SiExpress, SiPostgresql } from 'react-icons/si'
+import { SiTailwindcss, SiMongodb, SiExpress, SiPostgresql, SiNextdotjs, SiTypescript } from 'react-icons/si'
 
 const skillCategories = [
   { name: 'React Developer', icon: <FaReact />, color: '#61DAFB' },
@@ -10,9 +10,12 @@ const skillCategories = [
   { name: 'Project Manager', icon: <FaTasks />, color: '#FFD93D' },
 ]
 
-// Tech stack items for flowing rows
+// Updated tech stack items – includes Next.js, Python, TypeScript
 const flowingTech = [
   { name: 'React', icon: <FaReact />, color: '#61DAFB' },
+  { name: 'Next.js', icon: <SiNextdotjs />, color: '#ffffff' },
+  { name: 'TypeScript', icon: <SiTypescript />, color: '#3178C6' },
+  { name: 'Python', icon: <FaPython />, color: '#3776AB' },
   { name: 'Tailwind', icon: <SiTailwindcss />, color: '#06B6D4' },
   { name: 'Node.js', icon: <FaNodeJs />, color: '#339933' },
   { name: 'Express', icon: <SiExpress />, color: '#ffffff' },
