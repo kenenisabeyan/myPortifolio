@@ -10,15 +10,16 @@ const skillCategories = [
   { name: 'Project Manager', icon: <FaTasks />, color: '#FFD93D' },
 ]
 
-const techIcons = [
-  { icon: <FaReact />, name: 'React', color: '#61DAFB' },
-  { icon: <SiTailwindcss />, name: 'Tailwind', color: '#06B6D4' },
-  { icon: <FaNodeJs />, name: 'Node.js', color: '#339933' },
-  { icon: <SiExpress />, name: 'Express', color: '#ffffff' },
-  { icon: <SiMongodb />, name: 'MongoDB', color: '#47A248' },
-  { icon: <SiPostgresql />, name: 'PostgreSQL', color: '#4169E1' },
-  { icon: <FaDatabase />, name: 'SQL', color: '#4479A1' },
-  { icon: <FaGitAlt />, name: 'Git', color: '#F05032' },
+// Flowing tech stack items (icons + names)
+const flowingTech = [
+  { name: 'React', icon: <FaReact />, color: '#61DAFB' },
+  { name: 'Tailwind', icon: <SiTailwindcss />, color: '#06B6D4' },
+  { name: 'Node.js', icon: <FaNodeJs />, color: '#339933' },
+  { name: 'Express', icon: <SiExpress />, color: '#ffffff' },
+  { name: 'MongoDB', icon: <SiMongodb />, color: '#47A248' },
+  { name: 'PostgreSQL', icon: <SiPostgresql />, color: '#4169E1' },
+  { name: 'SQL', icon: <FaDatabase />, color: '#4479A1' },
+  { name: 'Git', icon: <FaGitAlt />, color: '#F05032' },
 ]
 
 const Skills = () => {
@@ -38,20 +39,28 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Tech stack icons */}
+        {/* Flowing tech stack marquee - like water */}
         <div className="text-center mb-12">
           <h3 className="text-xl font-semibold mb-6">Technologies I Work With</h3>
-          <div className="flex flex-wrap justify-center gap-6">
-            {techIcons.map((tech, idx) => (
-              <div key={idx} className="flex flex-col items-center gap-2 p-3 bg-gray-900/50 rounded-lg w-24">
-                <div className="text-3xl" style={{ color: tech.color }}>{tech.icon}</div>
-                <span className="text-sm text-gray-300">{tech.name}</span>
-              </div>
-            ))}
+          
+          {/* Marquee container - smooth infinite scroll */}
+          <div className="relative overflow-hidden w-full py-6">
+            <div className="marquee flex gap-12 whitespace-nowrap animate-flow">
+              {/* Double the items for seamless loop */}
+              {[...flowingTech, ...flowingTech].map((tech, idx) => (
+                <div
+                  key={idx}
+                  className="flex flex-col items-center gap-2 p-4 bg-gray-900/50 rounded-xl min-w-[100px] backdrop-blur-sm hover:scale-105 transition"
+                >
+                  <div className="text-3xl" style={{ color: tech.color }}>{tech.icon}</div>
+                  <span className="text-sm font-medium text-gray-200">{tech.name}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Quality cards (same as in Work, but can be kept) */}
+        {/* Quality cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
           <div className="text-center p-6 bg-gray-900/50 rounded-xl">
             <h3 className="text-xl font-semibold mb-2">Quality Focus</h3>
@@ -67,6 +76,23 @@ const Skills = () => {
           </div>
         </div>
       </div>
+
+      {/* Add custom CSS for smooth flowing animation */}
+      <style jsx>{`
+        @keyframes flow {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-flow {
+          animation: flow 20s linear infinite;
+          display: flex;
+          width: fit-content;
+        }
+        .marquee {
+          mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+          -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+      `}</style>
     </section>
   )
 }
