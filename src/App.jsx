@@ -9,7 +9,7 @@ import Testimonials from './components/Testimonials'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Background3D from './components/Background3D'
-import ScrollArrow from './components/ScrollArrow'   // <-- new import
+import ScrollArrow from './components/ScrollArrow'
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
         <Testimonials />
         <Contact />
         <Footer />
-        <ScrollArrow />   {/* floating arrow */}
+        <ScrollArrow />
       </div>
     </div>
   )
