@@ -10,7 +10,7 @@ const skillCategories = [
   { name: 'Project Manager', icon: <FaTasks />, color: '#FFD93D' },
 ]
 
-// Flowing tech stack items (icons + names)
+// Tech stack items for flowing rows
 const flowingTech = [
   { name: 'React', icon: <FaReact />, color: '#61DAFB' },
   { name: 'Tailwind', icon: <SiTailwindcss />, color: '#06B6D4' },
@@ -29,7 +29,7 @@ const Skills = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">What I Bring to the Table</h2>
         <p className="text-center text-gray-300 mb-12 text-lg">How I Can Contribute & My Key Skills</p>
 
-        {/* Skill categories with icons */}
+        {/* Skill categories */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-16">
           {skillCategories.map((skill, idx) => (
             <div key={idx} className="bg-gray-900/50 p-6 rounded-xl text-center hover:scale-105 transition">
@@ -39,19 +39,27 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Flowing tech stack marquee - like water */}
+        {/* Parallel flowing rows - top and bottom */}
         <div className="text-center mb-12">
           <h3 className="text-xl font-semibold mb-6">Technologies I Work With</h3>
           
-          {/* Marquee container - smooth infinite scroll */}
-          <div className="relative overflow-hidden w-full py-6">
-            <div className="marquee flex gap-12 whitespace-nowrap animate-flow">
-              {/* Double the items for seamless loop */}
+          {/* Row 1 - flows left to right */}
+          <div className="relative overflow-hidden w-full py-4 marquee-container">
+            <div className="marquee-row marquee-left">
               {[...flowingTech, ...flowingTech].map((tech, idx) => (
-                <div
-                  key={idx}
-                  className="flex flex-col items-center gap-2 p-4 bg-gray-900/50 rounded-xl min-w-[100px] backdrop-blur-sm hover:scale-105 transition"
-                >
+                <div key={`row1-${idx}`} className="flex flex-col items-center gap-2 p-4 bg-gray-900/50 rounded-xl min-w-[100px] backdrop-blur-sm hover:scale-105 transition mx-2">
+                  <div className="text-3xl" style={{ color: tech.color }}>{tech.icon}</div>
+                  <span className="text-sm font-medium text-gray-200">{tech.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Row 2 - flows right to left (opposite direction) */}
+          <div className="relative overflow-hidden w-full py-4 marquee-container mt-4">
+            <div className="marquee-row marquee-right">
+              {[...flowingTech, ...flowingTech].map((tech, idx) => (
+                <div key={`row2-${idx}`} className="flex flex-col items-center gap-2 p-4 bg-gray-900/50 rounded-xl min-w-[100px] backdrop-blur-sm hover:scale-105 transition mx-2">
                   <div className="text-3xl" style={{ color: tech.color }}>{tech.icon}</div>
                   <span className="text-sm font-medium text-gray-200">{tech.name}</span>
                 </div>
@@ -77,20 +85,29 @@ const Skills = () => {
         </div>
       </div>
 
-      {/* Add custom CSS for smooth flowing animation */}
-      <style jsx>{`
-        @keyframes flow {
+      <style>{`
+        .marquee-container {
+          mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+          -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        .marquee-row {
+          display: flex;
+          width: fit-content;
+          gap: 1rem;
+        }
+        .marquee-left {
+          animation: flowLeft 25s linear infinite;
+        }
+        .marquee-right {
+          animation: flowRight 25s linear infinite;
+        }
+        @keyframes flowLeft {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
         }
-        .animate-flow {
-          animation: flow 20s linear infinite;
-          display: flex;
-          width: fit-content;
-        }
-        .marquee {
-          mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-          -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        @keyframes flowRight {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
         }
       `}</style>
     </section>
