@@ -1,112 +1,51 @@
 import React from 'react'
-import { FaReact, FaPython, FaServer, FaPaintBrush, FaTasks, FaNodeJs, FaDatabase, FaGitAlt } from 'react-icons/fa'
-import { SiTailwindcss, SiMongodb, SiExpress, SiPostgresql, SiNextdotjs, SiTypescript } from 'react-icons/si'
+import { FaReact, FaPython, FaServer, FaPaintBrush, FaTasks } from 'react-icons/fa'
 
 const skillCategories = [
-  { name: 'React Developer', icon: <FaReact />, color: '#61DAFB' },
-  { name: 'Python Developer', icon: <FaPython />, color: '#3776AB' },
-  { name: 'Backend Developer', icon: <FaServer />, color: '#6DB33F' },
-  { name: 'Interactive Developer', icon: <FaPaintBrush />, color: '#FF6B6B' },
-  { name: 'Project Manager', icon: <FaTasks />, color: '#FFD93D' },
-]
-
-const flowingTech = [
-  { name: 'React', icon: <FaReact />, color: '#61DAFB' },
-  { name: 'Next.js', icon: <SiNextdotjs />, color: '#ffffff' },
-  { name: 'TypeScript', icon: <SiTypescript />, color: '#3178C6' },
-  { name: 'Python', icon: <FaPython />, color: '#3776AB' },
-  { name: 'Tailwind', icon: <SiTailwindcss />, color: '#06B6D4' },
-  { name: 'Node.js', icon: <FaNodeJs />, color: '#339933' },
-  { name: 'Express', icon: <SiExpress />, color: '#ffffff' },
-  { name: 'MongoDB', icon: <SiMongodb />, color: '#47A248' },
-  { name: 'PostgreSQL', icon: <SiPostgresql />, color: '#4169E1' },
-  { name: 'SQL', icon: <FaDatabase />, color: '#4479A1' },
-  { name: 'Git', icon: <FaGitAlt />, color: '#F05032' },
+  { name: 'React Developer', icon: <FaReact size={80} />, color: '#61DAFB' },
+  { name: 'Python Developer', icon: <FaPython size={80} />, color: '#F7D046' }, // Adjusting python color to match screenshot's blue/yellow
+  { name: 'Backend Developer', icon: <FaServer size={80} />, color: '#6DB33F' },
+  { name: 'Interactive Developer', icon: <FaPaintBrush size={80} />, color: '#A0A0A0' },
+  { name: 'Project Manager', icon: <FaTasks size={80} />, color: '#E34F26' },
 ]
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-20 px-6 bg-dark/80">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">What I Bring to the Table</h2>
-        <p className="text-center text-gray-300 mb-12 text-lg">How I Can Contribute & My Key Skills</p>
+    <section id="skills" className="py-24 px-6 bg-black relative">
+      <div className="max-w-7xl mx-auto flex flex-col items-center">
+        
+        {/* Badge */}
+        <div className="flex items-center gap-2 bg-[#1A1A1A] py-2 px-4 rounded-full mb-6 border border-[#2A2A2A]">
+          <span>🤝</span>
+          <span className="text-sm text-gray-300 font-medium">The Skills I Bring to the Table</span>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-16">
+        {/* Heading */}
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-20 tracking-tight">
+          My Preferred Tech Stack
+        </h2>
+
+        {/* Pill Cards */}
+        <div className="flex flex-wrap justify-center gap-6 md:gap-8 w-full">
           {skillCategories.map((skill, idx) => (
-            <div key={idx} className="bg-gray-900/50 p-6 rounded-xl text-center hover:scale-105 transition">
-              <div className="text-4xl mb-3" style={{ color: skill.color }}>{skill.icon}</div>
-              <h3 className="font-semibold text-lg">{skill.name}</h3>
+            <div 
+              key={idx} 
+              className="flex flex-col items-center justify-between w-44 md:w-56 h-80 md:h-[400px] bg-[#0E0E0E] rounded-[100px] p-8 hover:bg-[#1A1A1A] transition-colors cursor-default"
+            >
+              <div 
+                className="flex-1 flex items-center justify-center w-full"
+                style={{ color: skill.color }}
+              >
+                {skill.icon}
+              </div>
+              <h3 className="text-white font-semibold text-lg text-center mt-auto pb-4">
+                {skill.name}
+              </h3>
             </div>
           ))}
         </div>
 
-        <div className="text-center mb-12">
-          <h3 className="text-xl font-semibold mb-6">Technologies I Work With</h3>
-          
-          <div className="relative overflow-hidden w-full py-4 marquee-container">
-            <div className="marquee-row marquee-left">
-              {[...flowingTech, ...flowingTech].map((tech, idx) => (
-                <div key={`row1-${idx}`} className="flex flex-col items-center gap-2 p-4 bg-gray-900/50 rounded-xl min-w-[100px] backdrop-blur-sm hover:scale-105 transition mx-2">
-                  <div className="text-3xl" style={{ color: tech.color }}>{tech.icon}</div>
-                  <span className="text-sm font-medium text-gray-200">{tech.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="relative overflow-hidden w-full py-4 marquee-container mt-4">
-            <div className="marquee-row marquee-right">
-              {[...flowingTech, ...flowingTech].map((tech, idx) => (
-                <div key={`row2-${idx}`} className="flex flex-col items-center gap-2 p-4 bg-gray-900/50 rounded-xl min-w-[100px] backdrop-blur-sm hover:scale-105 transition mx-2">
-                  <div className="text-3xl" style={{ color: tech.color }}>{tech.icon}</div>
-                  <span className="text-sm font-medium text-gray-200">{tech.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-          <div className="text-center p-6 bg-gray-900/50 rounded-xl">
-            <h3 className="text-xl font-semibold mb-2">Quality Focus</h3>
-            <p className="text-gray-400">Delivering high-quality results while maintaining attention to every detail.</p>
-          </div>
-          <div className="text-center p-6 bg-gray-900/50 rounded-xl">
-            <h3 className="text-xl font-semibold mb-2">Reliable Communication</h3>
-            <p className="text-gray-400">Keeping you updated at every step to ensure transparency and clarity.</p>
-          </div>
-          <div className="text-center p-6 bg-gray-900/50 rounded-xl">
-            <h3 className="text-xl font-semibold mb-2">On-Time Delivery</h3>
-            <p className="text-gray-400">Making sure projects are completed on schedule, with quality & attention to detail.</p>
-          </div>
-        </div>
       </div>
-
-      <style>{`
-        .marquee-container {
-          mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-          -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-        }
-        .marquee-row {
-          display: flex;
-          width: fit-content;
-          gap: 1rem;
-        }
-        .marquee-left {
-          animation: flowLeft 25s linear infinite;
-        }
-        .marquee-right {
-          animation: flowRight 25s linear infinite;
-        }
-        @keyframes flowLeft {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        @keyframes flowRight {
-          0% { transform: translateX(-50%); }
-          100% { transform: translateX(0); }
-        }
-      `}</style>
     </section>
   )
 }

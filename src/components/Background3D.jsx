@@ -25,6 +25,23 @@ const LabelOnSphere = ({ text, color, position }) => {
   )
 }
 
+const TechGroup = ({ techItems }) => {
+  const groupRef = useRef()
+  useFrame(() => {
+    if (groupRef.current) {
+      groupRef.current.rotation.y += 0.002
+      groupRef.current.rotation.x += 0.001
+    }
+  })
+  return (
+    <group ref={groupRef}>
+      {techItems.map((item, idx) => (
+        <LabelOnSphere key={idx} text={item.text} color={item.color} position={item.pos} />
+      ))}
+    </group>
+  )
+}
+
 const Background3D = () => {
   const techItems = useMemo(() => {
     const items = [
@@ -55,14 +72,6 @@ const Background3D = () => {
     return positions
   }, [])
 
-  const groupRef = useRef()
-  useFrame(() => {
-    if (groupRef.current) {
-      groupRef.current.rotation.y += 0.002
-      groupRef.current.rotation.x += 0.001
-    }
-  })
-
   return (
     <div className="fixed top-0 left-0 w-full h-full -z-10">
       <Canvas camera={{ position: [0, 0, 7], fov: 45 }}>
@@ -91,11 +100,7 @@ const Background3D = () => {
           <meshBasicMaterial color="#3b82f6" transparent opacity={0.08} />
         </Sphere>
 
-        <group ref={groupRef}>
-          {techItems.map((item, idx) => (
-            <LabelOnSphere key={idx} text={item.text} color={item.color} position={item.pos} />
-          ))}
-        </group>
+        <TechGroup techItems={techItems} />
 
         <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.5} />
       </Canvas>
