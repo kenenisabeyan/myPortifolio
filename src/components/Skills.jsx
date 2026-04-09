@@ -10,7 +10,6 @@ const skillCategories = [
   { name: 'Project Manager', icon: <FaTasks />, color: '#FFD93D' },
 ]
 
-// Updated tech stack items – includes Next.js, Python, TypeScript
 const flowingTech = [
   { name: 'React', icon: <FaReact />, color: '#61DAFB' },
   { name: 'Next.js', icon: <SiNextdotjs />, color: '#ffffff' },
@@ -32,7 +31,6 @@ const Skills = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">What I Bring to the Table</h2>
         <p className="text-center text-gray-300 mb-12 text-lg">How I Can Contribute & My Key Skills</p>
 
-        {/* Skill categories */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-16">
           {skillCategories.map((skill, idx) => (
             <div key={idx} className="bg-gray-900/50 p-6 rounded-xl text-center hover:scale-105 transition">
@@ -42,11 +40,9 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Parallel flowing rows - top and bottom */}
         <div className="text-center mb-12">
           <h3 className="text-xl font-semibold mb-6">Technologies I Work With</h3>
           
-          {/* Row 1 - flows left to right */}
           <div className="relative overflow-hidden w-full py-4 marquee-container">
             <div className="marquee-row marquee-left">
               {[...flowingTech, ...flowingTech].map((tech, idx) => (
@@ -58,7 +54,6 @@ const Skills = () => {
             </div>
           </div>
 
-          {/* Row 2 - flows right to left (opposite direction) */}
           <div className="relative overflow-hidden w-full py-4 marquee-container mt-4">
             <div className="marquee-row marquee-right">
               {[...flowingTech, ...flowingTech].map((tech, idx) => (
@@ -71,7 +66,6 @@ const Skills = () => {
           </div>
         </div>
 
-        {/* Quality cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
           <div className="text-center p-6 bg-gray-900/50 rounded-xl">
             <h3 className="text-xl font-semibold mb-2">Quality Focus</h3>

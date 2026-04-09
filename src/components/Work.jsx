@@ -40,7 +40,6 @@ const Work = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Let's get started</h2>
         <p className="text-center text-gray-300 mb-12 text-lg">Explore my featured projects</p>
 
-        {/* Project cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {projects.map((project, idx) => (
             <div key={idx} className="bg-gray-900/50 rounded-xl overflow-hidden hover:scale-[1.02] transition duration-300">
@@ -59,7 +58,6 @@ const Work = () => {
           ))}
         </div>
 
-        {/* Logos */}
         <div className="text-center mb-12">
           <h3 className="text-xl font-semibold mb-6">Technologies & Partners</h3>
           <div className="flex flex-wrap justify-center gap-8 items-center">
@@ -69,7 +67,6 @@ const Work = () => {
           </div>
         </div>
 
-        {/* Quality focus cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
           <div className="text-center p-6 bg-gray-900/50 rounded-xl">
             <h3 className="text-xl font-semibold mb-2">Quality Focus</h3>
