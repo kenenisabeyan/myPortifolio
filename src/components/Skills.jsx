@@ -1,46 +1,44 @@
 import React from 'react'
-import { FaReact, FaPython, FaServer, FaPaintBrush, FaTasks } from 'react-icons/fa'
+import { FaLaptopCode, FaMobileAlt, FaServer, FaVideo } from 'react-icons/fa'
 
-const skillCategories = [
-  { name: 'React Developer', icon: <FaReact size={80} />, color: '#61DAFB' },
-  { name: 'Python Developer', icon: <FaPython size={80} />, color: '#F7D046' }, // Adjusting python color to match screenshot's blue/yellow
-  { name: 'Backend Developer', icon: <FaServer size={80} />, color: '#6DB33F' },
-  { name: 'Interactive Developer', icon: <FaPaintBrush size={80} />, color: '#A0A0A0' },
-  { name: 'Project Manager', icon: <FaTasks size={80} />, color: '#E34F26' },
+const services = [
+  { title: "Web Developer", icon: <FaLaptopCode size={40} className="text-[#a074fe]" /> },
+  { title: "React Native Developer", icon: <FaMobileAlt size={40} className="text-[#65def1]" /> },
+  { title: "Backend Developer", icon: <FaServer size={40} className="text-[#ff98ca]" /> },
+  { title: "Content Creator", icon: <FaVideo size={40} className="text-[#848efe]" /> },
 ]
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-24 px-6 bg-black relative">
-      <div className="max-w-7xl mx-auto flex flex-col items-center">
+    <section id="about" className="py-24 px-6 bg-[#050816] text-white">
+      <div className="max-w-7xl mx-auto flex flex-col">
         
-        {/* Badge */}
-        <div className="flex items-center gap-2 bg-[#1A1A1A] py-2 px-4 rounded-full mb-6 border border-[#2A2A2A]">
-          <span>🤝</span>
-          <span className="text-sm text-gray-300 font-medium">The Skills I Bring to the Table</span>
-        </div>
-
-        {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-20 tracking-tight">
-          My Preferred Tech Stack
+        <p className="text-sm text-gray-400 uppercase tracking-widest mb-2 font-medium">Introduction</p>
+        <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
+          Overview.
         </h2>
 
-        {/* Pill Cards */}
-        <div className="flex flex-wrap justify-center gap-6 md:gap-8 w-full">
-          {skillCategories.map((skill, idx) => (
+        <p className="text-gray-300 text-[17px] leading-[30px] max-w-3xl mb-16">
+          I'm a skilled software developer with experience in TypeScript and JavaScript, and
+          expertise in frameworks like React, Node.js, and Three.js. I'm a quick learner and
+          collaborate closely with clients to create efficient, scalable, and user-friendly solutions
+          that solve real-world problems. Let's work together to bring your ideas to life!
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {services.map((service, idx) => (
             <div 
               key={idx} 
-              className="flex flex-col items-center justify-between w-44 md:w-56 h-80 md:h-[400px] bg-[#0E0E0E] rounded-[100px] p-8 hover:bg-[#1A1A1A] transition-colors cursor-default"
+              className="bg-[#151030] rounded-2xl p-[1px] border border-[#2d2252] shadow-card hover:-translate-y-2 transition-transform duration-300 cursor-pointer"
             >
               <div 
-                className="flex-1 flex items-center justify-center w-full"
-                style={{ color: skill.color }}
+                className="bg-[#151030] rounded-2xl py-12 px-12 min-h-[280px] flex flex-col justify-evenly items-center shadow-[inset_0_0_20px_rgba(255,255,255,0.02)]"
               >
-                {skill.icon}
+                {service.icon}
+                <h3 className="text-white text-[20px] font-bold text-center mt-6">
+                  {service.title}
+                </h3>
               </div>
-              <h3 className="text-white font-semibold text-lg text-center mt-auto pb-4">
-                {skill.name}
-              </h3>
             </div>
           ))}
         </div>
