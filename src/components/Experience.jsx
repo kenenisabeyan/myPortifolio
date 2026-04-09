@@ -42,12 +42,19 @@ const experiences = [
 const Experience = () => {
   return (
     <section id="experience" className="py-24 px-6 bg-black relative">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto flex flex-col items-center">
+        
+        {/* Badge */}
+        <div className="flex items-center gap-2 bg-[#1A1A1A] py-2 px-4 rounded-full mb-6 border border-[#2A2A2A]">
+          <span>💼</span>
+          <span className="text-sm text-gray-300 font-medium tracking-wide">My Career Overview</span>
+        </div>
+
         <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-20 tracking-tight">
-          Work Experience
+          Professional Work Experience
         </h2>
 
-        <div className="relative max-w-5xl mx-auto">
+        <div className="relative w-full max-w-5xl mx-auto">
           {/* Vertical Center Line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-[2px] bg-[#1a1a1a]"></div>
 
