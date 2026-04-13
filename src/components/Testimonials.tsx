@@ -35,36 +35,37 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-24 px-6 bg-black relative">
-      <div className="max-w-7xl mx-auto flex flex-col items-center">
+    <section id="testimonials" className="py-24 px-6 relative z-10 border-t border-white/[0.05] bg-black/20 backdrop-blur-sm">
+      <div className="absolute inset-0 bg-gradient-to-b from-purple-900/10 via-transparent to-transparent pointer-events-none" />
+      <div className="max-w-7xl mx-auto flex flex-col items-center relative z-10">
         
         {/* Badge */}
-        <div className="flex items-center gap-2 bg-[#1A1A1A] py-2 px-4 rounded-full mb-6 border border-[#2A2A2A]">
-          <span>⭐</span>
-          <span className="text-sm text-gray-300 font-medium">Client Feedback Highlights</span>
+        <div className="flex items-center gap-2 bg-white/[0.02] border border-white/[0.05] py-2 px-4 rounded-full mb-6">
+          <span className="text-purple-400">✧</span>
+          <span className="text-sm text-gray-300 font-medium tracking-wide">Client Feedback Highlights</span>
         </div>
 
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-16 tracking-tight">
-          What People Say About Me?
+        <h2 className="text-4xl md:text-6xl font-black text-center text-white mb-16 tracking-tight">
+          What People Say <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">About Me?</span>
         </h2>
 
         {/* 3 Column Grid layout */}
-        <div className="w-full flex flex-col md:flex-row gap-6 items-start">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
           
           {/* Column 1 */}
-          <div className="w-full md:w-1/3 flex flex-col gap-6">
+          <div className="w-full flex flex-col gap-6">
              <TestimonialCard t={testimonials[0]} />
              <TestimonialCard t={testimonials[3]} />
           </div>
 
           {/* Column 2 */}
-          <div className="w-full md:w-1/3 flex flex-col gap-6">
+          <div className="w-full flex flex-col gap-6">
              <TestimonialCard t={testimonials[1]} />
              <TestimonialCard t={testimonials[4]} />
           </div>
 
           {/* Column 3 */}
-          <div className="w-full md:w-1/3 flex flex-col gap-6">
+          <div className="w-full flex flex-col gap-6">
              <TestimonialCard t={testimonials[2]} />
              <TestimonialCard t={testimonials[5]} />
           </div>
@@ -78,24 +79,27 @@ const Testimonials = () => {
 
 function TestimonialCard({ t }) {
   return (
-    <div className="bg-[#0E0E0E] p-8 rounded-2xl border border-[#1a1a1a] flex flex-col h-full">
-      <div className="flex text-white mb-6 space-x-1">
+    <div className="group relative bg-white/[0.02] hover:bg-white/[0.04] p-8 rounded-2xl border border-white/[0.05] hover:border-purple-500/30 transition-all duration-300 flex flex-col h-full overflow-hidden">
+      <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="relative z-10 flex text-purple-400 mb-6 space-x-1">
         {[...Array(5)].map((_, i) => (
-          <span key={i} className="text-lg">★</span>
+          <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
+             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
         ))}
       </div>
-      <p className="text-gray-300 text-[15px] leading-relaxed mb-8 flex-1">
-        {t.text}
+      <p className="relative z-10 text-gray-300 text-[15px] leading-relaxed mb-8 flex-1 font-light">
+        "{t.text}"
       </p>
       
-      <div className="flex items-center gap-4 mt-auto">
+      <div className="relative z-10 flex items-center gap-4 mt-auto">
         {/* Avatar Placeholder */}
-        <div className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-white font-bold text-lg overflow-hidden shrink-0">
+        <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-lg overflow-hidden shrink-0 shadow-lg shadow-purple-500/20">
           {t.name.charAt(0)}
         </div>
         <div className="flex flex-col">
           <span className="font-bold text-white text-[15px] tracking-wide">{t.name}</span>
-          <span className="text-gray-500 text-sm">{t.handle}</span>
+          <span className="text-gray-500 text-sm font-medium">{t.handle}</span>
         </div>
       </div>
     </div>
