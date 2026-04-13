@@ -1,44 +1,43 @@
 import React from 'react'
-import { FaLaptopCode, FaMobileAlt, FaServer, FaVideo } from 'react-icons/fa'
+import { FaReact, FaPython, FaNodeJs, FaProjectDiagram, FaGitAlt } from 'react-icons/fa'
 
 const services = [
-  { title: "Web Developer", icon: <FaLaptopCode size={40} className="text-[#a074fe]" /> },
-  { title: "React Native Developer", icon: <FaMobileAlt size={40} className="text-[#65def1]" /> },
-  { title: "Backend Developer", icon: <FaServer size={40} className="text-[#ff98ca]" /> },
-  { title: "Content Creator", icon: <FaVideo size={40} className="text-[#848efe]" /> },
+  { title: "React Developer", icon: <FaReact size={80} className="text-[#61DAFB] drop-shadow-lg" /> },
+  { title: "Python Developer", icon: <FaPython size={80} className="text-[#FFD43B] drop-shadow-lg" /> },
+  { title: "Backend Developer", icon: <FaNodeJs size={80} className="text-[#68A063] drop-shadow-lg" /> },
+  { title: "Interactive Developer", icon: <FaProjectDiagram size={80} className="text-gray-300 drop-shadow-lg" /> },
+  { title: "Project Manager", icon: <FaGitAlt size={80} className="text-[#F05032] drop-shadow-lg" /> },
 ]
 
 const Skills = () => {
   return (
-    <section id="about" className="py-24 px-6 bg-[#050816] text-white">
-      <div className="max-w-7xl mx-auto flex flex-col">
+    <section id="about" className="py-24 px-6 relative z-10 border-t border-white/[0.05] bg-black/20 backdrop-blur-sm">
+      <div className="absolute inset-0 bg-gradient-to-t from-blue-900/10 via-transparent to-transparent pointer-events-none" />
+      <div className="max-w-7xl mx-auto flex flex-col relative z-10">
         
-        <p className="text-sm text-gray-400 uppercase tracking-widest mb-2 font-medium">Introduction</p>
-        <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
-          Overview.
-        </h2>
+        <div className="flex flex-col items-center text-center mt-12">
+          <div className="flex items-center justify-center gap-2 bg-[#1C1F26] border border-white/[0.05] py-2 px-5 rounded-full mb-6 w-max shadow-lg">
+            <span className="text-yellow-500">🤝</span>
+            <span className="text-sm text-gray-300 font-medium tracking-wide">What I Bring to the Table</span>
+          </div>
+          
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-16 tracking-tight">
+            How I Can Contribute & My Key Skills
+          </h2>
+        </div>
 
-        <p className="text-gray-300 text-[17px] leading-[30px] max-w-3xl mb-16">
-          I'm a skilled software developer with experience in TypeScript and JavaScript, and
-          expertise in frameworks like React, Node.js, and Three.js. I'm a quick learner and
-          collaborate closely with clients to create efficient, scalable, and user-friendly solutions
-          that solve real-world problems. Let's work together to bring your ideas to life!
-        </p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="flex flex-wrap items-center justify-center gap-6 w-full max-w-6xl mx-auto">
           {services.map((service, idx) => (
             <div 
               key={idx} 
-              className="bg-[#151030] rounded-2xl p-[1px] border border-[#2d2252] shadow-card hover:-translate-y-2 transition-transform duration-300 cursor-pointer"
+              className="group relative bg-[#0B0E14] hover:bg-[#1E2330] rounded-full py-16 px-6 border border-white/[0.05] transition-colors duration-500 flex flex-col items-center justify-center w-[200px] h-[360px] shadow-2xl cursor-pointer"
             >
-              <div 
-                className="bg-[#151030] rounded-2xl py-12 px-12 min-h-[280px] flex flex-col justify-evenly items-center shadow-[inset_0_0_20px_rgba(255,255,255,0.02)]"
-              >
+              <div className="w-24 h-24 mb-10 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500">
                 {service.icon}
-                <h3 className="text-white text-[20px] font-bold text-center mt-6">
-                  {service.title}
-                </h3>
               </div>
+              <h3 className="text-white text-xl font-bold text-center tracking-wide leading-snug">
+                {service.title.split(' ').map((word, i) => <React.Fragment key={i}>{word}<br/></React.Fragment>)}
+              </h3>
             </div>
           ))}
         </div>
