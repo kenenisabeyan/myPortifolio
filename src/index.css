@@ -41,3 +41,27 @@ body {
 .animate-bounce {
   animation: bounce 1.5s infinite;
 }
+
+@keyframes marqueeLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333333%); }
+}
+
+@keyframes marqueeRight {
+  0% { transform: translateX(-33.333333%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee-left {
+  animation: marqueeLeft 30s linear infinite;
+  display: flex;
+}
+
+.animate-marquee-right {
+  animation: marqueeRight 30s linear infinite;
+  display: flex;
+}
+
+.hover\:animation-play-state-paused:hover {
+  animation-play-state: paused !important;
+}
