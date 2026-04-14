@@ -52,15 +52,15 @@ const Hero = () => {
 
         {/* Right Column: Image */}
         <div className="flex-1 flex justify-center md:justify-end mt-12 md:mt-0 w-full perspective-1000">
-          <div className="relative w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[420px] aspect-[4/5] group mx-auto md:mx-0">
+          <div className="relative w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[420px] aspect-square group mx-auto md:mx-0">
             <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/30 to-purple-500/30 rounded-[2.5rem] blur-[60px] opacity-40 group-hover:opacity-80 transition-opacity duration-700" />
             
             {/* Glass Border Container */}
-            <div className="relative w-full h-full rounded-[2.5rem] p-[2px] bg-gradient-to-br from-white/20 via-white/5 to-transparent overflow-hidden transform transition-all duration-700 group-hover:-translate-y-4 group-hover:rotate-2 group-hover:shadow-[0_30px_60px_rgba(59,130,246,0.4)] z-10">
+            <div className="relative w-full h-full rounded-[2.5rem] bg-gradient-to-br from-white/20 via-white/5 to-transparent overflow-hidden transform transition-all duration-700 group-hover:-translate-y-4 group-hover:rotate-2 group-hover:shadow-[0_30px_60px_rgba(59,130,246,0.4)] z-10">
               <img 
                 src={kenoImg} 
                 alt="Kenenisa" 
-                className="w-full h-full object-cover rounded-[2.4rem] bg-[#0A0D14]"
+                className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
             

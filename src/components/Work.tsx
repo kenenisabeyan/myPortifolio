@@ -65,18 +65,22 @@ const Work = () => {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project, idx) => (
-            <div key={idx} className={`p-8 bg-gradient-to-br ${project.color} rounded-3xl border border-white/[0.05] relative group overflow-hidden`}>
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500" />
-              <div className="relative z-10 w-full h-[280px] rounded-xl overflow-hidden shadow-2xl border border-white/10 mb-6 group-hover:-translate-y-2 transition-transform duration-500">
+            <div key={idx} className={`bg-gradient-to-br ${project.color} rounded-3xl border border-white/[0.05] relative group overflow-hidden flex flex-col`}>
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500 pointer-events-none" />
+              
+              {/* Edge-to-Edge Image Header */}
+              <div className="relative z-10 w-full h-[280px] overflow-hidden shadow-2xl border-b border-white/10 group-hover:-translate-y-2 transition-transform duration-500">
                  <img 
                    src={project.image} 
                    alt="Project Mockup" 
-                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                  />
               </div>
-              <div className="relative z-10 mt-5">
+              
+              {/* Text Content Area with Padding */}
+              <div className="relative z-10 p-8 flex-1 flex flex-col">
                 <h3 className="text-white font-bold text-2xl mb-2 tracking-wide group-hover:text-cyan-300 transition-colors duration-300">{project.title}</h3>
-                <p className="mt-2 text-gray-400 text-[15px] font-light leading-relaxed">
+                <p className="mt-2 text-gray-400 text-[15px] font-light leading-relaxed flex-1">
                   {project.description}
                 </p>
               </div>
