@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import Overview from './components/Overview'
 import Stats from './components/Stats'
 import Work from './components/Work'
 import Experience from './components/Experience'
@@ -19,6 +20,7 @@ function App() {
       <div className="relative z-10">
         <Navbar />
         <Hero />
+        <Overview />
         <Stats />
         <Work />
         <Experience />

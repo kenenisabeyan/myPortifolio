@@ -5,7 +5,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
-  const navItems = ['Work', 'Experience', 'About', 'Testimonials', 'Contact']
+  const navItems = ['Overview', 'Work', 'Experience', 'About', 'Testimonials', 'Contact']
 
   const scrollToSection = (section) => {
     const element = document.getElementById(section.toLowerCase())

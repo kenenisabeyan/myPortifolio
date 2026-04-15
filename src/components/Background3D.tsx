@@ -1,27 +1,30 @@
 import React, { useRef, useMemo } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { Text, OrbitControls, Stars, Sphere } from '@react-three/drei'
+import { Html, OrbitControls, Stars, Sphere } from '@react-three/drei'
+import {
+  SiJavascript,
+  SiTypescript,
+  SiNextdotjs,
+  SiReact,
+  SiCss3,
+  SiNodedotjs,
+  SiPython,
+  SiMysql,
+  SiGit,
+  SiTailwindcss,
+  SiFigma,
+  SiExpress,
+} from 'react-icons/si'
 
-const LabelOnSphere = ({ text, color, position }) => {
-  const textRef = useRef()
-  useFrame(() => {
-    if (textRef.current) {
-      textRef.current.lookAt(0, 0, 0)   // always face camera
-    }
-  })
+const LabelOnSphere = ({ icon: Icon, color, position }) => {
   return (
-    <Text
-      ref={textRef}
-      position={position}
-      fontSize={0.55}
-      color={color}
-      anchorX="center"
-      anchorY="middle"
-      outlineWidth={0.02}
-      outlineColor="#000000"
-    >
-      {text}
-    </Text>
+    <group position={position}>
+      <Html center transform distanceFactor={5} occlude>
+        <div className="flex items-center justify-center w-12 h-12 rounded-full border border-white/15 bg-black/80 shadow-lg shadow-cyan-500/10">
+          <Icon size={24} color={color} />
+        </div>
+      </Html>
+    </group>
   )
 }
 
@@ -36,7 +39,7 @@ const TechGroup = ({ techItems }) => {
   return (
     <group ref={groupRef}>
       {techItems.map((item, idx) => (
-        <LabelOnSphere key={idx} text={item.text} color={item.color} position={item.pos} />
+        <LabelOnSphere key={idx} icon={item.icon} color={item.color} position={item.pos} />
       ))}
     </group>
   )
@@ -45,18 +48,18 @@ const TechGroup = ({ techItems }) => {
 const Background3D = () => {
   const techItems = useMemo(() => {
     const items = [
-      { text: 'JS', color: '#f7df1e' },
-      { text: 'TS', color: '#3178c6' },
-      { text: 'NEXT', color: '#ffffff' },
-      { text: 'REACT', color: '#61dafb' },
-      { text: 'CSS', color: '#264de4' },
-      { text: 'NODE', color: '#68a063' },
-      { text: 'PY', color: '#3776ab' },
-      { text: 'SQL', color: '#4479a1' },
-      { text: 'GIT', color: '#f05032' },
-      { text: 'TAILWIND', color: '#06b6d4' },
-      { text: 'US', color: '#ffffff' },
-      { text: 'EXPRESS', color: '#ffffff' },
+      { icon: SiJavascript, color: '#f7df1e' },
+      { icon: SiTypescript, color: '#3178c6' },
+      { icon: SiNextdotjs, color: '#ffffff' },
+      { icon: SiReact, color: '#61dafb' },
+      { icon: SiCss3, color: '#264de4' },
+      { icon: SiNodedotjs, color: '#68a063' },
+      { icon: SiPython, color: '#3776ab' },
+      { icon: SiMysql, color: '#4479a1' },
+      { icon: SiGit, color: '#f05032' },
+      { icon: SiTailwindcss, color: '#06b6d4' },
+      { icon: SiFigma, color: '#f24e1e' },
+      { icon: SiExpress, color: '#000000' },
     ]
     const radius = 2.8
     const positions = []

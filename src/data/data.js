@@ -101,6 +101,13 @@ export const projects = [
     image: "https://via.placeholder.com/600x400?text=Library+Platform",
     link: "#",
   },
+  {
+    title: "Portfolio Showcase",
+    description: "A responsive personal portfolio built with modern web technologies and smooth animations.",
+    tech: ["React", "TailwindCSS", "TypeScript"],
+    image: "https://via.placeholder.com/600x400?text=Portfolio+Showcase",
+    link: "#",
+  },
 ];
 
 export const clientLogos = [
