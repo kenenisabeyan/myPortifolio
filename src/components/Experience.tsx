@@ -10,7 +10,7 @@ const experiences = [
       'Specialized in React, Next.js, and Node.js solutions, decreasing client load times by up to 40%.',
       'Consistently maintained a 100% Job Success Score through effective communication.',
     ],
-    iconColor: '#10b981', // emerald-500
+    iconColor: '#22d3ee', // cyan-400
     icon: (
       <span className="text-white font-bold text-lg">F</span>
     ),
@@ -46,7 +46,7 @@ const experiences = [
       'Optimized legacy codebases, significantly improving SEO scores and web core vitals.',
       'Set up CI/CD pipelines for streamlined automated deployments to Vercel and AWS.',
     ],
-    iconColor: '#8b5cf6', // violet-500
+    iconColor: '#818cf8', // indigo-400
     icon: (
       <span className="text-white font-bold text-lg">D</span>
     ),
@@ -58,9 +58,9 @@ const experiences = [
 ]
 
 const StarRating = () => (
-  <div className="flex gap-1 mb-4">
+  <div className="flex gap-1 mb-6">
     {[...Array(5)].map((_, i) => (
-      <svg key={i} className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+      <svg key={i} className="w-4 h-4 text-cyan-400 drop-shadow-[0_0_5px_rgba(34,211,238,0.8)]" fill="currentColor" viewBox="0 0 20 20">
         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
       </svg>
     ))}
@@ -98,84 +98,95 @@ const RevealOnScroll = ({ children }) => {
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-24 px-6 relative z-10 border-t border-white/[0.05] bg-[#050505]">
+    <section id="experience" className="py-32 px-6 relative z-10 border-t border-white/[0.05] bg-[#030610]">
+      
+      {/* Background ambient lighting */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/10 to-transparent pointer-events-none" />
+      <div className="absolute top-1/3 left-0 w-[400px] h-[600px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none" />
+
       <div className="max-w-7xl mx-auto flex flex-col items-center relative z-10">
         
-        <div className="flex flex-col items-center text-center mb-20">
-          <div className="flex items-center gap-2 bg-[#1C1F26] border border-white/[0.05] py-2 px-5 rounded-full mb-6 w-max shadow-lg">
-            <span className="text-orange-400">💼</span>
-            <span className="text-sm text-gray-300 font-medium tracking-wide">My Career Overview</span>
+        <div className="flex flex-col items-center text-center mb-24">
+          <div className="flex items-center gap-3 bg-blue-900/20 border border-blue-500/30 py-2.5 px-6 rounded-full mb-6 w-max shadow-[0_0_20px_rgba(59,130,246,0.15)] backdrop-blur-md">
+            <span className="text-cyan-400 animate-pulse">❖</span>
+            <span className="text-sm text-cyan-50 font-semibold tracking-widest uppercase">Career Timeline</span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight">
-            Professional Work Experience
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter drop-shadow-xl">
+            Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">History.</span>
           </h2>
         </div>
 
         <div className="relative w-full max-w-6xl mx-auto">
-          {/* Vertical Gradient Center Line */}
-          <div className="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-blue-600 via-purple-600 to-pink-600 z-0"></div>
+          {/* Neon Vertical Gradient Center Line */}
+          <div className="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-cyan-400 via-blue-600 to-transparent z-0 shadow-[0_0_15px_rgba(34,211,238,0.5)]"></div>
 
-          <div className="flex flex-col gap-12 md:gap-24">
+          <div className="flex flex-col gap-16 md:gap-32">
             {experiences.map((exp, idx) => (
               <RevealOnScroll key={idx}>
                 <div className="relative flex flex-col md:flex-row items-center md:items-start w-full z-10">
                   
-                  {/* Left Side: Testimonial Card */}
+                  {/* Left Side: Detail & Testimonial Container */}
                   <div className="hidden md:flex w-1/2 justify-end pr-16 mt-4">
-                    <div className="bg-[#0B0C10] p-8 rounded-2xl border border-white/[0.08] w-full max-w-[420px] shadow-2xl relative">
-                      <StarRating />
-                      <p className="text-gray-300 text-[15px] leading-relaxed mb-6 font-light">
-                        {exp.testimonial.text}
-                      </p>
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-sm">
-                          {exp.testimonial.companyName.charAt(0)}
+                    <div className="bg-[#050A14]/80 p-8 rounded-[2rem] border border-white/[0.05] w-full max-w-[460px] shadow-2xl relative backdrop-blur-xl group hover:border-cyan-500/30 transition-all duration-500 hover:shadow-[0_0_30px_rgba(34,211,238,0.1)]">
+                      {/* Ambient hover glow inside card */}
+                      <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none" />
+                      
+                      <div className="relative z-10">
+                        <StarRating />
+                        <p className="text-gray-300 text-[16px] leading-relaxed mb-8 font-light italic">
+                          "{exp.testimonial.text}"
+                        </p>
+                        <div className="flex items-center gap-4 border-t border-white/[0.05] pt-6">
+                          <div className="w-12 h-12 rounded-full border border-white/10 bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-black text-lg shadow-[0_0_15px_rgba(34,211,238,0.4)]">
+                            {exp.testimonial.companyName.charAt(0)}
+                          </div>
+                          <span className="text-cyan-50 font-bold text-lg tracking-wide">{exp.testimonial.companyName}</span>
                         </div>
-                        <span className="text-white font-bold text-lg tracking-wide">{exp.testimonial.companyName}</span>
                       </div>
                     </div>
                   </div>
 
-                  {/* Center Icon */}
-                  <div className="absolute left-0 md:left-1/2 transform translate-x-1 md:-translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full border-4 border-[#050505] bg-black z-10 mt-6 md:mt-8">
+                  {/* Center Node Icon */}
+                  <div className="absolute left-0 md:left-1/2 transform translate-x-1 md:-translate-x-1/2 flex items-center justify-center w-14 h-14 rounded-full border-[5px] border-[#030610] bg-black z-10 mt-6 md:mt-8 shadow-[0_0_20px_rgba(34,211,238,0.3)]">
                     <div 
-                      className="w-full h-full rounded-full flex items-center justify-center bg-white/[0.1] backdrop-blur-md"
-                      style={{ borderColor: exp.iconColor, borderWidth: '2px' }}
+                      className="w-full h-full rounded-full flex items-center justify-center bg-white/[0.05] backdrop-blur-md transition-all duration-300 hover:scale-110 cursor-default"
+                      style={{ borderColor: exp.iconColor, borderWidth: '2px', boxShadow: `0 0 15px ${exp.iconColor}40` }}
                     >
                       {exp.icon}
                     </div>
                   </div>
 
-                  {/* Right Side: Role Details & Mobile Formats */}
+                  {/* Right Side: Role Overview */}
                   <div className="w-full md:w-1/2 flex justify-start pl-20 md:pl-16 mt-6 md:mt-8">
                     <div className="w-full max-w-[500px]">
-                      <h3 className="text-3xl font-bold text-white mb-3 tracking-tight">{exp.title}</h3>
-                      <div className="flex items-center gap-2 mb-6 text-gray-400">
-                        <span>📅</span>
-                        <p className="text-sm tracking-wide font-medium">{exp.period}</p>
+                      <h3 className="text-4xl font-black text-white mb-4 tracking-tighter drop-shadow-md">{exp.title}</h3>
+                      
+                      <div className="flex items-center gap-3 mb-8 bg-white/[0.02] border border-white/5 w-max px-4 py-2 rounded-lg backdrop-blur-sm">
+                        <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></div>
+                        <p className="text-sm tracking-widest font-semibold text-cyan-200 uppercase">{exp.period}</p>
                       </div>
                       
-                      <p className="text-gray-500 italic text-sm mb-4">Responsibilities</p>
-                      <ul className="space-y-4">
+                      <p className="text-cyan-500/80 font-bold tracking-widest uppercase text-sm mb-6 border-b border-white/5 pb-2">Technical Execution</p>
+                      <ul className="space-y-6">
                         {exp.responsibilities.map((item, i) => (
-                          <li key={i} className="flex items-start text-[15px] text-gray-300 tracking-wide font-light leading-relaxed">
-                            <span className="mr-3 mt-2 w-1.5 h-1.5 bg-gray-500 rounded-full flex-shrink-0"></span>
-                            {item}
+                          <li key={i} className="flex items-start text-[16px] text-gray-300 tracking-wide font-light leading-relaxed group">
+                            <span className="mr-4 mt-2.5 w-1.5 h-1.5 bg-cyan-500 rounded-full flex-shrink-0 group-hover:scale-150 group-hover:shadow-[0_0_10px_rgba(34,211,238,0.8)] transition-all duration-300"></span>
+                            <span>{item}</span>
                           </li>
                         ))}
                       </ul>
 
-                      {/* Mobile Testimonial Appended */}
-                      <div className="md:hidden mt-8 bg-[#0B0C10] p-6 rounded-2xl border border-white/[0.08] w-full shadow-2xl relative">
+                      {/* Mobile Testimonial Add-on */}
+                      <div className="md:hidden mt-12 bg-[#050A14]/80 p-8 rounded-[2rem] border border-white/[0.05] w-full shadow-2xl relative backdrop-blur-lg">
                         <StarRating />
-                        <p className="text-gray-300 text-sm leading-relaxed mb-4 font-light">
-                          {exp.testimonial.text}
+                        <p className="text-gray-300 text-[15px] leading-relaxed mb-6 font-light italic">
+                          "{exp.testimonial.text}"
                         </p>
-                        <div className="flex items-center gap-3">
-                          <div className="w-6 h-6 rounded bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-xs">
+                        <div className="flex items-center gap-4 border-t border-white/[0.05] pt-6">
+                          <div className="w-10 h-10 rounded-full border border-white/10 bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-black text-sm shadow-[0_0_15px_rgba(34,211,238,0.4)]">
                             {exp.testimonial.companyName.charAt(0)}
                           </div>
-                          <span className="text-white font-bold tracking-wide">{exp.testimonial.companyName}</span>
+                          <span className="text-cyan-50 font-bold tracking-wide">{exp.testimonial.companyName}</span>
                         </div>
                       </div>
 
