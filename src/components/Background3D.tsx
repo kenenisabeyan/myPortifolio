@@ -174,12 +174,11 @@ const Background3D = () => {
   }, [])
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full -z-10 bg-black overflow-hidden">
-      
+    <div className="fixed top-0 left-0 w-full h-full -z-10 bg-[#050505] overflow-hidden">
       {/* Deep space faint radial mesh grid background */}
-      <div className="absolute inset-0 z-0 pointer-events-none" style={{
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-60" style={{
         backgroundImage: `
-          radial-gradient(circle at center, rgba(59,130,246,0.15) 0%, rgba(0,0,0,1) 70%),
+          radial-gradient(circle at center, rgba(59,130,246,0.1) 0%, rgba(0,0,0,1) 80%),
           linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
           linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)
         `,

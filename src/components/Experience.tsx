@@ -2,13 +2,14 @@ import React, { useEffect, useRef } from 'react'
 
 const experiences = [
   {
-    title: 'Senior Full Stack Engineer',
-    company: 'Freelance / Remote',
-    period: 'January 2023 - Present',
+    title: 'Full Stack Engineer',
+    company: 'Freelance & Contract',
+    period: 'October 2025 - Present',
     responsibilities: [
-      'Architected and delivered scalable web applications for diverse international clients.',
-      'Specialized in React, Next.js, and Node.js solutions, decreasing client load times by up to 40%.',
-      'Consistently maintained a 100% Job Success Score through effective communication.',
+      'Architecting and developing scalable, production-ready web applications using MERN, PERN, and Django (Python) stacks.',
+      'Designing modern, responsive user interfaces and robust backend systems, improving performance and system efficiency.',
+      'Building and managing fullstack platforms, including EDOT, with multi-role dashboards and structured workflows.',
+      'Delivering reliable solutions through clean code, clear communication, and consistent project execution.',
     ],
     iconColor: '#22d3ee', // cyan-400
     icon: (
@@ -16,17 +17,36 @@ const experiences = [
     ),
     testimonial: {
       text: "Kenenisa brought immense technical expertise to our team, drastically improving our frontend performance. His problem-solving mindset was key to delivering exactly what we needed.",
-      companyName: "TechNova Inc.",
+      companyName: "TechNova Solutions",
+    }
+  },
+  {
+    title: 'Full Stack Developer Intern',
+    company: 'TechFlow Agency',
+    period: 'August 2025 - September 2025',
+    responsibilities: [
+      'Designed and implemented a full-stack Employee Performance Evaluation Dashboard using Next.js 15+ (App Router) and MongoDB, enabling structured evaluation workflows for organizations.',
+      'Built secure authentication and role-based access control using NextAuth.js, supporting Admin and Employee dashboards with different permissions.',
+      'Developed core evaluation features including self-assessments, peer reviews, and admin evaluations with real-time performance tracking.',
+      'Implemented data visualization and performance analytics using chart-based UI components to improve transparency and decision-making.',
+    ],
+    iconColor: '#818cf8', // indigo-400
+    icon: (
+      <span className="text-white font-bold text-lg">D</span>
+    ),
+    testimonial: {
+      text: "Kenenisa completely revitalized our client properties. SEO scores skyrocketed, and the sleek designs helped us land major new agency accounts.",
+      companyName: "TechFlow Agency",
     }
   },
   {
     title: 'Frontend Developer',
-    company: 'Tech Startup / Remote',
-    period: 'June 2021 - December 2022',
+    company: 'StartupFlow',
+    period: 'November 2024 - April 2025',
     responsibilities: [
-      'Led the frontend development for a dynamic SaaS platform, resulting in a 25% increase in user retention.',
-      'Implemented complex state management and seamless REST/GraphQL API integrations.',
-      'Collaborated closely with UI/UX designers to achieve pixel-perfect, highly responsive interfaces.',
+      'Developed responsive and user-focused web interfaces using modern JavaScript and UI technologies, improving usability and engagement.',
+      'Integrated frontend systems with backend APIs, ensuring smooth data flow and real-time interaction across applications.',
+      'Collaborated on UI/UX implementation to deliver clean, consistent, and highly responsive user experiences.',
     ],
     iconColor: '#3b82f6', // blue-500
     icon: (
@@ -35,24 +55,6 @@ const experiences = [
     testimonial: {
       text: "His contributions to our web applications have been outstanding. He approaches challenges with a professional, scalable mindset and seamlessly integrates complex APIs.",
       companyName: "StartupFlow",
-    }
-  },
-  {
-    title: 'Web Developer',
-    company: 'Digital Agency / Contract',
-    period: 'March 2019 - May 2021',
-    responsibilities: [
-      'Developed custom e-commerce interfaces and portfolio websites for over 20+ businesses.',
-      'Optimized legacy codebases, significantly improving SEO scores and web core vitals.',
-      'Set up CI/CD pipelines for streamlined automated deployments to Vercel and AWS.',
-    ],
-    iconColor: '#818cf8', // indigo-400
-    icon: (
-      <span className="text-white font-bold text-lg">D</span>
-    ),
-    testimonial: {
-      text: "Kenenisa completely revitalized our client properties. SEO scores skyrocketed, and the sleek designs helped us land major new agency accounts.",
-      companyName: "Creative Digital",
     }
   },
 ]
