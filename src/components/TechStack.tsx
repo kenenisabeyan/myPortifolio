@@ -3,38 +3,35 @@ import FluidBackground from './FluidBackground'
 import { 
   SiHtml5, SiCss, SiJavascript, SiTypescript, SiReact, SiNextdotjs, 
   SiDjango, SiPython, SiCplusplus, SiExpress, SiTailwindcss,
-  SiMysql, SiPostgresql, SiMongodb, SiBootstrap, SiGit, SiGithub
+  SiMysql, SiPostgresql, SiMongodb, SiNodedotjs
 } from 'react-icons/si'
-import { FaJava, FaSitemap } from 'react-icons/fa'
+import { FaJava } from 'react-icons/fa'
 
 const iconClass = "text-white transition-colors duration-500"
 
 const rowOne = [
   { name: 'React', icon: <SiReact className={`group-hover:text-[#61DAFB] ${iconClass}`} size={38} /> },
   { name: 'Next.js', icon: <SiNextdotjs className={`group-hover:text-gray-300 ${iconClass}`} size={38} /> },
-  { name: 'Django', icon: <SiDjango className={`group-hover:text-[rgba(9,46,32,0.8)] sm:group-hover:text-[#092E20] ${iconClass}`} size={38} /> },
-  { name: 'Python', icon: <SiPython className={`group-hover:text-[#3776AB] ${iconClass}`} size={38} /> },
-  { name: 'Java', icon: <FaJava className={`group-hover:text-[#5382a1] ${iconClass}`} size={38} /> },
-  { name: 'JavaScript', icon: <SiJavascript className={`group-hover:text-[#F7DF1E] ${iconClass}`} size={38} /> },
-  { name: 'TypeScript', icon: <SiTypescript className={`group-hover:text-[#3178C6] ${iconClass}`} size={38} /> },
+  { name: 'Node.js', icon: <SiNodedotjs className={`group-hover:text-[#339933] ${iconClass}`} size={38} /> },
+  { name: 'Express', icon: <SiExpress className={`group-hover:text-gray-300 ${iconClass}`} size={38} /> },
+  { name: 'MongoDB', icon: <SiMongodb className={`group-hover:text-[#47A248] ${iconClass}`} size={38} /> },
 ]
 
 const rowTwo = [
-  { name: 'Express.js', icon: <SiExpress className={`group-hover:text-gray-300 ${iconClass}`} size={38} /> },
-  { name: 'Tailwind CSS', icon: <SiTailwindcss className={`group-hover:text-[#06B6D4] ${iconClass}`} size={38} /> },
+  { name: 'JavaScript', icon: <SiJavascript className={`group-hover:text-[#F7DF1E] ${iconClass}`} size={38} /> },
+  { name: 'TypeScript', icon: <SiTypescript className={`group-hover:text-[#3178C6] ${iconClass}`} size={38} /> },
   { name: 'HTML5', icon: <SiHtml5 className={`group-hover:text-[#E34F26] ${iconClass}`} size={38} /> },
   { name: 'CSS3', icon: <SiCss className={`group-hover:text-[#1572B6] ${iconClass}`} size={38} /> },
-  { name: 'MySQL', icon: <SiMysql className={`group-hover:text-[#4479A1] ${iconClass}`} size={38} /> },
-  { name: 'PostgreSQL', icon: <SiPostgresql className={`group-hover:text-[#4169E1] ${iconClass}`} size={38} /> },
+  { name: 'Tailwind CSS', icon: <SiTailwindcss className={`group-hover:text-[#06B6D4] ${iconClass}`} size={38} /> },
 ]
 
 const rowThree = [
-  { name: 'MongoDB', icon: <SiMongodb className={`group-hover:text-[#47A248] ${iconClass}`} size={38} /> },
+  { name: 'Python', icon: <SiPython className={`group-hover:text-[#3776AB] ${iconClass}`} size={38} /> },
+  { name: 'Django', icon: <SiDjango className={`group-hover:text-[#092E20] ${iconClass}`} size={38} /> },
+  { name: 'MySQL', icon: <SiMysql className={`group-hover:text-[#4479A1] ${iconClass}`} size={38} /> },
+  { name: 'PostgreSQL', icon: <SiPostgresql className={`group-hover:text-[#4169E1] ${iconClass}`} size={38} /> },
   { name: 'C++', icon: <SiCplusplus className={`group-hover:text-[#00599C] ${iconClass}`} size={38} /> },
-  { name: 'Data Structures', icon: <FaSitemap className={`group-hover:text-purple-400 ${iconClass}`} size={38} /> },
-  { name: 'Bootstrap', icon: <SiBootstrap className={`group-hover:text-[#7952b3] ${iconClass}`} size={38} /> },
-  { name: 'Git', icon: <SiGit className={`group-hover:text-[#F05032] ${iconClass}`} size={38} /> },
-  { name: 'GitHub', icon: <SiGithub className={`group-hover:text-gray-300 ${iconClass}`} size={38} /> },
+  { name: 'Java', icon: <FaJava className={`group-hover:text-[#5382a1] ${iconClass}`} size={38} /> },
 ]
 
 const TechCard = ({ tech }) => (

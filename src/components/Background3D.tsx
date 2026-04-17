@@ -155,7 +155,7 @@ const Background3D = () => {
     ]
 
     const orbitRadius = 2.8 // Placed INSIDE the 3.8 CyberGlobe boundary
-    const positions = []
+    const positions: any[] = []
     const num = iconsList.length
 
     // Separate all icons using perfectly equal distance along a single internal orbital circumference
