@@ -17,10 +17,10 @@ const technologies = [
 
 const Work = () => {
   return (
-    <section id="work" className="py-24 px-6 relative z-10 bg-black border-t border-white/[0.05]">
+    <section id="work" className="py-24 px-6 relative z-10 bg-[#030610] border-t border-white/[0.05]">
       
       {/* Background ambient light */}
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 via-black to-black pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 via-[#030610] to-[#030610] pointer-events-none" />
       <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto flex flex-col relative z-10">

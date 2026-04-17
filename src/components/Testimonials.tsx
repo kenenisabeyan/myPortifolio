@@ -35,18 +35,19 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-24 px-6 relative z-10 border-t border-white/[0.05] bg-black/20 backdrop-blur-sm">
-      <div className="absolute inset-0 bg-gradient-to-b from-purple-900/10 via-transparent to-transparent pointer-events-none" />
+    <section id="testimonials" className="py-24 px-6 relative z-10 border-t border-white/[0.05] bg-[#030610]">
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none" />
       <div className="max-w-7xl mx-auto flex flex-col items-center relative z-10">
         
         {/* Badge */}
-        <div className="flex items-center gap-2 bg-white/[0.02] border border-white/[0.05] py-2 px-4 rounded-full mb-6">
-          <span className="text-purple-400">✧</span>
-          <span className="text-sm text-gray-300 font-medium tracking-wide">Client Feedback Highlights</span>
+        <div className="flex items-center gap-3 bg-blue-900/20 border border-blue-500/30 py-2.5 px-6 rounded-full mb-6 w-max shadow-[0_0_20px_rgba(59,130,246,0.15)] backdrop-blur-md">
+          <span className="text-cyan-400 animate-pulse">❖</span>
+          <span className="text-sm text-cyan-50 font-semibold tracking-widest uppercase">Client Feedback Highlights</span>
         </div>
 
-        <h2 className="text-4xl md:text-6xl font-black text-center text-white mb-16 tracking-tight">
-          What People Say <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">About Me?</span>
+        <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-center text-white mb-16 tracking-tighter drop-shadow-xl">
+          What People Say <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500">About Me?</span>
         </h2>
 
         {/* 3 Column Grid layout */}
@@ -79,9 +80,9 @@ const Testimonials = () => {
 
 function TestimonialCard({ t }) {
   return (
-    <div className="group relative bg-white/[0.02] hover:bg-white/[0.04] p-8 rounded-2xl border border-white/[0.05] hover:border-purple-500/30 transition-all duration-300 flex flex-col h-full overflow-hidden">
-      <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="relative z-10 flex text-purple-400 mb-6 space-x-1">
+    <div className="group relative bg-[#050A14]/80 backdrop-blur-xl border border-white/[0.05] hover:border-cyan-500/40 p-8 rounded-[2rem] transition-all duration-500 flex flex-col h-full overflow-hidden shadow-2xl hover:shadow-[0_0_30px_rgba(34,211,238,0.15)] hover:-translate-y-2 cursor-default">
+      <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="relative z-10 flex text-cyan-400 mb-6 space-x-1">
         {[...Array(5)].map((_, i) => (
           <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -94,7 +95,7 @@ function TestimonialCard({ t }) {
       
       <div className="relative z-10 flex items-center gap-4 mt-auto">
         {/* Avatar Placeholder */}
-        <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-lg overflow-hidden shrink-0 shadow-lg shadow-purple-500/20">
+        <div className="w-12 h-12 rounded-full border border-white/10 bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-black text-lg overflow-hidden shrink-0 shadow-[0_0_15px_rgba(34,211,238,0.4)]">
           {t.name.charAt(0)}
         </div>
         <div className="flex flex-col">

@@ -57,7 +57,7 @@ const TechCard = ({ tech }) => (
 
 const TechStack = () => {
   return (
-    <section className="py-32 relative overflow-hidden border-t border-white/[0.05] bg-black">
+    <section className="py-32 relative overflow-hidden border-t border-white/[0.05] bg-[#030610]">
       
       {/* 3D Fluid Animation Background if applicable, layered softly */}
       <div className="absolute inset-0 opacity-30">
@@ -65,8 +65,8 @@ const TechStack = () => {
       </div>
       
       {/* Edge Fades for infinite marquee illusion */}
-      <div className="absolute left-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-r from-black via-black/80 to-transparent z-10 pointer-events-none"></div>
-      <div className="absolute right-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-l from-black via-black/80 to-transparent z-10 pointer-events-none"></div>
+      <div className="absolute left-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-r from-[#030610] via-[#030610]/80 to-transparent z-10 pointer-events-none"></div>
+      <div className="absolute right-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-l from-[#030610] via-[#030610]/80 to-transparent z-10 pointer-events-none"></div>
       
       {/* Ambient static glow matching the globe theme */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none z-0"></div>

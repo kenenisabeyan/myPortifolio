@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="relative">
       <Background3D />
-      <div className="relative z-10">
+      <div className="relative z-10 w-full">
         <Navbar />
         <Hero />
         <Overview />

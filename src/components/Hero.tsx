@@ -18,35 +18,43 @@ const Hero = () => {
         {/* Left side: Typography matching the clean reference design */}
         <div className="flex flex-col items-start text-left pt-10">
           
+          {/* Role Badge */}
+          <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-blue-900/20 border border-blue-500/30 mb-8 backdrop-blur-md shadow-[0_0_20px_rgba(59,130,246,0.15)]">
+            <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_10px_rgba(34,211,238,0.8)]"></span>
+            <span className="text-xs sm:text-sm text-cyan-50 font-bold tracking-widest uppercase">Full-Stack Engineer</span>
+          </div>
+
           {/* Main Headline */}
-          <h1 className="text-5xl sm:text-6xl lg:text-[5rem] xl:text-[5.5rem] font-bold leading-[1.1] tracking-tight text-white mb-8 drop-shadow-xl">
-             I help businesses <br />
-             turn ideas into <br />
-             production-ready <br />
-             web applications <br />
-             that deliver results.
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-[5rem] font-black leading-[1.1] tracking-tighter text-white mb-6 drop-shadow-xl">
+             Turning Ideas Into <br className="hidden lg:block" />
+             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500">
+               Production-Ready
+             </span> <br className="hidden lg:block" />
+             Web Apps.
           </h1>
           
           {/* Subtle Bio Text */}
-          <p className="text-gray-400 text-lg sm:text-xl font-light mb-10 max-w-lg">
-             Hi, I'm Kenenisa, a full-stack software developer specializing in building fast, scalable, and user-focused web applications.
+          <p className="text-gray-400 text-base sm:text-lg lg:text-xl font-light mb-10 max-w-xl leading-relaxed">
+             Hi, I’m Kenenisa Beyan, a software developer focused on building scalable, high-performance digital solutions that deliver real world results.
           </p>
 
-          {/* Minimal Clean Call To Action Button */}
+          {/* Modern Cyan Call To Action Button */}
           <button
             onClick={scrollToWork}
-            className="inline-flex items-center justify-center gap-3 px-6 py-3 sm:px-8 sm:py-4 bg-white text-black hover:bg-gray-200 rounded-xl font-semibold text-sm sm:text-base transition-colors shadow-lg"
+            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-black rounded-xl font-black text-sm sm:text-base uppercase tracking-widest shadow-[0_0_20px_rgba(34,211,238,0.4)] hover:shadow-[0_0_40px_rgba(34,211,238,0.6)] hover:-translate-y-1 transition-all duration-300"
           >
-            See My Work
-            <svg 
-              className="w-4 h-4 sm:w-5 sm:h-5 text-gray-900" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24" 
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
+            <span>See My Work</span>
+            <div className="w-8 h-8 rounded-full border border-black/20 flex items-center justify-center group-hover:bg-black/10 transition-colors">
+              <svg 
+                className="w-4 h-4 text-black transform group-hover:rotate-45 transition-transform duration-300" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </div>
           </button>
 
         </div>
