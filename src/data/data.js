@@ -1,3 +1,8 @@
+import edotImage from '../assets/edotpage.png';
+import clientImage from '../assets/client.png';
+import employeeImage from '../assets/employee.png';
+import clientflowImage from '../assets/clientflow.jpg';
+
 export const stats = [
   { label: "Years of Experience", value: "15+" },
   { label: "Satisfied Clients", value: "200+" },
@@ -81,31 +86,31 @@ export const testimonials = [
 
 export const projects = [
   {
-    title: "Ryde",
-    description: "On-Demand Rides Made Simple with a Powerful, User-Friendly App called Ryde",
-    tech: ["React Native", "Expo", "TailwindCSS"],
-    image: "https://via.placeholder.com/600x400?text=Ryde+App", // replace with actual image
-    link: "#",
-  },
-  {
-    title: "YC Directory",
-    description: "A Startup Showcase App – pitch your startup, connect with entrepreneurs",
+    title: "EDOT Platform",
+    description: "An interactive educational platform designed for seamless learning experiences and course management.",
     tech: ["React", "Node.js", "MongoDB"],
-    image: "https://via.placeholder.com/600x400?text=YC+Directory",
+    image: edotImage,
     link: "#",
   },
   {
-    title: "Library Management Platform",
-    description: "The Library Management Platform – Manage Your Account, Digital Art, Photo Editing, Web Design, Photography, Video Production",
-    tech: ["PERN Stack", "TailwindCSS"],
-    image: "https://via.placeholder.com/600x400?text=Library+Platform",
+    title: "ClientFlow",
+    description: "A comprehensive project and client management dashboard with dynamic theme support.",
+    tech: ["React", "Vite", "TailwindCSS"],
+    image: clientflowImage,
     link: "#",
   },
   {
-    title: "Portfolio Showcase",
-    description: "A responsive personal portfolio built with modern web technologies and smooth animations.",
-    tech: ["React", "TailwindCSS", "TypeScript"],
-    image: "https://via.placeholder.com/600x400?text=Portfolio+Showcase",
+    title: "FollowFlow (Employee Portal)",
+    description: "An internal employee and task tracking system designed for optimal team productivity.",
+    tech: ["React", "TypeScript", "TailwindCSS"],
+    image: employeeImage,
+    link: "#",
+  },
+  {
+    title: "Client Portal",
+    description: "A tailored client gateway for tracking invoices, project progress, and centralized reporting.",
+    tech: ["React", "Vite", "TailwindCSS"],
+    image: clientImage,
     link: "#",
   },
 ];
