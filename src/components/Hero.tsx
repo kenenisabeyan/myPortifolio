@@ -25,13 +25,13 @@ const Hero = () => {
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-[5rem] font-black leading-[1.1] tracking-tighter text-white mb-6 drop-shadow-xl">
+          <h5 className="text-5xl sm:text-6xl lg:text-7xl xl:text-[5rem] font-black leading-[1.1] tracking-tighter text-white mb-6 drop-shadow-xl text-align-center ">
              Turning Ideas Into <br className="hidden lg:block" />
              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500">
                Production-Ready
              </span> <br className="hidden lg:block" />
              Web Apps.
-          </h1>
+          </h5>
           
           {/* Subtle Bio Text */}
           <p className="text-gray-400 text-base sm:text-lg lg:text-xl font-light mb-10 max-w-xl leading-relaxed">
