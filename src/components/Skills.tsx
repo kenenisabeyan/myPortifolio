@@ -11,48 +11,42 @@ const services = [
 
 const Skills = () => {
   return (
-    <section id="about" className="py-32 px-6 relative z-10 border-t border-white/[0.05] bg-[#030610]">
+    <section id="skills" className="py-16 md:py-24 px-6 relative z-10 bg-white">
       
-      {/* Deep space ambient glow map */}
-      <div className="absolute inset-0 bg-gradient-to-t from-blue-900/10 via-transparent to-transparent pointer-events-none" />
-      <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-indigo-600/10 blur-[120px] rounded-full pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto flex flex-col relative z-10">
+      <div className="max-w-4xl mx-auto flex flex-col relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center mt-12 mb-20">
-          <div className="flex items-center justify-center gap-3 bg-blue-900/20 border border-blue-500/30 py-2.5 px-6 rounded-full mb-6 w-max shadow-[0_0_20px_rgba(59,130,246,0.15)] backdrop-blur-md">
-            <span className="text-cyan-400 animate-pulse">❖</span>
-            <span className="text-sm text-cyan-50 font-semibold tracking-widest uppercase">System Capabilities</span>
+        <div className="flex flex-col items-center text-center mt-12 mb-16">
+          <div className="flex items-center justify-center gap-3 bg-gray-50 border border-gray-200 py-2.5 px-6 rounded-full mb-6 w-max shadow-sm">
+            <span className="text-gray-500 animate-pulse">❖</span>
+            <span className="text-sm text-gray-500 font-semibold tracking-widest uppercase">System Capabilities</span>
           </div>
           
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter drop-shadow-xl">
-            My <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500">Service Modules.</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">
+            My Service Modules.
           </h2>
         </div>
 
         {/* Floating Skill Capsules */}
-        <div className="flex flex-wrap items-center justify-center gap-8 w-full max-w-6xl mx-auto">
+        <div className="flex flex-wrap items-center justify-center gap-8 w-full max-w-4xl mx-auto">
           {services.map((service, idx) => (
             <div 
               key={idx} 
-              className="group relative bg-[#050A14]/80 backdrop-blur-xl hover:bg-[#080d1a]/90 rounded-full py-16 px-6 border border-white/[0.05] hover:border-cyan-500/40 transition-all duration-500 flex flex-col items-center justify-center w-[220px] h-[380px] hover:shadow-[0_0_40px_rgba(34,211,238,0.15)] cursor-default overflow-hidden transform hover:-translate-y-2"
+              className="group relative bg-gray-50 hover:bg-white rounded-full py-16 px-6 border border-gray-200 transition-all duration-300 flex flex-col items-center justify-center w-[220px] h-[380px] hover:shadow-md cursor-default overflow-hidden transform hover:-translate-y-2"
             >
-              {/* Containment ambient glow ring */}
-              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-b-full"></div>
               
               {/* Primary Icon Engine */}
-              <div className="w-24 h-24 mb-10 flex items-center justify-center transform group-hover:scale-110 group-hover:-translate-y-2 transition-transform duration-500 relative z-10">
+              <div className="w-24 h-24 mb-10 flex items-center justify-center transform group-hover:scale-110 group-hover:-translate-y-2 transition-transform duration-500 relative z-10 text-gray-400 group-hover:opacity-100 opacity-80">
                 {service.icon}
               </div>
 
               {/* Data readouts */}
-              <h3 className="text-white text-[22px] font-black text-center tracking-tight leading-tight group-hover:text-cyan-300 transition-colors duration-300 relative z-10 w-[90%]">
+              <h3 className="text-gray-900 text-lg font-semibold text-center tracking-tight leading-tight transition-colors duration-300 relative z-10 w-[90%]">
                 {service.title.split(' ').map((word, i) => <React.Fragment key={i}>{word}<br/></React.Fragment>)}
               </h3>
 
               {/* Decorative base lock */}
-              <div className="absolute bottom-6 w-8 h-1 rounded-full bg-white/10 group-hover:bg-cyan-400 group-hover:shadow-[0_0_10px_rgba(34,211,238,1)] transition-colors duration-300"></div>
+              <div className="absolute bottom-6 w-8 h-1 rounded-full bg-gray-300 group-hover:bg-gray-500 transition-colors duration-300"></div>
             </div>
           ))}
         </div>

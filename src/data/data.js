@@ -106,13 +106,7 @@ export const projects = [
     image: employeeImage,
     link: "https://github.com/kenenisabeyan/employee-evaluation",
   },
-  {
-    title: "ClientFlow",
-    description: "A robust, full-stack CRM and Project Workflow Dashboard. Acts as a centralized portal for business operations, managing client onboarding, project tracking, secure file sharing, financial reporting, and task delegation.",
-    tech: ["React 19", "TypeScript", "Node.js", "Express", "Prisma", "PostgreSQL", "Tailwind CSS"],
-    image: clientImage,
-    link: "https://github.com/kenenisabeyan/clientflow",
-  },
+
 ];
 
 export const clientLogos = [

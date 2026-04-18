@@ -7,37 +7,27 @@ const Hero = () => {
   }
 
   return (
-    <section id="hero" className="relative min-h-[100vh] flex items-center overflow-hidden pt-20">
+    <section id="hero" className="relative min-h-[100vh] flex items-center overflow-hidden pt-20 bg-white">
       
-      {/* Subtle overlay gradients for contrast */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent pointer-events-none z-0" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/90 pointer-events-none z-0" />
-      
-      <div className="relative z-10 max-w-[80rem] mx-auto w-full px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-4xl mx-auto w-full px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
         {/* Left side: Original Typography integrated carefully */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left pt-6 order-2 lg:order-1 relative z-20">
           
-          {/* Role Badge */}
-          <div className="group inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-[#030610]/50 border border-cyan-500/30 mb-8 backdrop-blur-xl shadow-[0_0_20px_rgba(34,211,238,0.15)] hover:border-cyan-400/60 hover:shadow-[0_0_30px_rgba(34,211,238,0.3)] transition-all duration-500 cursor-default">
-            <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_10px_rgba(34,211,238,0.8)]"></span>
-            <span className="text-xs sm:text-sm text-cyan-100 font-black tracking-[0.2em] uppercase">Full-Stack Engineer</span>
+          {/* Role Badge / Subheading */}
+          <div className="mb-6">
+            <span className="text-lg md:text-xl font-medium text-gray-600">Full-Stack Engineer</span>
           </div>
 
           {/* Main Headline */}
-          <h5 className="text-5xl sm:text-6xl md:text-7xl lg:text-[4.5rem] font-black leading-[1.05] tracking-tighter text-white mb-6 drop-shadow-2xl">
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight text-gray-900 mb-6">
              Turning Ideas Into <br className="hidden lg:block" />
-             <span className="relative inline-block mt-2">
-               <span className="absolute -inset-1 blur-xl bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 opacity-40 animate-pulse"></span>
-               <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-400">
-                 Production-Ready
-               </span>
-             </span> <br className="hidden lg:block mt-2" />
+             Production-Ready <br className="hidden lg:block" />
              Web Apps.
-          </h5>
+          </h1>
           
           {/* Subtle Bio Text */}
-          <p className="text-gray-300 md:text-blue-100/70 text-lg sm:text-xl font-light mb-12 max-w-xl leading-[1.8] tracking-wide">
+          <p className="text-base md:text-lg font-normal leading-relaxed text-gray-600 max-w-2xl mb-12">
              Hi, I’m Kenenisa Beyan, a software developer focused on building scalable, high-performance digital solutions that deliver real-world results.
           </p>
 
@@ -48,7 +38,7 @@ const Hero = () => {
             
             <button
               onClick={scrollToWork}
-              className="relative flex items-center justify-center gap-4 px-10 py-4 lg:py-5 bg-[#030610] text-cyan-50 border border-cyan-400/50 rounded-full font-black text-sm sm:text-base uppercase tracking-[0.2em] shadow-2xl hover:bg-cyan-500 hover:text-black hover:border-transparent transform hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+              className="relative flex items-center justify-center gap-4 px-10 py-4 bg-gray-900 text-white font-semibold text-base rounded-full uppercase tracking-wide hover:bg-gray-800 transition-colors"
             >
               {/* Shine Sweep Effect */}
               <div className="absolute inset-0 -translate-x-[150%] bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:animate-[shimmer_1.5s_infinite]"></div>
@@ -83,10 +73,10 @@ const Hero = () => {
           </div>
 
           {/* Outer containment ring */}
-          <div className="relative w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] rounded-full p-[2px] bg-gradient-to-tr from-cyan-500 via-transparent to-blue-600 shadow-[0_0_50px_rgba(34,211,238,0.2)] flex items-center justify-center z-10 group cursor-default">
+          <div className="relative w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] rounded-full border-4 border-gray-100 flex items-center justify-center z-10 group cursor-default shadow-sm">
             
-            {/* Black void core */}
-            <div className="w-full h-full rounded-full border-[8px] border-[#030610] bg-[#030610] flex items-center justify-center overflow-hidden">
+            {/* White void core */}
+            <div className="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
               
               {/* Profile Image Container with inner edge glow */}
               <div className="w-full h-full rounded-full relative transform group-hover:scale-110 transition-transform duration-700 ease-out">

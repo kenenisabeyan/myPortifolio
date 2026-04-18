@@ -6,7 +6,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
-  const navItems = ['Home', 'Work', 'Skills', 'Projects', 'Contact']
+  const navItems = ['Home', 'Overview', 'Work', 'Experience', 'Skills', 'Contact']
 
   const scrollToSection = (section: string) => {
     if (section === 'Home') {
@@ -31,60 +31,56 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
       scrolled 
-        ? 'bg-[#030610]/70 backdrop-blur-2xl border-b border-white/[0.05] py-4 shadow-[0_4px_30px_rgba(0,0,0,0.5)]' 
-        : 'bg-gradient-to-b from-[#030610]/90 to-transparent py-5 border-b border-transparent'
+        ? 'bg-white/80 backdrop-blur-2xl border-b border-gray-200 py-4 shadow-sm' 
+        : 'bg-white/90 py-5 border-b border-transparent'
     } px-6 md:px-12`}>
       {/* Decorative top border gradient line on scroll */}
-      <div className={`absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent transition-opacity duration-500 ${scrolled ? 'opacity-100' : 'opacity-0'}`}></div>
+      <div className={`absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent transition-opacity duration-500 ${scrolled ? 'opacity-100' : 'opacity-0'}`}></div>
 
       <div className="max-w-[75rem] mx-auto flex justify-between items-center text-sm font-medium relative z-10">
         
         {/* Logo */}
         <div className="flex items-center group relative cursor-pointer" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
-          <div className="absolute inset-0 bg-cyan-400 blur-md opacity-40 group-hover:opacity-80 transition-opacity duration-300 rounded-full animate-pulse"></div>
-          <div className="relative w-[46px] h-[46px] rounded-full bg-[#030610] border border-cyan-500/50 flex items-center justify-center text-cyan-50 font-black text-[22px] shadow-[0_0_15px_rgba(34,211,238,0.3)] group-hover:bg-gradient-to-br from-cyan-500 to-blue-600 group-hover:border-transparent transition-all duration-500">
+          <div className="absolute inset-0 bg-gray-200 blur-md opacity-40 group-hover:opacity-80 transition-opacity duration-300 rounded-full"></div>
+          <div className="relative w-[46px] h-[46px] rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-900 text-lg md:text-xl font-bold tracking-wide shadow-sm group-hover:bg-gray-50 group-hover:border-gray-300 transition-all duration-500">
             K
           </div>
         </div>
 
         {/* Center Nav */}
-        <ul className="hidden md:flex space-x-10 text-gray-400">
+        <ul className="hidden md:flex space-x-10">
           {navItems.map((item) => (
             <li key={item} className="relative group flex flex-col items-center">
               <button 
                 onClick={() => scrollToSection(item)}
-                className={`hover:text-white transition-colors duration-300 tracking-wider font-semibold py-1 ${item === 'Home' ? 'text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)]' : ''}`}
+                className={`text-sm md:text-base transition duration-300 py-1 ${item === 'Home' ? 'font-semibold text-gray-900 border-b-2 border-gray-900' : 'font-medium text-gray-500 hover:text-gray-900'}`}
               >
                 {item}
               </button>
-              {/* Animated underline indicator */}
-              <span className={`absolute -bottom-2 h-[2px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent transition-all duration-300 ${item === 'Home' ? 'w-full opacity-100' : 'w-0 opacity-0 group-hover:w-full group-hover:opacity-100'}`}></span>
             </li>
           ))}
         </ul>
 
         {/* Right Side */}
-        <div className="hidden md:flex items-center space-x-6 text-gray-400">
-          <button className="hover:text-white transition-colors" aria-label="Toggle theme"><FaSun className="text-lg" /></button>
+        <div className="hidden md:flex items-center space-x-6 text-gray-500">
+          <button className="hover:text-gray-900 transition-colors" aria-label="Toggle theme"><FaSun className="text-lg" /></button>
           
-          <div className="w-[1px] h-5 bg-gray-700/80"></div>
+          <div className="w-[1px] h-5 bg-gray-300"></div>
           
           <div className="flex space-x-4 items-center">
-            <a href="#" className="hover:text-white transition-colors"><FaGithub className="text-[1.1rem]" /></a>
-            <a href="#" className="hover:text-white transition-colors"><FaLinkedin className="text-[1.1rem]" /></a>
-            <a href="#" className="hover:text-white transition-colors"><FaTwitter className="text-[1.1rem]" /></a>
+            <a href="#" className="hover:text-gray-900 transition-colors"><FaGithub className="text-[1.1rem]" /></a>
+            <a href="#" className="hover:text-gray-900 transition-colors"><FaLinkedin className="text-[1.1rem]" /></a>
+            <a href="#" className="hover:text-gray-900 transition-colors"><FaTwitter className="text-[1.1rem]" /></a>
           </div>
           
-          <button className="relative group overflow-hidden flex items-center justify-center gap-2 bg-[#030610] text-cyan-50 font-bold tracking-wider py-2.5 px-7 rounded-full border border-cyan-500/50 shadow-[0_0_15px_rgba(34,211,238,0.2)] hover:shadow-[0_0_25px_rgba(34,211,238,0.5)] transition-all duration-300">
-            {/* Glowing sweep effect on hover */}
-            <span className="absolute inset-0 w-[200%] -translate-x-[150%] bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent group-hover:animate-[shimmer_1.5s_infinite]"></span>
-            <span className="relative z-10 group-hover:text-cyan-300 transition-colors">Resume</span> 
-            <FiArrowUpRight className="relative z-10 text-lg group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform group-hover:text-cyan-300" />
+          <button className="relative group overflow-hidden flex items-center justify-center gap-2 bg-gray-900 text-white font-semibold tracking-wider py-2.5 px-7 rounded-full transition-all duration-300 hover:bg-gray-800 hover:shadow-md">
+            <span className="relative z-10 transition-colors">Resume</span> 
+            <FiArrowUpRight className="relative z-10 text-lg group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </button>
         </div>
 
         {/* Mobile Hamburger */}
-        <button className="md:hidden text-2xl z-50 text-white relative w-10 h-10 flex items-center justify-center rounded-full bg-white/[0.05] border border-white/[0.1] hover:bg-white/[0.1] transition-colors" onClick={() => setIsOpen(!isOpen)}>
+        <button className="md:hidden text-2xl z-50 text-gray-900 relative w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 border border-gray-200 hover:bg-gray-200 transition-colors" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>

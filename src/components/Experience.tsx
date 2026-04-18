@@ -12,9 +12,9 @@ const experiences = [
       'Delivering reliable solutions through clean code, clear communication, and consistent project execution.',
     ],
     iconColor: '#22d3ee', // cyan-400
-    // icon: (
-    //   <span className="text-white font-bold text-lg">F</span>
-    // ),
+    icon: (
+      <span className="text-white font-bold text-lg">E</span>
+    ),
     testimonial: {
       text: "Through my journey, I designed modern, responsive user interfaces and developed strong backend logic, improving performance and overall system usability. One of my key projects is the EDOT Platform, where I built a complete system with multi-role dashboards for students, instructors, and administrators, along with structured workflows and interactive features. This experience has strengthened my ability to design real-world applications, solve practical problems, and continuously improve through hands-on development.",
       companyName: "edotplatform Solutions",
@@ -100,27 +100,23 @@ const RevealOnScroll = ({ children }) => {
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-32 px-6 relative z-10 border-t border-white/[0.05] bg-[#030610]">
+    <section id="experience" className="py-16 md:py-24 px-6 relative z-10 bg-gray-50">
       
-      {/* Background ambient lighting */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/10 to-transparent pointer-events-none" />
-      <div className="absolute top-1/3 left-0 w-[400px] h-[600px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto flex flex-col items-center relative z-10">
+      <div className="max-w-4xl mx-auto flex flex-col items-center relative z-10">
         
-        <div className="flex flex-col items-center text-center mb-24">
-          <div className="flex items-center gap-3 bg-blue-900/20 border border-blue-500/30 py-2.5 px-6 rounded-full mb-6 w-max shadow-[0_0_20px_rgba(59,130,246,0.15)] backdrop-blur-md">
-            <span className="text-cyan-400 animate-pulse">❖</span>
-            <span className="text-sm text-cyan-50 font-semibold tracking-widest uppercase">Career Timeline</span>
+        <div className="flex flex-col items-center text-center mb-16">
+          <div className="flex items-center gap-3 bg-white border border-gray-200 py-2.5 px-6 rounded-full mb-6 max-w-max shadow-sm">
+            <span className="text-gray-500 animate-pulse">❖</span>
+            <span className="text-sm text-gray-500 font-semibold tracking-widest uppercase">Career Timeline</span>
           </div>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter drop-shadow-xl">
-            Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">History.</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 tracking-tight">
+            Professional History.
           </h2>
         </div>
 
         <div className="relative w-full max-w-6xl mx-auto">
-          {/* Neon Vertical Gradient Center Line */}
-          <div className="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-cyan-400 via-blue-600 to-transparent z-0 shadow-[0_0_15px_rgba(34,211,238,0.5)]"></div>
+          {/* Vertical Center Line */}
+          <div className="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-[2px] bg-gray-200 z-0"></div>
 
           <div className="flex flex-col gap-16 md:gap-32">
             {experiences.map((exp, idx) => (
@@ -129,66 +125,62 @@ const Experience = () => {
                   
                   {/* Left Side: Detail & Testimonial Container */}
                   <div className="hidden md:flex w-1/2 justify-end pr-16 mt-4">
-                    <div className="bg-[#050A14]/80 p-8 rounded-[2rem] border border-white/[0.05] w-full max-w-[460px] shadow-2xl relative backdrop-blur-xl group hover:border-cyan-500/30 transition-all duration-500 hover:shadow-[0_0_30px_rgba(34,211,238,0.1)]">
-                      {/* Ambient hover glow inside card */}
-                      <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none" />
+                    <div className="bg-white p-8 rounded-3xl border border-gray-100 w-full max-w-[420px] shadow-sm hover:shadow-md transition-shadow duration-300 relative group">
                       
                       <div className="relative z-10">
                         <StarRating />
-                        <p className="text-gray-300 text-[16px] leading-relaxed mb-8 font-light italic">
+                        <p className="text-gray-600 text-[15px] leading-relaxed mb-6 font-normal italic">
                           "{exp.testimonial.text}"
                         </p>
-                        <div className="flex items-center gap-4 border-t border-white/[0.05] pt-6">
-                          <div className="w-12 h-12 rounded-full border border-white/10 bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-black text-lg shadow-[0_0_15px_rgba(34,211,238,0.4)]">
+                        <div className="flex items-center gap-4 border-t border-gray-100 pt-6">
+                          <div className="w-10 h-10 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-gray-600 font-bold text-sm">
                             {exp.testimonial.companyName.charAt(0)}
                           </div>
-                          <span className="text-cyan-50 font-bold text-lg tracking-wide">{exp.testimonial.companyName}</span>
+                          <span className="text-gray-900 font-semibold text-sm tracking-wide">{exp.testimonial.companyName}</span>
                         </div>
                       </div>
                     </div>
                   </div>
 
                   {/* Center Node Icon */}
-                  <div className="absolute left-0 md:left-1/2 transform translate-x-1 md:-translate-x-1/2 flex items-center justify-center w-14 h-14 rounded-full border-[5px] border-[#030610] bg-black z-10 mt-6 md:mt-8 shadow-[0_0_20px_rgba(34,211,238,0.3)]">
+                  <div className="absolute left-0 md:left-1/2 transform translate-x-1 md:-translate-x-1/2 flex items-center justify-center w-14 h-14 rounded-full border-4 border-gray-50 bg-white z-10 mt-6 md:mt-8 shadow-sm">
                     <div 
-                      className="w-full h-full rounded-full flex items-center justify-center bg-white/[0.05] backdrop-blur-md transition-all duration-300 hover:scale-110 cursor-default"
-                      style={{ borderColor: exp.iconColor, borderWidth: '2px', boxShadow: `0 0 15px ${exp.iconColor}40` }}
+                      className="w-full h-full rounded-full flex items-center justify-center border border-gray-200 bg-gray-50 transition-all duration-300 group-hover:scale-110 cursor-default"
                     >
-                      {exp.icon}
+                      <span className="text-gray-600 font-bold text-lg">{exp.company ? exp.company.charAt(0) : 'T'}</span>
                     </div>
                   </div>
 
                   {/* Right Side: Role Overview */}
                   <div className="w-full md:w-1/2 flex justify-start pl-20 md:pl-16 mt-6 md:mt-8">
-                    <div className="w-full max-w-[500px]">
-                      <h3 className="text-4xl font-black text-white mb-4 tracking-tighter drop-shadow-md">{exp.title}</h3>
+                    <div className="w-full max-w-[420px]">
+                      <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">{exp.title}</h3>
                       
-                      <div className="flex items-center gap-3 mb-8 bg-white/[0.02] border border-white/5 w-max px-4 py-2 rounded-lg backdrop-blur-sm">
-                        <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></div>
-                        <p className="text-sm tracking-widest font-semibold text-cyan-200 uppercase">{exp.period}</p>
+                      <div className="flex items-center gap-2 mb-6">
+                        <span className="text-sm font-medium text-gray-500">{exp.company} {exp.company && '•'} {exp.period}</span>
                       </div>
                       
-                      <p className="text-cyan-500/80 font-bold tracking-widest uppercase text-sm mb-6 border-b border-white/5 pb-2">Technical Execution</p>
-                      <ul className="space-y-6">
+                      <p className="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-4 pb-2 border-b border-gray-100">Technical Execution</p>
+                      <ul className="space-y-4">
                         {exp.responsibilities.map((item, i) => (
-                          <li key={i} className="flex items-start text-[16px] text-gray-300 tracking-wide font-light leading-relaxed group">
-                            <span className="mr-4 mt-2.5 w-1.5 h-1.5 bg-cyan-500 rounded-full flex-shrink-0 group-hover:scale-150 group-hover:shadow-[0_0_10px_rgba(34,211,238,0.8)] transition-all duration-300"></span>
+                          <li key={i} className="flex items-start text-sm md:text-base text-gray-600 font-normal leading-relaxed group">
+                            <span className="mr-3 mt-2 w-1.5 h-1.5 bg-gray-300 rounded-full flex-shrink-0 group-hover:bg-gray-500 transition-colors duration-300"></span>
                             <span>{item}</span>
                           </li>
                         ))}
                       </ul>
 
                       {/* Mobile Testimonial Add-on */}
-                      <div className="md:hidden mt-12 bg-[#050A14]/80 p-8 rounded-[2rem] border border-white/[0.05] w-full shadow-2xl relative backdrop-blur-lg">
+                      <div className="md:hidden mt-8 bg-white p-6 rounded-2xl border border-gray-100 w-full shadow-sm relative">
                         <StarRating />
-                        <p className="text-gray-300 text-[15px] leading-relaxed mb-6 font-light italic">
+                        <p className="text-gray-600 text-sm leading-relaxed mb-6 font-normal italic">
                           "{exp.testimonial.text}"
                         </p>
-                        <div className="flex items-center gap-4 border-t border-white/[0.05] pt-6">
-                          <div className="w-10 h-10 rounded-full border border-white/10 bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-black text-sm shadow-[0_0_15px_rgba(34,211,238,0.4)]">
+                        <div className="flex items-center gap-3 border-t border-gray-100 pt-4">
+                          <div className="w-8 h-8 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-gray-600 font-bold text-xs">
                             {exp.testimonial.companyName.charAt(0)}
                           </div>
-                          <span className="text-cyan-50 font-bold tracking-wide">{exp.testimonial.companyName}</span>
+                          <span className="text-gray-900 font-semibold text-xs tracking-wide">{exp.testimonial.companyName}</span>
                         </div>
                       </div>
 

@@ -10,7 +10,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <a href="/" className="text-2xl font-bold text-white">
-          Adrian JSM
+          Kenenisa Beyan
         </a>
 
         {/* Desktop Nav */}
