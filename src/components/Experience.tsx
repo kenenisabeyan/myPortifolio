@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react'
 const experiences = [
   {
     title: 'Full Stack Engineer',
-    company: 'Freelance & Contract',
+    company: 'edotplatform',
     period: 'October 2025 - Present',
     responsibilities: [
       'Architecting and developing scalable, production-ready web applications using MERN, PERN, and Django (Python) stacks.',
@@ -12,12 +12,12 @@ const experiences = [
       'Delivering reliable solutions through clean code, clear communication, and consistent project execution.',
     ],
     iconColor: '#22d3ee', // cyan-400
-    icon: (
-      <span className="text-white font-bold text-lg">F</span>
-    ),
+    // icon: (
+    //   <span className="text-white font-bold text-lg">F</span>
+    // ),
     testimonial: {
-      text: "Kenenisa brought immense technical expertise to our team, drastically improving our frontend performance. His problem-solving mindset was key to delivering exactly what we needed.",
-      companyName: "TechNova Solutions",
+      text: "Through my journey, I designed modern, responsive user interfaces and developed strong backend logic, improving performance and overall system usability. One of my key projects is the EDOT Platform, where I built a complete system with multi-role dashboards for students, instructors, and administrators, along with structured workflows and interactive features. This experience has strengthened my ability to design real-world applications, solve practical problems, and continuously improve through hands-on development.",
+      companyName: "edotplatform Solutions",
     }
   },
   {
@@ -35,13 +35,13 @@ const experiences = [
       <span className="text-white font-bold text-lg">D</span>
     ),
     testimonial: {
-      text: "Kenenisa completely revitalized our client properties. SEO scores skyrocketed, and the sleek designs helped us land major new agency accounts.",
-      companyName: "TechFlow Agency",
+      text: "Through this project, I designed and built a full-stack Employee Performance Evaluation Dashboard using Next.js (App Router) and MongoDB, enabling structured workflows for organizational evaluations. I implemented secure authentication and role-based access using NextAuth.js, creating separate Admin and Employee dashboards with different permissions. I also developed key features such as self-assessments, peer reviews, and admin evaluations with real-time performance tracking, along with chart-based analytics to improve data visualization and decision-making. This experience strengthened my ability to build secure, data-driven applications and handle real-world system requirements.",
+      companyName: "Astu IT directorate",
     }
   },
   {
     title: 'Frontend Developer',
-    company: 'StartupFlow',
+    company: '',
     period: 'November 2024 - April 2025',
     responsibilities: [
       'Developed responsive and user-focused web interfaces using modern JavaScript and UI technologies, improving usability and engagement.',
@@ -53,8 +53,8 @@ const experiences = [
       <span className="text-white font-bold text-lg">T</span>
     ),
     testimonial: {
-      text: "His contributions to our web applications have been outstanding. He approaches challenges with a professional, scalable mindset and seamlessly integrates complex APIs.",
-      companyName: "StartupFlow",
+      text: "Started my full-stack journey by focusing on frontend development as a CSE student at ASTU. Built responsive UI interfaces, integrated backend APIs, and learned real-world web application structure. This phase shaped my decision to pursue full-stack development.",
+      companyName: "CSE student at ASTU",
     }
   },
 ]

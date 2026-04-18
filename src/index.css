@@ -65,3 +65,9 @@ body {
 .hover\:animation-play-state-paused:hover {
   animation-play-state: paused !important;
 }
+
+/* Custom premium hover sweep effect */
+@keyframes shimmer {
+  0% { transform: translateX(-150%); }
+  100% { transform: translateX(200%); }
+}

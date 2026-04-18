@@ -1,7 +1,7 @@
 import edotImage from '../assets/edotpage.png';
 import clientImage from '../assets/client.png';
 import employeeImage from '../assets/employee.png';
-import clientflowImage from '../assets/clientflow.jpg';
+import followflowImage from '../assets/followflow.png';
 
 export const stats = [
   { label: "Years of Experience", value: "15+" },
@@ -93,25 +93,25 @@ export const projects = [
     link: "https://github.com/kenenisabeyan/edot",
   },
   {
-    title: "ClientFlow",
-    description: "A sophisticated client and project management dashboard featuring dynamic theme support and high-performance UI optimization. Engineered to streamline full-stack operational pipelines and data visualizations.",
-    tech: ["React", "Vite", "Node.js", "Tailwind CSS"],
-    image: clientflowImage,
-    link: "https://github.com/kenenisabeyan/clientflow",
-  },
-  {
-    title: "FollowFlow Platform",
-    description: "An enterprise-grade employee and task-tracking system strictly typed and built with a modular architecture. Designed for intelligent progress tracking, secure workflows, and robust team productivity.",
-    tech: ["React", "TypeScript", "Node.js", "MongoDB", "Tailwind CSS"],
-    image: employeeImage,
+    title: "FollowFlow",
+    description: "A premium CRM and Task Tracking Dashboard designed to help professionals visualize, manage, and follow up with their client network. Features a fully responsive, theme-aware interface with elegant micro-animations for seamless workflow orchestration.",
+    tech: ["React 19", "TypeScript", "Python", "Django", "SQLite", "Tailwind CSS", "Framer Motion"],
+    image: followflowImage,
     link: "https://github.com/kenenisabeyan/followflow",
   },
   {
-    title: "Dedicated Client Portal",
-    description: "A highly tailored client-facing modern gateway focusing on secure authentication, interactive invoice tracking, and centralized KPI reporting delivered through a sleek glassmorphic user interface.",
-    tech: ["React", "Vite", "Express", "Tailwind CSS"],
+    title: "Performance Evaluator",
+    description: "A Full-Stack Employee Evaluation Dashboard streamlining organizational assessments. Features role-based access control, real-time performance summaries with chart visualizations, dynamic PDF reporting, and highly secure role-based portals.",
+    tech: ["Next.js", "React", "MongoDB", "Tailwind CSS", "NextAuth"],
+    image: employeeImage,
+    link: "https://github.com/kenenisabeyan/employee-evaluation",
+  },
+  {
+    title: "ClientFlow",
+    description: "A robust, full-stack CRM and Project Workflow Dashboard. Acts as a centralized portal for business operations, managing client onboarding, project tracking, secure file sharing, financial reporting, and task delegation.",
+    tech: ["React 19", "TypeScript", "Node.js", "Express", "Prisma", "PostgreSQL", "Tailwind CSS"],
     image: clientImage,
-    link: "https://github.com/kenenisabeyan/client-portal",
+    link: "https://github.com/kenenisabeyan/clientflow",
   },
 ];
 
