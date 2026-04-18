@@ -12,8 +12,8 @@ import ScrollArrow from './components/ScrollArrow'
 
 function App() {
   return (
-    <div className="bg-white min-h-screen text-gray-900 font-sans selection:bg-gray-200 selection:text-gray-900 relative overflow-x-hidden">
-      <div className="relative z-10 w-full">
+    <div className="dark min-h-screen text-white font-sans selection:bg-cyan-500/30 selection:text-cyan-50 relative overflow-x-hidden transition-colors duration-500">
+      <div className="relative w-full">
         <Navbar />
         <Hero />
         <Overview />

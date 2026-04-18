@@ -24,20 +24,23 @@ const stats = [
 
 const Overview = () => {
   return (
-    <section id="overview" className="py-16 md:py-24 px-6 relative z-10 bg-gray-50">
+    <section id="overview" className="py-16 md:py-24 px-6 relative z-10 bg-gray-50 dark:bg-transparent dark:border-t dark:border-white/[0.05]">
       
+      {/* Subtle overlay gradients for contrast (Dark Mode Only) */}
+      <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-cyan-600/10 blur-[130px] rounded-full pointer-events-none hidden dark:block" />
+
       <div className="max-w-4xl mx-auto relative z-10">
         
         {/* Header container */}
         <div className="flex flex-col items-center justify-center text-center mb-24">
-          <div className="flex items-center gap-3 bg-gray-200 py-2.5 px-6 rounded-full mb-8">
-            <span className="text-gray-500 animate-pulse">❖</span>
-            <span className="text-lg font-medium text-gray-500 uppercase">About Me</span>
+          <div className="flex items-center gap-3 bg-gray-200 dark:bg-blue-900/20 py-2.5 px-6 rounded-full mb-8 dark:border dark:border-blue-500/30 dark:shadow-[0_0_20px_rgba(59,130,246,0.15)] dark:backdrop-blur-md">
+            <span className="text-gray-500 dark:text-cyan-400 animate-pulse">❖</span>
+            <span className="text-lg font-medium text-gray-500 uppercase dark:text-cyan-50 dark:tracking-widest">About Me</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 mb-6">
-            Who I Am.
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 dark:drop-shadow-xl">
+            Who I <span className="dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-cyan-400 dark:via-blue-500 dark:to-indigo-500">Am.</span>
           </h2>
-          <div className="mx-auto max-w-2xl text-base md:text-lg font-normal leading-relaxed text-gray-600 space-y-6">
+          <div className="mx-auto max-w-2xl text-base md:text-lg font-normal leading-relaxed text-gray-600 dark:text-gray-300 space-y-6">
             <p>
               I am a Computer Science and Engineering student at ASTU focused on full-stack development. I build scalable web applications with modern technologies, turning ideas into real, user-focused systems.
             </p>
@@ -52,19 +55,22 @@ const Overview = () => {
           {stats.map((item) => (
             <div 
               key={item.title} 
-              className="group relative bg-white border border-gray-100 rounded-2xl p-8 overflow-hidden hover:shadow-lg transition-all duration-300"
+              className={`group relative bg-white dark:bg-[#050A14]/80 border border-gray-100 dark:border-white/[0.05] dark:hover:border-${item.glowColor}-500/40 rounded-2xl p-8 overflow-hidden hover:shadow-lg dark:hover:shadow-[0_0_25px_rgba(34,211,238,0.15)] transition-all duration-300 dark:backdrop-blur-xl`}
             >
+               {/* Dark mode only edge glow */}
+               <div className={`absolute top-0 right-0 w-32 h-32 bg-${item.glowColor}-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden dark:block`} />
+               
               <div className="relative z-10 flex flex-col h-full">
                 {/* Icon Container */}
-                <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gray-50 mb-6 border border-gray-100`}>
+                <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gray-50 dark:bg-black/20 mb-6 border border-gray-100 dark:border-${item.glowColor}-500/20`}>
                   {item.icon}
                 </div>
                 
                 {/* Typography */}
-                <h3 className="text-xl md:text-2xl font-semibold text-gray-900 mb-4">
+                <h3 className="text-xl md:text-2xl font-semibold text-gray-900 dark:text-white mb-4">
                   {item.title}
                 </h3>
-                <p className="text-sm md:text-base font-normal leading-relaxed text-gray-600 flex-grow">
+                <p className="text-sm md:text-base font-normal leading-relaxed text-gray-600 dark:text-gray-400 flex-grow">
                   {item.description}
                 </p>
               </div>

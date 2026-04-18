@@ -106,6 +106,13 @@ export const projects = [
     image: employeeImage,
     link: "https://github.com/kenenisabeyan/employee-evaluation",
   },
+  {
+    title: "ClientFlow",
+    description: "A comprehensive CRM platform for managing interactions with current and potential clients. Features an intuitive dashboard and robust analytics.",
+    tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+    image: clientImage,
+    link: "https://github.com/kenenisabeyan/clientflow",
+  },
 
 ];
 

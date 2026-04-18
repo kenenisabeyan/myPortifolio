@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { FaBars, FaTimes, FaSun, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { FaBars, FaTimes, FaSun, FaMoon, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { FiArrowUpRight } from 'react-icons/fi'
 
 const Navbar = () => {
@@ -28,21 +28,23 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+
+
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
       scrolled 
-        ? 'bg-white/80 backdrop-blur-2xl border-b border-gray-200 py-4 shadow-sm' 
-        : 'bg-white/90 py-5 border-b border-transparent'
+        ? 'bg-white/80 dark:bg-[#030610]/70 backdrop-blur-2xl border-b border-gray-200 dark:border-white/[0.05] py-4 shadow-sm dark:shadow-[0_4px_30px_rgba(0,0,0,0.5)]' 
+        : 'bg-white/90 dark:bg-gradient-to-b dark:from-[#030610]/90 dark:to-transparent py-5 border-b border-transparent'
     } px-6 md:px-12`}>
       {/* Decorative top border gradient line on scroll */}
-      <div className={`absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent transition-opacity duration-500 ${scrolled ? 'opacity-100' : 'opacity-0'}`}></div>
+      <div className={`absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gray-300 dark:via-cyan-500/50 to-transparent transition-opacity duration-500 ${scrolled ? 'opacity-100' : 'opacity-0'}`}></div>
 
       <div className="max-w-[75rem] mx-auto flex justify-between items-center text-sm font-medium relative z-10">
         
         {/* Logo */}
         <div className="flex items-center group relative cursor-pointer" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
-          <div className="absolute inset-0 bg-gray-200 blur-md opacity-40 group-hover:opacity-80 transition-opacity duration-300 rounded-full"></div>
-          <div className="relative w-[46px] h-[46px] rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-900 text-lg md:text-xl font-bold tracking-wide shadow-sm group-hover:bg-gray-50 group-hover:border-gray-300 transition-all duration-500">
+          <div className="absolute inset-0 bg-gray-200 dark:bg-cyan-400 blur-md opacity-40 group-hover:opacity-80 transition-opacity duration-300 rounded-full dark:animate-pulse"></div>
+          <div className="relative w-[46px] h-[46px] rounded-full bg-white dark:bg-[#030610] border border-gray-200 dark:border-cyan-500/50 flex items-center justify-center text-gray-900 dark:text-cyan-50 text-lg md:text-xl font-bold tracking-wide shadow-sm dark:shadow-[0_0_15px_rgba(34,211,238,0.3)] group-hover:bg-gray-50 dark:group-hover:bg-gradient-to-br dark:from-cyan-500 dark:to-blue-600 group-hover:border-gray-300 dark:group-hover:border-transparent transition-all duration-500">
             K
           </div>
         </div>
@@ -53,7 +55,7 @@ const Navbar = () => {
             <li key={item} className="relative group flex flex-col items-center">
               <button 
                 onClick={() => scrollToSection(item)}
-                className={`text-sm md:text-base transition duration-300 py-1 ${item === 'Home' ? 'font-semibold text-gray-900 border-b-2 border-gray-900' : 'font-medium text-gray-500 hover:text-gray-900'}`}
+                className={`text-sm md:text-base transition duration-300 py-1 ${item === 'Home' ? 'font-semibold text-gray-900 dark:text-white border-b-2 border-gray-900 dark:border-cyan-400' : 'font-medium text-gray-500 hover:text-gray-900 dark:hover:text-white'}`}
               >
                 {item}
               </button>
@@ -62,25 +64,24 @@ const Navbar = () => {
         </ul>
 
         {/* Right Side */}
-        <div className="hidden md:flex items-center space-x-6 text-gray-500">
-          <button className="hover:text-gray-900 transition-colors" aria-label="Toggle theme"><FaSun className="text-lg" /></button>
-          
-          <div className="w-[1px] h-5 bg-gray-300"></div>
+        <div className="hidden md:flex items-center space-x-6 text-gray-500 dark:text-gray-400">
           
           <div className="flex space-x-4 items-center">
-            <a href="#" className="hover:text-gray-900 transition-colors"><FaGithub className="text-[1.1rem]" /></a>
-            <a href="#" className="hover:text-gray-900 transition-colors"><FaLinkedin className="text-[1.1rem]" /></a>
-            <a href="#" className="hover:text-gray-900 transition-colors"><FaTwitter className="text-[1.1rem]" /></a>
+            <a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors"><FaGithub className="text-[1.1rem]" /></a>
+            <a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors"><FaLinkedin className="text-[1.1rem]" /></a>
+            <a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors"><FaTwitter className="text-[1.1rem]" /></a>
           </div>
           
-          <button className="relative group overflow-hidden flex items-center justify-center gap-2 bg-gray-900 text-white font-semibold tracking-wider py-2.5 px-7 rounded-full transition-all duration-300 hover:bg-gray-800 hover:shadow-md">
-            <span className="relative z-10 transition-colors">Resume</span> 
-            <FiArrowUpRight className="relative z-10 text-lg group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+          <button className="relative group overflow-hidden flex items-center justify-center gap-2 bg-gray-900 dark:bg-[#030610] text-white dark:text-cyan-50 font-bold tracking-wider py-2.5 px-7 rounded-full border border-transparent dark:border-cyan-500/50 dark:shadow-[0_0_15px_rgba(34,211,238,0.2)] dark:hover:shadow-[0_0_25px_rgba(34,211,238,0.5)] transition-all duration-300 hover:bg-gray-800 hover:shadow-md">
+            {/* Glowing sweep effect on hover for dark mode */}
+            <span className="hidden dark:block absolute inset-0 w-[200%] -translate-x-[150%] bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent group-hover:animate-[shimmer_1.5s_infinite]"></span>
+            <span className="relative z-10 transition-colors dark:group-hover:text-cyan-300">Resume</span> 
+            <FiArrowUpRight className="relative z-10 text-lg group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform dark:group-hover:text-cyan-300" />
           </button>
         </div>
 
         {/* Mobile Hamburger */}
-        <button className="md:hidden text-2xl z-50 text-gray-900 relative w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 border border-gray-200 hover:bg-gray-200 transition-colors" onClick={() => setIsOpen(!isOpen)}>
+        <button className="md:hidden text-2xl z-50 text-gray-900 dark:text-white relative w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-white/[0.05] border border-gray-200 dark:border-white/[0.1] hover:bg-gray-200 dark:hover:bg-white/[0.1] transition-colors" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>

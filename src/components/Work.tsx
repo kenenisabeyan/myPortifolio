@@ -59,16 +59,16 @@ const highlightsTech = [
 
 const Work = () => {
   return (
-    <section id="work" className="py-16 md:py-24 px-6 relative z-10 bg-white">
+    <section id="work" className="py-16 md:py-24 px-6 relative z-10 bg-white dark:bg-transparent">
       
       <div className="max-w-4xl mx-auto flex flex-col relative z-10">
         
         {/* Core Tech Header */}
         <div className="w-full text-center flex flex-col items-center mb-16">
-          <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-gray-200 mb-4 bg-gray-50 text-gray-500 text-xs font-bold uppercase tracking-widest shadow-sm">
+          <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-gray-200 dark:border-white/10 mb-4 bg-gray-50 dark:bg-white/5 text-gray-500 dark:text-gray-300 text-xs font-bold uppercase tracking-widest shadow-sm">
             MY EXPERTISE
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 inline-block">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white inline-block">
             Technical Skills
           </h2>
         </div>
@@ -79,15 +79,17 @@ const Work = () => {
           {categoriesInfo.map((cat, idx) => (
             <div 
               key={idx} 
-              className="flex flex-col bg-gray-50 rounded-2xl border border-gray-100 p-8 shadow-sm relative hover:shadow-md transition-all duration-300 h-auto"
+              className="group flex flex-col bg-gray-50 dark:bg-[#050A14]/80 rounded-2xl border border-gray-100 dark:border-white/[0.05] p-8 shadow-sm relative hover:shadow-md dark:hover:shadow-[0_0_30px_rgba(34,211,238,0.1)] transition-all duration-300 h-auto overflow-hidden dark:backdrop-blur-xl"
             >
-              
+              {/* Dark mode internal glow */}
+              <div className={`absolute top-0 right-0 w-32 h-32 ${cat.cornerColor} rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden dark:block`} />
+
               {/* Title & Icon Header */}
               <div className="relative z-10 flex flex-col items-start mb-8">
-                <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-white border border-gray-200 mb-4 text-gray-600 transition-colors duration-300">
+                <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 mb-4 text-gray-600 dark:text-cyan-400 transition-colors duration-300">
                   {cat.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                    {cat.name}
                 </h3>
               </div>
@@ -96,10 +98,10 @@ const Work = () => {
               <div className="relative z-10 flex flex-col gap-4">
                 {categorizedTech[cat.id]?.map((item, i) => (
                    <div key={i} className="flex items-center gap-4 group/item cursor-default">
-                     <div className="text-gray-400 transition-colors duration-300">
+                     <div className="text-gray-400 dark:text-gray-500 dark:group-hover/item:text-cyan-400 transition-colors duration-300">
                         {item.icon}
                      </div>
-                     <span className="text-sm md:text-base font-medium text-gray-700 transition-colors duration-300">
+                     <span className="text-sm md:text-base font-medium text-gray-700 dark:text-gray-300 dark:group-hover/item:text-white transition-colors duration-300">
                         {item.name}
                      </span>
                    </div>
@@ -112,7 +114,7 @@ const Work = () => {
 
         {/* Tech stack Highlights Header */}
         <div className="w-full text-center flex flex-col items-center mb-10">
-          <h3 className="text-2xl font-bold text-white tracking-wide">
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white tracking-wide">
             Tech stack Highlights
           </h3>
         </div>
@@ -142,47 +144,50 @@ const Work = () => {
 
         {/* Projects Header */}
         <div className="w-full text-center md:text-left mb-16 flex flex-col items-center md:items-start">
-          <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-gray-100 border border-gray-200 mb-6 shadow-sm">
-            <span className="text-gray-500 animate-pulse">❖</span>
-            <span className="text-sm text-gray-500 font-semibold tracking-widest uppercase">My Work</span>
+          <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-gray-100 dark:bg-blue-900/20 border border-gray-200 dark:border-blue-500/30 mb-6 shadow-sm dark:shadow-[0_0_20px_rgba(59,130,246,0.15)] dark:backdrop-blur-md">
+            <span className="text-gray-500 dark:text-cyan-400 animate-pulse">❖</span>
+            <span className="text-sm text-gray-500 font-semibold tracking-widest uppercase dark:text-cyan-50">My Work</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Featured Deployments.
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+            Featured <span className="dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-cyan-400 dark:via-blue-500 dark:to-indigo-500">Deployments.</span>
           </h2>
-          <p className="text-base md:text-lg font-normal leading-relaxed text-gray-600 max-w-2xl text-center md:text-left">
+          <p className="text-base md:text-lg font-normal leading-relaxed text-gray-600 dark:text-gray-400 max-w-2xl text-center md:text-left">
             The following projects showcase my ability to solve complex problems, build dynamic user interfaces, and deliver production-ready software efficiently using modern high-tech stacks.
           </p>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-2xl border border-gray-100 overflow-hidden flex flex-col hover:shadow-md transition-all duration-300"
+              className="group bg-white dark:bg-[#050A14]/80 rounded-2xl border border-gray-100 dark:border-white/[0.05] dark:hover:border-blue-500/40 overflow-hidden flex flex-col hover:shadow-md dark:shadow-2xl dark:hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500 dark:backdrop-blur-xl relative"
             >
+              {/* Dark mode internal glow behind image */}
+              <div className="absolute top-0 left-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 hidden dark:block" />
+
               {/* Image Container */}
-              <div className="relative z-10 w-full h-[300px] overflow-hidden border-b border-gray-100 bg-gray-50">
+              <div className="relative z-10 w-full h-[200px] sm:h-[240px] overflow-hidden border-b border-gray-100 dark:border-white/5 bg-gray-50 dark:bg-black/50">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain dark:opacity-90 dark:group-hover:opacity-100 transition-opacity duration-300 transform group-hover:scale-105"
                 />
               </div>
 
               {/* Content Container */}
               <div className="relative z-10 p-8 sm:p-10 flex-1 flex flex-col">
-                <h3 className="text-xl md:text-2xl font-semibold text-gray-900 mb-4 transition-colors duration-300">
+                <h3 className="text-xl md:text-2xl font-semibold text-gray-900 dark:text-white dark:group-hover:text-cyan-400 mb-4 transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-sm md:text-base font-normal text-gray-600 leading-relaxed flex-1 mb-6">
+                <p className="text-sm md:text-base font-normal text-gray-600 dark:text-gray-400 leading-relaxed flex-1 mb-6">
                   {project.description}
                 </p>
                 
                 {/* Tech Tags */}
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tech?.map((tech, techIdx) => (
-                    <span key={techIdx} className="px-4 py-1.5 bg-gray-50 border border-gray-200 text-sm font-medium text-gray-500 rounded-full">
+                    <span key={techIdx} className="px-4 py-1.5 bg-gray-50 border border-gray-200 dark:bg-blue-900/20 dark:border-blue-500/30 text-sm font-medium text-gray-500 dark:text-cyan-100 rounded-full">
                       {tech}
                     </span>
                   ))}

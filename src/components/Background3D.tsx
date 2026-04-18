@@ -174,7 +174,7 @@ const Background3D = () => {
   }, [])
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full -z-10 bg-[#030610] overflow-hidden">
+    <div className="absolute inset-0 w-full h-full z-0 bg-[#030610] overflow-hidden pointer-events-auto">
       {/* Deep space faint radial mesh grid background */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-60" style={{
         backgroundImage: `
