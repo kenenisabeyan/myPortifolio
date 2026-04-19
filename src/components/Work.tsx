@@ -65,7 +65,7 @@ const Work = () => {
         
         {/* Core Tech Header */}
         <div className="w-full text-center flex flex-col items-center mb-16">
-          <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-gray-200 dark:border-white/10 mb-4 bg-gray-50 dark:bg-white/5 text-gray-500 dark:text-gray-300 text-xs font-bold uppercase tracking-widest shadow-sm">
+          <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-gray-200 dark:border-cyan-500/20 mb-4 bg-gray-50 dark:bg-cyan-950/30 text-gray-500 dark:text-cyan-100 text-xs font-bold uppercase tracking-widest shadow-sm dark:shadow-[0_0_20px_rgba(34,211,238,0.15)] dark:backdrop-blur-md transition-colors hover:dark:bg-cyan-900/40">
             MY EXPERTISE
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white inline-block">
@@ -144,12 +144,12 @@ const Work = () => {
 
         {/* Projects Header */}
         <div className="w-full text-center md:text-left mb-16 flex flex-col items-center md:items-start">
-          <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-gray-100 dark:bg-blue-900/20 border border-gray-200 dark:border-blue-500/30 mb-6 shadow-sm dark:shadow-[0_0_20px_rgba(59,130,246,0.15)] dark:backdrop-blur-md">
+          <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-gray-100 dark:bg-cyan-950/30 border border-gray-200 dark:border-cyan-500/20 mb-6 shadow-sm dark:shadow-[0_0_25px_rgba(34,211,238,0.15)] dark:backdrop-blur-md transition-colors hover:dark:bg-cyan-900/40">
             <span className="text-gray-500 dark:text-cyan-400 animate-pulse">❖</span>
-            <span className="text-sm text-gray-500 font-semibold tracking-widest uppercase dark:text-cyan-50">My Work</span>
+            <span className="text-sm text-gray-500 font-semibold tracking-widest uppercase dark:text-cyan-100">My Work</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-            Featured <span className="dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-cyan-400 dark:via-blue-500 dark:to-indigo-500">Deployments.</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 dark:drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+            Featured <span className="dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-cyan-300 dark:via-blue-400 dark:to-indigo-400">Deployments.</span>
           </h2>
           <p className="text-base md:text-lg font-normal leading-relaxed text-gray-600 dark:text-gray-400 max-w-2xl text-center md:text-left">
             The following projects showcase my ability to solve complex problems, build dynamic user interfaces, and deliver production-ready software efficiently using modern high-tech stacks.

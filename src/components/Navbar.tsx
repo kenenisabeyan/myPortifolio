@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { FaBars, FaTimes, FaSun, FaMoon, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { FiArrowUpRight } from 'react-icons/fi'
 
-const Navbar = () => {
+const Navbar = ({ isDarkMode, toggleDarkMode }: { isDarkMode?: boolean, toggleDarkMode?: () => void }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -33,8 +33,8 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
       scrolled 
-        ? 'bg-white/80 dark:bg-[#030610]/70 backdrop-blur-2xl border-b border-gray-200 dark:border-white/[0.05] py-4 shadow-sm dark:shadow-[0_4px_30px_rgba(0,0,0,0.5)]' 
-        : 'bg-white/90 dark:bg-gradient-to-b dark:from-[#030610]/90 dark:to-transparent py-5 border-b border-transparent'
+        ? 'bg-white/80 dark:bg-[#060D1F]/60 backdrop-blur-3xl border-b border-gray-200 dark:border-cyan-500/10 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.8)]' 
+        : 'bg-white/90 dark:bg-gradient-to-b dark:from-[#030610]/95 dark:to-transparent py-5 border-b border-transparent'
     } px-6 md:px-12`}>
       {/* Decorative top border gradient line on scroll */}
       <div className={`absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gray-300 dark:via-cyan-500/50 to-transparent transition-opacity duration-500 ${scrolled ? 'opacity-100' : 'opacity-0'}`}></div>
@@ -67,6 +67,13 @@ const Navbar = () => {
         <div className="hidden md:flex items-center space-x-6 text-gray-500 dark:text-gray-400">
           
           <div className="flex space-x-4 items-center">
+            <button 
+              onClick={toggleDarkMode} 
+              className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors p-2 rounded-full hover:bg-gray-100 dark:hover:bg-white/10"
+              aria-label="Toggle Dark Mode"
+            >
+              {isDarkMode ? <FaSun className="text-[1.1rem]" /> : <FaMoon className="text-[1.1rem]" />}
+            </button>
             <a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors"><FaGithub className="text-[1.1rem]" /></a>
             <a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors"><FaLinkedin className="text-[1.1rem]" /></a>
             <a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors"><FaTwitter className="text-[1.1rem]" /></a>
@@ -107,6 +114,9 @@ const Navbar = () => {
             </li>
           ))}
           <li className="w-full pt-6 flex space-x-4 text-gray-400">
+             <button onClick={toggleDarkMode} className="hover:text-white transition-colors p-2 bg-gray-800 rounded-full">
+               {isDarkMode ? <FaSun className="text-lg" /> : <FaMoon className="text-lg" />}
+             </button>
              <a href="#" className="hover:text-white transition-colors p-2 bg-gray-800 rounded-full"><FaGithub className="text-lg" /></a>
              <a href="#" className="hover:text-white transition-colors p-2 bg-gray-800 rounded-full"><FaLinkedin className="text-lg" /></a>
              <a href="#" className="hover:text-white transition-colors p-2 bg-gray-800 rounded-full"><FaTwitter className="text-lg" /></a>

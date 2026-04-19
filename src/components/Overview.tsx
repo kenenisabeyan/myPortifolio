@@ -33,12 +33,12 @@ const Overview = () => {
         
         {/* Header container */}
         <div className="flex flex-col items-center justify-center text-center mb-24">
-          <div className="flex items-center gap-3 bg-gray-200 dark:bg-blue-900/20 py-2.5 px-6 rounded-full mb-8 dark:border dark:border-blue-500/30 dark:shadow-[0_0_20px_rgba(59,130,246,0.15)] dark:backdrop-blur-md">
+          <div className="flex items-center gap-3 bg-gray-200 dark:bg-cyan-950/30 py-2.5 px-6 rounded-full mb-8 dark:border dark:border-cyan-500/20 dark:shadow-[0_0_25px_rgba(34,211,238,0.15)] dark:backdrop-blur-md transition-colors hover:dark:bg-cyan-900/40">
             <span className="text-gray-500 dark:text-cyan-400 animate-pulse">❖</span>
-            <span className="text-lg font-medium text-gray-500 uppercase dark:text-cyan-50 dark:tracking-widest">About Me</span>
+            <span className="text-lg font-medium text-gray-500 uppercase dark:text-cyan-100 dark:tracking-widest">About Me</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 dark:drop-shadow-xl">
-            Who I <span className="dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-cyan-400 dark:via-blue-500 dark:to-indigo-500">Am.</span>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 dark:drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+            Who I <span className="dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-cyan-300 dark:via-blue-400 dark:to-indigo-400">Am.</span>
           </h2>
           <div className="mx-auto max-w-2xl text-base md:text-lg font-normal leading-relaxed text-gray-600 dark:text-gray-300 space-y-6">
             <p>

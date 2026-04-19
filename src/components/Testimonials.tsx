@@ -36,6 +36,7 @@ const testimonials = [
 const Testimonials = () => {
   return (
     <section id="testimonials" className="py-16 md:py-24 px-6 relative z-10 bg-gray-50 dark:bg-transparent dark:border-t dark:border-white/[0.05]">
+      
       <div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 via-transparent to-transparent pointer-events-none hidden dark:block" />
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none hidden dark:block" />
       <div className="max-w-4xl dark:max-w-7xl mx-auto flex flex-col items-center relative z-10 transition-all duration-300">

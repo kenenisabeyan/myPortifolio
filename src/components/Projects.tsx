@@ -2,10 +2,10 @@ import { projects } from '../data/data';
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-24 relative bg-[#030610]">
+    <section id="projects" className="py-24 relative bg-gray-50 dark:bg-transparent transition-colors duration-500">
       {/* Background gradient accents */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/10 via-[#030610] to-[#030610] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-200/50 via-transparent to-transparent dark:from-blue-900/10 dark:via-transparent dark:to-transparent pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10 max-w-7xl">
         {/* Section Header */}
@@ -28,11 +28,11 @@ const Projects = () => {
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className="group relative bg-[#0a0f1e]/80 backdrop-blur-xl rounded-2xl overflow-hidden border border-white/5 hover:border-cyan-500/40 transition-all duration-500 shadow-xl hover:shadow-[0_0_30px_rgba(6,182,212,0.15)] transform hover:-translate-y-2 flex flex-col"
+              className="group relative bg-white/80 dark:bg-[#0a0f1e]/80 backdrop-blur-xl rounded-2xl overflow-hidden border border-gray-200 dark:border-white/5 hover:border-cyan-500/40 transition-all duration-500 shadow-xl hover:shadow-[0_0_30px_rgba(6,182,212,0.15)] transform hover:-translate-y-2 flex flex-col"
             >
               {/* Image Container */}
               <div className="relative w-full h-64 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1e] to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-100 dark:from-[#0a0f1e] to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
                 <img
                   src={project.image}
                   alt={project.title}
@@ -50,11 +50,11 @@ const Projects = () => {
               </div>
 
               {/* Content Container */}
-              <div className="p-8 flex-1 flex flex-col relative z-20 -mt-6 bg-gradient-to-b from-transparent to-[#0a0f1e]">
-                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
+              <div className="p-8 flex-1 flex flex-col relative z-20 -mt-6 bg-gradient-to-b from-transparent to-white dark:to-[#0a0f1e]">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-1">
+                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6 flex-1">
                   {project.description}
                 </p>
                 

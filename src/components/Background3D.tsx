@@ -1,4 +1,4 @@
-import React, { useRef, useMemo } from 'react'
+import React, { useRef, useMemo, useState, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Html, Stars, Sphere, OrbitControls } from '@react-three/drei'
 import * as THREE from 'three'
@@ -48,7 +48,7 @@ const PlanetIcon = ({ icon: Icon, color, position, index }) => {
 }
 
 // The entire Solar System ring of tech planets
-const InnerPlanetarySystem = ({ techItems }) => {
+const InnerPlanetarySystem = ({ techItems, isDark }) => {
   const orbitRef = useRef<THREE.Group>(null)
   
   // Orbit all the planets slowly inside the central sun container
@@ -65,7 +65,7 @@ const InnerPlanetarySystem = ({ techItems }) => {
         {/* Draw the orbital ring path INSIDE the globe */}
         <mesh rotation={[Math.PI / 2, 0, 0]}>
           <torusGeometry args={[2.8, 0.003, 16, 128]} />
-          <meshBasicMaterial color="#3b82f6" transparent opacity={0.4} blending={THREE.AdditiveBlending} />
+          <meshBasicMaterial color={isDark ? "#3b82f6" : "#4b5563"} transparent opacity={0.4} blending={THREE.AdditiveBlending} />
         </mesh>
         
         {/* Map each planet onto the inner orbit ring */}
@@ -79,7 +79,7 @@ const InnerPlanetarySystem = ({ techItems }) => {
 }
 
 // High-tech translucent wireframe central globe
-const CyberGlobe = () => {
+const CyberGlobe = ({ isDark }) => {
   const globeRef = useRef<THREE.Mesh>(null)
   const ringRef1 = useRef<THREE.Mesh>(null)
   const ringRef2 = useRef<THREE.Mesh>(null)
@@ -103,9 +103,9 @@ const CyberGlobe = () => {
       {/* Central Glowing Wireframe Sphere - Outer Boundary */}
       <Sphere ref={globeRef} args={[3.8, 48, 48]} position={[0, 0, 0]}>
         <meshStandardMaterial
-          color="#1e3a8a"
-          emissive="#3b82f6"
-          emissiveIntensity={1.5}
+          color={isDark ? "#1e3a8a" : "#1f2937"}
+          emissive={isDark ? "#3b82f6" : "#374151"}
+          emissiveIntensity={isDark ? 1.5 : 1}
           wireframe
           transparent
           opacity={0.1}
@@ -118,18 +118,37 @@ const CyberGlobe = () => {
       {/* Decorative crossed rings */}
       <mesh ref={ringRef1}>
         <torusGeometry args={[4.2, 0.015, 16, 100]} />
-        <meshBasicMaterial color="#60a5fa" transparent opacity={0.3} blending={THREE.AdditiveBlending} />
+        <meshBasicMaterial color={isDark ? "#60a5fa" : "#6b7280"} transparent opacity={isDark ? 0.3 : 0.4} blending={THREE.AdditiveBlending} />
       </mesh>
       
       <mesh ref={ringRef2} rotation={[-Math.PI / 2.2, Math.PI / 4, 0]}>
         <torusGeometry args={[4.4, 0.01, 16, 100]} />
-        <meshBasicMaterial color="#a855f7" transparent opacity={0.2} blending={THREE.AdditiveBlending} />
+        <meshBasicMaterial color={isDark ? "#a855f7" : "#4b5563"} transparent opacity={isDark ? 0.2 : 0.3} blending={THREE.AdditiveBlending} />
       </mesh>
     </group>
   )
 }
 
 const Background3D = () => {
+  const [isDark, setIsDark] = useState(true)
+
+  useEffect(() => {
+    // Initial check
+    setIsDark(document.documentElement.classList.contains('dark'))
+    
+    // Observer for dark mode toggle
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'class') {
+          setIsDark(document.documentElement.classList.contains('dark'))
+        }
+      })
+    })
+    
+    observer.observe(document.documentElement, { attributes: true })
+    return () => observer.disconnect()
+  }, [])
+
   const techItems = useMemo(() => {
     // Retain brand colors so the images (icons) are highly recognizable and visible
     const iconsList = [
@@ -174,11 +193,23 @@ const Background3D = () => {
   }, [])
 
   return (
-    <div className="absolute inset-0 w-full h-full z-0 bg-[#030610] overflow-hidden pointer-events-auto">
-      {/* Deep space faint radial mesh grid background */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-60" style={{
+    <div className="fixed inset-0 w-screen h-[100vh] z-0 bg-gray-50 dark:bg-[#030610] overflow-hidden pointer-events-auto transition-colors duration-500">
+      
+      {/* Light mode grid */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-30 dark:hidden" style={{
         backgroundImage: `
-          radial-gradient(circle at center, rgba(59,130,246,0.1) 0%, rgba(0,0,0,1) 80%),
+          radial-gradient(circle at center, rgba(59,130,246,0.15) 0%, rgba(249,250,251,1) 80%),
+          linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)
+        `,
+        backgroundSize: '100% 100%, 50px 50px, 50px 50px',
+        backgroundPosition: 'center center'
+      }}></div>
+
+      {/* Deep space faint radial mesh grid background (Dark Mode) */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-60 hidden dark:block" style={{
+        backgroundImage: `
+          radial-gradient(circle at center, rgba(59,130,246,0.1) 0%, rgba(3,6,16,1) 80%),
           linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
           linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)
         `,
@@ -189,17 +220,17 @@ const Background3D = () => {
       <Canvas camera={{ position: [0, 0, 9], fov: 45 }}>
         
         {/* Cinematic Lighting */}
-        <ambientLight intensity={0.2} />
-        <spotLight position={[10, 20, 10]} intensity={3} angle={0.5} penumbra={1} color="#3b82f6" />
-        <pointLight position={[-10, -10, -10]} intensity={2} color="#8b5cf6" />
+        <ambientLight intensity={isDark ? 0.2 : 0.6} />
+        <spotLight position={[10, 20, 10]} intensity={3} angle={0.5} penumbra={1} color={isDark ? "#3b82f6" : "#ffffff"} />
+        <pointLight position={[-10, -10, -10]} intensity={2} color={isDark ? "#8b5cf6" : "#9ca3af"} />
         <pointLight position={[0, 0, 0]} intensity={1} color="#ffffff" />
 
         {/* Deep space stars */}
-        <Stars radius={150} depth={60} count={3000} factor={4} fade speed={1.5} />
+        {isDark && <Stars radius={150} depth={60} count={3000} factor={4} fade speed={1.5} />}
         
         {/* High-tech structures */}
-        <CyberGlobe />
-        <InnerPlanetarySystem techItems={techItems} />
+        <CyberGlobe isDark={isDark} />
+        <InnerPlanetarySystem techItems={techItems} isDark={isDark} />
 
         {/* Interaction controls */}
         <OrbitControls 
