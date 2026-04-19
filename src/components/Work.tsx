@@ -79,7 +79,7 @@ const Work = () => {
           {categoriesInfo.map((cat, idx) => (
             <div 
               key={idx} 
-              className="group flex flex-col bg-gray-50 dark:bg-[#050A14]/80 rounded-2xl border border-gray-100 dark:border-white/[0.05] p-8 shadow-sm relative hover:shadow-md dark:hover:shadow-[0_0_30px_rgba(34,211,238,0.1)] transition-all duration-300 h-auto overflow-hidden dark:backdrop-blur-xl"
+              className="group flex flex-col bg-gray-50 dark:bg-[#050A14]/80 rounded-2xl border border-gray-100 dark:border-white/[0.05] p-8 shadow-sm relative transform hover:-translate-y-2 hover:shadow-xl dark:hover:shadow-[0_0_30px_rgba(34,211,238,0.1)] transition-all duration-300 h-auto overflow-hidden dark:backdrop-blur-xl"
             >
               {/* Dark mode internal glow */}
               <div className={`absolute top-0 right-0 w-32 h-32 ${cat.cornerColor} rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden dark:block`} />
@@ -161,7 +161,7 @@ const Work = () => {
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className="group bg-white dark:bg-[#050A14]/80 rounded-2xl border border-gray-100 dark:border-white/[0.05] dark:hover:border-blue-500/40 overflow-hidden flex flex-col hover:shadow-md dark:shadow-2xl dark:hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500 dark:backdrop-blur-xl relative"
+              className="group bg-white dark:bg-[#050A14]/80 rounded-2xl border border-gray-100 dark:border-white/[0.05] dark:hover:border-blue-500/40 overflow-hidden flex flex-col transform hover:-translate-y-2 hover:shadow-xl dark:shadow-2xl dark:hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-500 dark:backdrop-blur-xl relative"
             >
               {/* Dark mode internal glow behind image */}
               <div className="absolute top-0 left-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 hidden dark:block" />

@@ -81,7 +81,7 @@ const Testimonials = () => {
 
 function TestimonialCard({ t }) {
   return (
-    <div className="group relative bg-white dark:bg-[#050A14]/80 border border-gray-200 dark:border-white/[0.05] dark:hover:border-cyan-500/40 p-8 rounded-3xl dark:rounded-[2rem] transition-all duration-300 dark:duration-500 flex flex-col h-full overflow-hidden shadow-sm dark:shadow-2xl hover:shadow-md dark:hover:shadow-[0_0_30px_rgba(34,211,238,0.15)] cursor-default dark:backdrop-blur-xl dark:hover:-translate-y-2">
+    <div className="group relative bg-white dark:bg-[#050A14]/80 border border-gray-200 dark:border-white/[0.05] dark:hover:border-cyan-500/40 p-8 rounded-3xl dark:rounded-[2rem] transition-all duration-300 dark:duration-500 flex flex-col h-full overflow-hidden shadow-sm dark:shadow-2xl hover:shadow-xl dark:hover:shadow-[0_0_30px_rgba(34,211,238,0.15)] cursor-default dark:backdrop-blur-xl transform hover:-translate-y-2">
       <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden dark:block" />
       <div className="relative z-10 flex text-gray-400 dark:text-cyan-400 mb-6 space-x-1">
         {[...Array(5)].map((_, i) => (

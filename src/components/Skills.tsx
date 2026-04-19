@@ -36,7 +36,7 @@ const Skills = () => {
           {services.map((service, idx) => (
             <div 
               key={idx} 
-              className="group relative bg-gray-50 dark:bg-[#050A14]/80 dark:backdrop-blur-xl hover:bg-white dark:hover:bg-[#080d1a]/90 rounded-full py-16 px-6 border border-gray-200 dark:border-white/[0.05] dark:hover:border-cyan-500/40 transition-all duration-500 flex flex-col items-center justify-center w-[220px] h-[380px] hover:shadow-md dark:hover:shadow-[0_0_40px_rgba(34,211,238,0.15)] cursor-default overflow-hidden transform hover:-translate-y-2"
+              className="group relative bg-gray-50 dark:bg-[#050A14]/80 dark:backdrop-blur-xl hover:bg-white dark:hover:bg-[#080d1a]/90 rounded-full py-16 px-6 border border-gray-200 dark:border-white/[0.05] dark:hover:border-cyan-500/40 transition-all duration-500 flex flex-col items-center justify-center w-[220px] h-[380px] hover:shadow-xl dark:hover:shadow-[0_0_40px_rgba(34,211,238,0.25)] cursor-default overflow-hidden transform hover:-translate-y-3"
             >
               
               {/* Containment ambient glow ring */}

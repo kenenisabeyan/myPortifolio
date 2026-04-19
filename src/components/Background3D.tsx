@@ -11,7 +11,7 @@ import {
 import { FaJava, FaSitemap } from 'react-icons/fa'
 
 // A single "Planet" carrying a tech icon
-const PlanetIcon = ({ icon: Icon, color, position, index }) => {
+const PlanetIcon = ({ icon: Icon, color, position, index, isDark }) => {
   const planetRef = useRef<THREE.Group>(null)
 
   // Planets slowly rotate on their own axis
@@ -29,8 +29,8 @@ const PlanetIcon = ({ icon: Icon, color, position, index }) => {
         <meshBasicMaterial 
           color={color} 
           transparent 
-          opacity={0.15} 
-          blending={THREE.AdditiveBlending} 
+          opacity={isDark ? 0.15 : 0.4} 
+          blending={isDark ? THREE.AdditiveBlending : THREE.NormalBlending} 
         />
       </Sphere>
 
@@ -65,12 +65,12 @@ const InnerPlanetarySystem = ({ techItems, isDark }) => {
         {/* Draw the orbital ring path INSIDE the globe */}
         <mesh rotation={[Math.PI / 2, 0, 0]}>
           <torusGeometry args={[2.8, 0.003, 16, 128]} />
-          <meshBasicMaterial color={isDark ? "#3b82f6" : "#4b5563"} transparent opacity={0.4} blending={THREE.AdditiveBlending} />
+          <meshBasicMaterial color={isDark ? "#3b82f6" : "#4b5563"} transparent opacity={isDark ? 0.4 : 0.8} blending={isDark ? THREE.AdditiveBlending : THREE.NormalBlending} />
         </mesh>
         
         {/* Map each planet onto the inner orbit ring */}
         {techItems.map((item, idx) => (
-          <PlanetIcon key={idx} index={idx} icon={item.icon} color={item.color} position={item.pos} />
+          <PlanetIcon key={idx} index={idx} icon={item.icon} color={item.color} position={item.pos} isDark={isDark} />
         ))}
         
       </group>
@@ -108,22 +108,22 @@ const CyberGlobe = ({ isDark }) => {
           emissiveIntensity={isDark ? 1.5 : 1}
           wireframe
           transparent
-          opacity={0.1}
+          opacity={isDark ? 0.1 : 0.5}
           roughness={0.1}
           metalness={1}
-          blending={THREE.AdditiveBlending}
+          blending={isDark ? THREE.AdditiveBlending : THREE.NormalBlending}
         />
       </Sphere>
 
       {/* Decorative crossed rings */}
       <mesh ref={ringRef1}>
         <torusGeometry args={[4.2, 0.015, 16, 100]} />
-        <meshBasicMaterial color={isDark ? "#60a5fa" : "#6b7280"} transparent opacity={isDark ? 0.3 : 0.4} blending={THREE.AdditiveBlending} />
+        <meshBasicMaterial color={isDark ? "#60a5fa" : "#6b7280"} transparent opacity={isDark ? 0.3 : 0.6} blending={isDark ? THREE.AdditiveBlending : THREE.NormalBlending} />
       </mesh>
       
       <mesh ref={ringRef2} rotation={[-Math.PI / 2.2, Math.PI / 4, 0]}>
         <torusGeometry args={[4.4, 0.01, 16, 100]} />
-        <meshBasicMaterial color={isDark ? "#a855f7" : "#4b5563"} transparent opacity={isDark ? 0.2 : 0.3} blending={THREE.AdditiveBlending} />
+        <meshBasicMaterial color={isDark ? "#a855f7" : "#4b5563"} transparent opacity={isDark ? 0.2 : 0.4} blending={isDark ? THREE.AdditiveBlending : THREE.NormalBlending} />
       </mesh>
     </group>
   )

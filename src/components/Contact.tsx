@@ -36,7 +36,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full">
           
           {/* Left Form Container */}
-          <div className="bg-gray-50 dark:bg-[#050A14]/80 rounded-3xl dark:rounded-[2.5rem] p-8 md:p-12 border border-gray-200 dark:border-white/[0.05] dark:hover:border-cyan-500/30 transition-all duration-300 dark:duration-500 relative group shadow-sm dark:shadow-2xl dark:backdrop-blur-xl">
+          <div className="bg-gray-50 dark:bg-[#050A14]/80 rounded-3xl dark:rounded-[2.5rem] p-8 md:p-12 border border-gray-200 dark:border-white/[0.05] dark:hover:border-cyan-500/30 transition-all duration-300 dark:duration-500 relative group shadow-sm dark:shadow-2xl dark:backdrop-blur-xl transform hover:-translate-y-2 hover:shadow-2xl dark:hover:shadow-[0_0_40px_rgba(34,211,238,0.15)]">
             {/* Corner glowing accent */}
             <div className="absolute top-0 right-0 w-40 h-40 bg-blue-500/20 rounded-full blur-[80px] opacity-50 group-hover:opacity-100 group-hover:bg-cyan-500/20 transition-all duration-700 pointer-events-none hidden dark:block" />
             
@@ -93,7 +93,7 @@ const Contact = () => {
           </div>
 
           {/* Right Graphic Container */}
-          <div className="bg-gray-100 dark:bg-gradient-to-br dark:from-[#050A14] dark:to-blue-900/20 rounded-3xl dark:rounded-[2.5rem] min-h-[500px] flex justify-center items-center relative overflow-hidden border border-gray-200 dark:border-white/[0.05] group shadow-sm dark:shadow-2xl transition-all duration-300">
+          <div className="bg-gray-100 dark:bg-gradient-to-br dark:from-[#050A14] dark:to-blue-900/20 rounded-3xl dark:rounded-[2.5rem] min-h-[500px] flex justify-center items-center relative overflow-hidden border border-gray-200 dark:border-white/[0.05] group shadow-sm dark:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl dark:hover:shadow-[0_0_40px_rgba(34,211,238,0.15)]">
             {/* Animated glowing backdrops */}
             <div className="absolute inset-0 bg-cyan-500/10 blur-[120px] scale-150 transform opacity-30 group-hover:opacity-70 transition-opacity duration-700 pointer-events-none hidden dark:block" />
             

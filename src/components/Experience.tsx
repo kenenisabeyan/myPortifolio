@@ -125,7 +125,7 @@ const Experience = () => {
                   
                   {/* Left Side: Detail & Testimonial Container */}
                   <div className="hidden md:flex w-1/2 justify-end pr-16 mt-4">
-                    <div className="bg-white dark:bg-[#050A14]/80 p-8 rounded-3xl border border-gray-100 dark:border-white/[0.05] w-full max-w-[420px] shadow-sm dark:shadow-2xl hover:shadow-md dark:hover:shadow-[0_0_30px_rgba(34,211,238,0.15)] transition-shadow duration-300 relative group overflow-hidden dark:backdrop-blur-xl">
+                    <div className="bg-white dark:bg-[#050A14]/80 p-8 rounded-3xl border border-gray-100 dark:border-white/[0.05] w-full max-w-[420px] shadow-sm dark:shadow-2xl transform hover:-translate-y-2 hover:shadow-xl dark:hover:shadow-[0_0_30px_rgba(34,211,238,0.15)] transition-all duration-300 relative group overflow-hidden dark:backdrop-blur-xl">
                       
                       {/* Dark mode internal glow */}
                       <div className="hidden dark:block absolute top-0 left-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -173,7 +173,7 @@ const Experience = () => {
                       </ul>
 
                       {/* Mobile Testimonial Add-on */}
-                      <div className="md:hidden mt-8 bg-white dark:bg-[#050A14]/80 p-6 rounded-2xl border border-gray-100 dark:border-white/[0.05] w-full shadow-sm relative dark:backdrop-blur-xl">
+                      <div className="md:hidden mt-8 bg-white dark:bg-[#050A14]/80 p-6 rounded-2xl border border-gray-100 dark:border-white/[0.05] w-full shadow-sm relative dark:backdrop-blur-xl transform hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                         <StarRating />
                         <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6 font-normal italic">
                           "{exp.testimonial.text}"
