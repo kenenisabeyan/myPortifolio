@@ -77,7 +77,7 @@ const Hero = () => {
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative flex items-center justify-center gap-3 px-8 w-full h-full bg-gray-900 dark:bg-[#030610] text-white dark:text-cyan-50 dark:border dark:border-cyan-400/50 rounded-full font-bold dark:font-black text-sm uppercase tracking-widest hover:bg-gray-800 dark:hover:bg-cyan-500 dark:hover:text-black dark:hover:border-transparent transition-colors overflow-hidden"
+                className="relative flex items-center justify-center gap-3 px-8 w-full h-full bg-gray-900 dark:bg-cyan-500 text-white dark:text-black dark:border dark:border-transparent rounded-full font-bold dark:font-black text-sm uppercase tracking-widest hover:bg-gray-800 dark:hover:bg-[#030610] dark:hover:text-cyan-50 dark:hover:border-cyan-400/50 transition-colors overflow-hidden"
               >
                 {/* Shine Sweep Effect */}
                 <div className="absolute inset-0 -translate-x-[150%] bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:animate-[shimmer_1.5s_infinite]"></div>

@@ -1,12 +1,37 @@
 import React from 'react'
-import { FaReact, FaPython, FaNodeJs, FaProjectDiagram, FaGitAlt } from 'react-icons/fa'
+import { FaReact, FaServer, FaDatabase, FaBrain, FaMagic, FaRocket } from 'react-icons/fa'
 
 const services = [
-  { title: "Frontend Architecture", icon: <FaReact size={64} className="text-[#61DAFB] drop-shadow-[0_0_15px_rgba(97,218,251,0.6)] group-hover:drop-shadow-[0_0_25px_rgba(97,218,251,1)] transition-all duration-300" /> },
-  { title: "Backend Systems", icon: <FaNodeJs size={64} className="text-[#68A063] drop-shadow-[0_0_15px_rgba(104,160,99,0.6)] group-hover:drop-shadow-[0_0_25px_rgba(104,160,99,1)] transition-all duration-300" /> },
-  { title: "Data Engines", icon: <FaPython size={64} className="text-[#FFD43B] drop-shadow-[0_0_15px_rgba(255,212,59,0.6)] group-hover:drop-shadow-[0_0_25px_rgba(255,212,59,1)] transition-all duration-300" /> },
-  { title: "Interactive WebGL", icon: <FaProjectDiagram size={64} className="text-cyan-400 drop-shadow-[0_0_15px_rgba(34,211,238,0.6)] group-hover:drop-shadow-[0_0_25px_rgba(34,211,238,1)] transition-all duration-300" /> },
-  { title: "Version Matrix", icon: <FaGitAlt size={64} className="text-[#F05032] drop-shadow-[0_0_15px_rgba(240,80,50,0.6)] group-hover:drop-shadow-[0_0_25px_rgba(240,80,50,1)] transition-all duration-300" /> },
+  { 
+    title: "🎨 Frontend Architecture", 
+    desc: "(React, Next.js, Tailwind)",
+    icon: <FaReact size={48} className="text-[#61DAFB] group-hover:drop-shadow-[0_0_15px_rgba(97,218,251,1)] transition-all duration-300" /> 
+  },
+  { 
+    title: "⚙️ Backend Systems", 
+    desc: "(Node.js, Express, Django)",
+    icon: <FaServer size={48} className="text-[#68A063] group-hover:drop-shadow-[0_0_15px_rgba(104,160,99,1)] transition-all duration-300" /> 
+  },
+  { 
+    title: "🗄️ Data Engine", 
+    desc: "(PostgreSQL, MongoDB, Prisma)",
+    icon: <FaDatabase size={48} className="text-[#FFD43B] group-hover:drop-shadow-[0_0_15px_rgba(255,212,59,1)] transition-all duration-300" /> 
+  },
+  { 
+    title: "🤖 AI Integration", 
+    desc: "(LLM APIs, Automation)",
+    icon: <FaBrain size={48} className="text-cyan-400 group-hover:drop-shadow-[0_0_15px_rgba(34,211,238,1)] transition-all duration-300" /> 
+  },
+  { 
+    title: "✨ Interactive UX", 
+    desc: "(Motion, State-Driven)",
+    icon: <FaMagic size={48} className="text-purple-400 group-hover:drop-shadow-[0_0_15px_rgba(168,85,247,1)] transition-all duration-300" /> 
+  },
+  { 
+    title: "🚀 Version & CI/CD", 
+    desc: "(Git, Vercel, Deployment)",
+    icon: <FaRocket size={48} className="text-[#F05032] group-hover:drop-shadow-[0_0_15px_rgba(240,80,50,1)] transition-all duration-300" /> 
+  },
 ]
 
 const Skills = () => {
@@ -26,7 +51,7 @@ const Skills = () => {
             <span className="text-sm text-gray-500 dark:text-cyan-50 font-semibold tracking-widest uppercase">System Capabilities</span>
           </div>
           
-          <h2 className="text-3xl md:text-4xl dark:text-5xl dark:md:text-6xl dark:lg:text-7xl font-bold dark:font-black text-gray-900 dark:text-white tracking-tight dark:tracking-tighter dark:drop-shadow-xl transition-all duration-300">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white inline-block">
             My <span className="dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-cyan-400 dark:via-blue-500 dark:to-indigo-500">Service Modules.</span>
           </h2>
         </div>
@@ -43,14 +68,17 @@ const Skills = () => {
               <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-b-full hidden dark:block"></div>
 
               {/* Primary Icon Engine */}
-              <div className="w-24 h-24 mb-10 flex items-center justify-center transform group-hover:scale-110 group-hover:-translate-y-2 transition-transform duration-500 relative z-10 text-gray-400 group-hover:opacity-100 opacity-80 dark:opacity-100">
+              <div className="w-16 h-16 mb-4 flex items-center justify-center transform group-hover:scale-110 group-hover:-translate-y-2 transition-transform duration-500 relative z-10 text-gray-400 group-hover:opacity-100 opacity-80 dark:opacity-100">
                 {service.icon}
               </div>
 
               {/* Data readouts */}
-              <h3 className="text-gray-900 dark:text-white text-lg dark:text-[22px] font-semibold dark:font-black text-center tracking-tight leading-tight transition-colors duration-300 relative z-10 w-[90%] dark:group-hover:text-cyan-300">
-                {service.title.split(' ').map((word, i) => <React.Fragment key={i}>{word}<br/></React.Fragment>)}
+              <h3 className="text-gray-900 dark:text-white text-lg font-bold text-center leading-snug transition-colors duration-300 relative z-10 w-full px-2 dark:group-hover:text-cyan-300 mb-2">
+                {service.title}
               </h3>
+              <p className="text-xs md:text-sm font-medium text-gray-600 dark:text-gray-400 text-center relative z-10 w-full px-2">
+                {service.desc}
+              </p>
 
               {/* Decorative base lock */}
               <div className="absolute bottom-6 w-8 h-1 rounded-full bg-gray-300 dark:bg-white/10 group-hover:bg-gray-500 dark:group-hover:bg-cyan-400 dark:group-hover:shadow-[0_0_10px_rgba(34,211,238,1)] transition-colors duration-300"></div>

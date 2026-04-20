@@ -116,31 +116,33 @@ const Work = () => {
         {/* Tech stack Highlights Header */}
         <div className="w-full text-center flex flex-col items-center mb-10">
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white tracking-wide">
-            Tech stack Highlights
+            Tech-stack Highlights
           </h3>
         </div>
         
-        {/* Highlights Row (Marquee) */}
-        <div className="w-full overflow-hidden relative py-4 mb-24 max-w-7xl mx-auto">
-           {/* Edge fade gradients for smooth entry and exit */}
-           <div className="absolute top-0 bottom-0 left-0 w-32 bg-gradient-to-r from-gray-50 dark:from-[#030610] to-transparent z-20 pointer-events-none" />
-           <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-gray-50 dark:from-[#030610] to-transparent z-20 pointer-events-none" />
-           
-           <div className="animate-marquee-left hover:animation-play-state-paused w-max flex items-center gap-6">
-              {[...highlightsTech, ...highlightsTech, ...highlightsTech].map((item, idx) => (
-               <div 
-                 key={idx} 
-                 className="flex flex-col items-center justify-center py-4 px-2 w-[120px] bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/5 rounded-2xl hover:bg-gray-50 dark:hover:bg-white/[0.07] hover:border-gray-300 dark:hover:border-white/20 transition-all duration-300 hover:-translate-y-1 shadow-sm dark:shadow-lg group/item cursor-default flex-shrink-0"
-               >
-                 <div className="mb-3 transition-transform duration-300 group-hover/item:scale-110 drop-shadow-sm">
-                   {item.icon}
-                 </div>
-                 <span className="text-[12px] text-gray-600 dark:text-gray-400 font-semibold tracking-wider group-hover/item:text-gray-900 dark:group-hover/item:text-white text-center transition-colors">
-                   {item.name}
-                 </span>
+        {/* Highlights Grid */}
+        <div className="w-full flex flex-wrap justify-center gap-4 sm:gap-6 max-w-4xl mx-auto mb-16 relative z-10 px-4">
+           {highlightsTech.map((item, idx) => (
+             <div 
+               key={idx} 
+               className="flex flex-col items-center justify-center p-4 w-[110px] sm:w-[130px] h-[110px] sm:h-[130px] bg-white dark:bg-[#050A14] border border-gray-100 dark:border-white/10 rounded-2xl hover:border-gray-300 dark:hover:border-cyan-500/50 transition-all duration-300 shadow-sm hover:shadow-md dark:shadow-2xl flex-shrink-0 group"
+             >
+               <div className="mb-3 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)] flex-1 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                 {item.icon}
                </div>
-            ))}
-           </div>
+               <span className="text-[13px] text-gray-600 dark:text-gray-300 font-medium tracking-wide text-center group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
+                 {item.name}
+               </span>
+             </div>
+           ))}
+        </div>
+
+        {/* Let's Discuss Your Project Button */}
+        <div className="w-full flex justify-center mb-24 relative z-10">
+           <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#1DA1F2] hover:bg-blue-500 dark:bg-gradient-to-r dark:from-[#1DA1F2] dark:to-blue-600 text-white font-bold tracking-wide rounded-xl transition-all duration-300 shadow-md dark:shadow-[0_0_20px_rgba(29,161,242,0.3)] transform hover:-translate-y-1 hover:shadow-lg dark:hover:shadow-[0_0_30px_rgba(29,161,242,0.5)]">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+              Let's Discuss Your Project
+           </button>
         </div>
 
         {/* Projects Header */}
