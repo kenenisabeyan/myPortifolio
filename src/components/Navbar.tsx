@@ -74,17 +74,8 @@ const Navbar = ({ isDarkMode, toggleDarkMode }: { isDarkMode?: boolean, toggleDa
             >
               {isDarkMode ? <FaSun className="text-[1.1rem]" /> : <FaMoon className="text-[1.1rem]" />}
             </button>
-            <a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors"><FaGithub className="text-[1.1rem]" /></a>
-            <a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors"><FaLinkedin className="text-[1.1rem]" /></a>
-            <a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors"><FaTwitter className="text-[1.1rem]" /></a>
           </div>
           
-          <button className="relative group overflow-hidden flex items-center justify-center gap-2 bg-gray-900 dark:bg-[#030610] text-white dark:text-cyan-50 font-bold tracking-wider py-2.5 px-7 rounded-full border border-transparent dark:border-cyan-500/50 dark:shadow-[0_0_15px_rgba(34,211,238,0.2)] dark:hover:shadow-[0_0_25px_rgba(34,211,238,0.5)] transition-all duration-300 hover:bg-gray-800 hover:shadow-md">
-            {/* Glowing sweep effect on hover for dark mode */}
-            <span className="hidden dark:block absolute inset-0 w-[200%] -translate-x-[150%] bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent group-hover:animate-[shimmer_1.5s_infinite]"></span>
-            <span className="relative z-10 transition-colors dark:group-hover:text-cyan-300">Resume</span> 
-            <FiArrowUpRight className="relative z-10 text-lg group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform dark:group-hover:text-cyan-300" />
-          </button>
         </div>
 
         {/* Mobile Hamburger */}
@@ -117,14 +108,6 @@ const Navbar = ({ isDarkMode, toggleDarkMode }: { isDarkMode?: boolean, toggleDa
              <button onClick={toggleDarkMode} className="hover:text-white transition-colors p-2 bg-gray-800 rounded-full">
                {isDarkMode ? <FaSun className="text-lg" /> : <FaMoon className="text-lg" />}
              </button>
-             <a href="#" className="hover:text-white transition-colors p-2 bg-gray-800 rounded-full"><FaGithub className="text-lg" /></a>
-             <a href="#" className="hover:text-white transition-colors p-2 bg-gray-800 rounded-full"><FaLinkedin className="text-lg" /></a>
-             <a href="#" className="hover:text-white transition-colors p-2 bg-gray-800 rounded-full"><FaTwitter className="text-lg" /></a>
-          </li>
-          <li className="w-full pt-4">
-            <button className="w-full flex items-center justify-center gap-2 bg-blue-500 text-white py-3 rounded-xl font-bold shadow-lg">
-              Resume <FiArrowUpRight />
-            </button>
           </li>
         </ul>
       </div>

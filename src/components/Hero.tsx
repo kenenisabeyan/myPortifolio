@@ -10,7 +10,7 @@ const Hero = () => {
   return (
     <section id="hero" className="relative min-h-[100vh] flex items-center overflow-hidden pt-20 bg-transparent">
       <Background3D />
-      <div className="relative z-10 max-w-4xl mx-auto w-full px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
         {/* Left side: Original Typography integrated carefully */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left pt-6 order-2 lg:order-1 relative z-20">
@@ -38,31 +38,65 @@ const Hero = () => {
              Hi, I’m Kenenisa Beyan, a software developer focused on building scalable, high-performance digital solutions that deliver real-world results.
           </p>
 
-          {/* Modern Cyan Call To Action Button */}
-          <div className="relative group">
-            {/* Ambient Base Glow */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-blue-600 to-cyan-500 rounded-full blur-md opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+          {/* Action Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 sm:gap-6 w-full">
             
-            <button
-              onClick={scrollToWork}
-              className="relative flex items-center justify-center gap-4 px-10 py-4 bg-gray-900 dark:bg-[#030610] text-white dark:text-cyan-50 dark:border dark:border-cyan-400/50 rounded-full font-semibold dark:font-black text-base dark:tracking-[0.2em] uppercase tracking-wide hover:bg-gray-800 dark:hover:bg-cyan-500 dark:hover:text-black dark:hover:border-transparent transition-colors transform hover:-translate-y-1 overflow-hidden"
-            >
-              {/* Shine Sweep Effect */}
-              <div className="absolute inset-0 -translate-x-[150%] bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:animate-[shimmer_1.5s_infinite]"></div>
+            {/* Modern Cyan Call To Action Button (See My Work) */}
+            <div className="relative group w-full sm:w-auto h-[60px] transform hover:-translate-y-1 transition-transform">
+              {/* Ambient Base Glow */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-blue-600 to-cyan-500 rounded-full blur-md opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
               
-              <span className="relative z-10 transition-colors">See My Work</span>
-              <div className="w-10 h-10 rounded-full border border-current flex items-center justify-center bg-cyan-500/10 group-hover:bg-black/10 transition-colors relative z-10">
-                <svg 
-                  className="w-5 h-5 transform group-hover:rotate-45 transition-transform duration-300" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24" 
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                </svg>
-              </div>
-            </button>
+              <button
+                onClick={scrollToWork}
+                className="relative flex items-center justify-center gap-3 px-8 w-full h-full bg-gray-900 dark:bg-[#030610] text-white dark:text-cyan-50 dark:border dark:border-cyan-400/50 rounded-full font-bold dark:font-black text-sm uppercase tracking-widest hover:bg-gray-800 dark:hover:bg-cyan-500 dark:hover:text-black dark:hover:border-transparent transition-colors overflow-hidden"
+              >
+                {/* Shine Sweep Effect */}
+                <div className="absolute inset-0 -translate-x-[150%] bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:animate-[shimmer_1.5s_infinite]"></div>
+                
+                <span className="relative z-10 transition-colors">See My Work</span>
+                <div className="w-8 h-8 rounded-full border border-current flex items-center justify-center bg-cyan-500/10 group-hover:bg-black/10 transition-colors relative z-10">
+                  <svg 
+                    className="w-4 h-4 transform group-hover:rotate-45 transition-transform duration-300" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24" 
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  </svg>
+                </div>
+              </button>
+            </div>
+
+            {/* Resume Details Button */}
+            <div className="relative group w-full sm:w-auto h-[60px] transform hover:-translate-y-1 transition-transform">
+              {/* Ambient Base Glow */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-blue-600 to-cyan-500 rounded-full blur-md opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+              
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative flex items-center justify-center gap-3 px-8 w-full h-full bg-gray-900 dark:bg-[#030610] text-white dark:text-cyan-50 dark:border dark:border-cyan-400/50 rounded-full font-bold dark:font-black text-sm uppercase tracking-widest hover:bg-gray-800 dark:hover:bg-cyan-500 dark:hover:text-black dark:hover:border-transparent transition-colors overflow-hidden"
+              >
+                {/* Shine Sweep Effect */}
+                <div className="absolute inset-0 -translate-x-[150%] bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:animate-[shimmer_1.5s_infinite]"></div>
+                
+                <span className="relative z-10 transition-colors">Download Resume</span>
+                <div className="w-8 h-8 flex items-center justify-center transition-colors relative z-10 group-hover:translate-y-1">
+                  <svg 
+                    className="w-5 h-5 transition-transform duration-300" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24" 
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                </div>
+              </a>
+            </div>
+
           </div>
 
         </div>

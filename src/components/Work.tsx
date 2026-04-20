@@ -1,5 +1,5 @@
 import React from 'react'
-import { SiReact, SiPython, SiNodedotjs, SiTailwindcss, SiMongodb, SiTypescript, SiJavascript, SiHtml5, SiCss, SiDocker, SiNextdotjs, SiExpress, SiDjango, SiMysql, SiPostgresql, SiCplusplus, SiGit, SiGithub, SiFastapi, SiTensorflow, SiPytorch, SiKeras, SiScikitlearn, SiSelenium } from 'react-icons/si'
+import { SiReact, SiPython, SiNodedotjs, SiTailwindcss, SiMongodb, SiTypescript, SiJavascript, SiHtml5, SiCss, SiDocker, SiNextdotjs, SiExpress, SiDjango, SiMysql, SiPostgresql, SiCplusplus, SiGit, SiGithub, SiFastapi, SiTensorflow, SiPytorch, SiKeras, SiScikitlearn, SiSelenium, SiBootstrap } from 'react-icons/si'
 import { FaJava, FaServer, FaDatabase, FaTools, FaLayerGroup, FaAws, FaBrain, FaRobot, FaSyncAlt, FaMicrochip, FaNetworkWired } from 'react-icons/fa'
 import { projects } from '../data/data'
 
@@ -38,30 +38,29 @@ const categoriesInfo = [
 ]
 
 const highlightsTech = [
-  { name: "Next.js", icon: <SiNextdotjs size={28} /> },
-  { name: "React.js", icon: <SiReact size={28} /> },
-  { name: "JavaScript", icon: <SiJavascript size={28} /> },
-  { name: "TypeScript", icon: <SiTypescript size={28} /> },
-  { name: "Tailwind CSS", icon: <SiTailwindcss size={28} /> },
-  { name: "Node.js", icon: <SiNodedotjs size={28} /> },
-  { name: "Express", icon: <SiExpress size={28} /> },
-  { name: "Python", icon: <SiPython size={28} /> },
-  { name: "Django", icon: <SiDjango size={28} /> },
-  { name: "Java", icon: <FaJava size={28} /> },
-  { name: "C++", icon: <SiCplusplus size={28} /> },
-  { name: "PostgreSQL", icon: <SiPostgresql size={28} /> },
-  { name: "MongoDB", icon: <SiMongodb size={28} /> },
-  { name: "AWS", icon: <FaAws size={28} /> },
-  { name: "Docker", icon: <SiDocker size={28} /> },
-  { name: "Web-Scraping", icon: <SiSelenium size={28} /> },
-  { name: "Data Structures", icon: <FaNetworkWired size={28} /> },
+  { name: "React.js", icon: <SiReact size={28} color="#61DAFB" /> },
+  { name: "Next.js", icon: <SiNextdotjs size={28} className="text-black dark:text-white" /> },
+  { name: "Node.js", icon: <SiNodedotjs size={28} color="#339933" /> },
+  { name: "Express", icon: <SiExpress size={28} className="text-black dark:text-white" /> },
+  { name: "JavaScript", icon: <SiJavascript size={28} color="#F7DF1E" /> },
+  { name: "TypeScript", icon: <SiTypescript size={28} color="#3178C6" /> },
+  { name: "Python", icon: <SiPython size={28} color="#3776AB" /> },
+  { name: "Django", icon: <SiDjango size={28} color="#092E20" /> },
+  { name: "HTML", icon: <SiHtml5 size={28} color="#E34F26" /> },
+  { name: "CSS", icon: <SiCss size={28} color="#1572B6" /> },
+  { name: "Bootstrap", icon: <SiBootstrap size={28} color="#7952B3" /> },
+  { name: "PostgreSQL", icon: <SiPostgresql size={28} color="#4169E1" /> },
+  { name: "MongoDB", icon: <SiMongodb size={28} color="#47A248" /> },
+  { name: "MySQL", icon: <SiMysql size={28} color="#4479A1" /> },
+  { name: "GIT", icon: <SiGit size={28} color="#F05032" /> },
+  { name: "GITHUB", icon: <SiGithub size={28} className="text-black dark:text-white" /> },
 ]
 
 const Work = () => {
   return (
     <section id="work" className="py-16 md:py-24 px-6 relative z-10 bg-white dark:bg-transparent">
       
-      <div className="max-w-4xl mx-auto flex flex-col relative z-10">
+      <div className="max-w-7xl mx-auto flex flex-col relative z-10">
         
         {/* Core Tech Header */}
         <div className="w-full text-center flex flex-col items-center mb-16">
@@ -122,19 +121,19 @@ const Work = () => {
         {/* Highlights Row (Marquee) */}
         <div className="w-full overflow-hidden relative py-4 mb-24 max-w-7xl mx-auto">
            {/* Edge fade gradients for smooth entry and exit */}
-           <div className="absolute top-0 bottom-0 left-0 w-32 bg-gradient-to-r from-[#030610] to-transparent z-20 pointer-events-none" />
-           <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-[#030610] to-transparent z-20 pointer-events-none" />
+           <div className="absolute top-0 bottom-0 left-0 w-32 bg-gradient-to-r from-gray-50 dark:from-[#030610] to-transparent z-20 pointer-events-none" />
+           <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-gray-50 dark:from-[#030610] to-transparent z-20 pointer-events-none" />
            
            <div className="animate-marquee-left hover:animation-play-state-paused w-max flex items-center gap-6">
               {[...highlightsTech, ...highlightsTech, ...highlightsTech].map((item, idx) => (
                <div 
                  key={idx} 
-                 className="flex flex-col items-center justify-center py-4 px-2 w-[120px] bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-white/[0.07] hover:border-white/20 transition-all duration-300 hover:-translate-y-1 shadow-lg group/item cursor-default flex-shrink-0"
+                 className="flex flex-col items-center justify-center py-4 px-2 w-[120px] bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/5 rounded-2xl hover:bg-gray-50 dark:hover:bg-white/[0.07] hover:border-gray-300 dark:hover:border-white/20 transition-all duration-300 hover:-translate-y-1 shadow-sm dark:shadow-lg group/item cursor-default flex-shrink-0"
                >
-                 <div className="text-white/60 group-hover/item:text-cyan-400 transition-colors duration-300 mb-3">
+                 <div className="mb-3 transition-transform duration-300 group-hover/item:scale-110 drop-shadow-sm">
                    {item.icon}
                  </div>
-                 <span className="text-[12px] text-gray-400 font-semibold tracking-wider group-hover/item:text-white text-center">
+                 <span className="text-[12px] text-gray-600 dark:text-gray-400 font-semibold tracking-wider group-hover/item:text-gray-900 dark:group-hover/item:text-white text-center transition-colors">
                    {item.name}
                  </span>
                </div>

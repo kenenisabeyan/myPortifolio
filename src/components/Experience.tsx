@@ -102,7 +102,7 @@ const Experience = () => {
   return (
     <section id="experience" className="py-16 md:py-24 px-6 relative z-10 bg-gray-50 dark:bg-transparent">
       
-      <div className="max-w-4xl mx-auto flex flex-col items-center relative z-10">
+      <div className="max-w-7xl mx-auto flex flex-col items-center relative z-10">
         
         <div className="flex flex-col items-center text-center mb-16">
           <div className="flex items-center gap-3 bg-white dark:bg-blue-900/20 border border-gray-200 dark:border-blue-500/30 py-2.5 px-6 rounded-full mb-6 max-w-max shadow-sm dark:shadow-[0_0_20px_rgba(59,130,246,0.15)] dark:backdrop-blur-md">

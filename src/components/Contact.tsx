@@ -21,7 +21,7 @@ const Contact = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-blue-900/10 via-transparent to-transparent pointer-events-none hidden dark:block" />
       <div className="absolute top-1/2 right-1/4 w-[600px] h-[600px] bg-cyan-600/10 blur-[150px] rounded-full pointer-events-none hidden dark:block" />
 
-      <div className="max-w-4xl dark:max-w-7xl mx-auto flex flex-col justify-center relative z-10 transition-all duration-300">
+      <div className="max-w-7xl mx-auto flex flex-col justify-center relative z-10 transition-all duration-300">
         
         {/* Badge */}
         <div className="flex w-max mx-auto md:mx-0 items-center gap-3 px-5 py-2.5 rounded-full bg-gray-50 dark:bg-blue-900/20 border border-gray-200 dark:border-blue-500/30 mb-6 shadow-sm dark:shadow-[0_0_20px_rgba(59,130,246,0.15)] dark:backdrop-blur-md">

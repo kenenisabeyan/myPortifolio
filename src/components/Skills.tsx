@@ -17,7 +17,7 @@ const Skills = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-blue-900/10 via-transparent to-transparent pointer-events-none hidden dark:block" />
       <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-indigo-600/10 blur-[120px] rounded-full pointer-events-none hidden dark:block" />
       
-      <div className="max-w-4xl mx-auto flex flex-col relative z-10">
+      <div className="max-w-7xl mx-auto flex flex-col relative z-10">
         
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mt-12 mb-16 dark:mb-20">
@@ -32,7 +32,7 @@ const Skills = () => {
         </div>
 
         {/* Floating Skill Capsules */}
-        <div className="flex flex-wrap items-center justify-center gap-8 w-full max-w-4xl dark:max-w-6xl mx-auto transition-all duration-300">
+        <div className="flex flex-wrap items-center justify-center gap-8 w-full max-w-7xl mx-auto transition-all duration-300">
           {services.map((service, idx) => (
             <div 
               key={idx} 

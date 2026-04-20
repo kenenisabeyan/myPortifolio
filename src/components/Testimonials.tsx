@@ -38,10 +38,7 @@ const Testimonials = () => {
     <section id="testimonials" className="py-16 md:py-24 px-6 relative z-10 bg-gray-50 dark:bg-transparent dark:border-t dark:border-white/[0.05]">
       
       <div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 via-transparent to-transparent pointer-events-none hidden dark:block" />
-      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none hidden dark:block" />
-      <div className="max-w-4xl dark:max-w-7xl mx-auto flex flex-col items-center relative z-10 transition-all duration-300">
-        
-        {/* Badge */}
+      <div className="max-w-7xl mx-auto flex flex-col items-center relative z-10 transition-all duration-300">
         <div className="flex items-center gap-3 bg-white dark:bg-blue-900/20 border border-gray-200 dark:border-blue-500/30 py-2.5 px-6 rounded-full mb-6 w-max shadow-sm dark:shadow-[0_0_20px_rgba(59,130,246,0.15)] dark:backdrop-blur-md">
           <span className="text-gray-500 dark:text-cyan-400 animate-pulse">❖</span>
           <span className="text-sm text-gray-500 dark:text-cyan-50 font-semibold tracking-widest uppercase">Client Feedback Highlights</span>

@@ -29,7 +29,7 @@ const Overview = () => {
       {/* Subtle overlay gradients for contrast (Dark Mode Only) */}
       <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-cyan-600/10 blur-[130px] rounded-full pointer-events-none hidden dark:block" />
 
-      <div className="max-w-4xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Header container */}
         <div className="flex flex-col items-center justify-center text-center mb-24">
