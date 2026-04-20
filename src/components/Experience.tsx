@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 
 const experiences = [
   {
-    title: 'Full Stack Engineer',
+    title: 'Full Stack Software Engineer',
     company: 'edotplatform',
     period: 'October 2025 - Present',
     responsibilities: [
@@ -110,7 +110,7 @@ const Experience = () => {
             <span className="text-sm text-gray-500 font-semibold tracking-widest uppercase dark:text-cyan-50">Career Timeline</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
-            Professional History.
+            My Journey as a Full-Stack Software Engineer
           </h2>
         </div>
 

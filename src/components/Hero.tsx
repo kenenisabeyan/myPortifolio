@@ -17,25 +17,32 @@ const Hero = () => {
           
           {/* Role Badge / Subheading */}
           <div className="mb-6">
-            <span className="text-lg md:text-xl font-medium text-gray-600 dark:text-cyan-400">Full-Stack Engineer</span>
+            <span className="text-lg md:text-xl font-medium text-gray-600 dark:text-cyan-400"></span>
           </div>
 
           {/* Main Headline */}
           <h1 className="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white mb-6">
-             Turning Ideas Into <br className="hidden lg:block" />
+             From Concept to  <br className="hidden lg:block" />
              <span className="inline-block relative mt-2">
                <span className="absolute -inset-1 blur-xl bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 opacity-40 animate-pulse"></span>
                <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-400">
-                 Production-Ready
+                 Production
                </span>
              </span>
              <br className="hidden lg:block" />
-             Web Apps.
+             web apps
           </h1>
           
           {/* Subtle Bio Text */}
           <p className="text-base md:text-lg font-normal leading-relaxed text-gray-600 dark:text-gray-300 dark:md:text-blue-100/70 max-w-2xl mb-12">
-             Hi, I’m Kenenisa Beyan, a software developer focused on building scalable, high-performance digital solutions that deliver real-world results.
+             👋 Hello, I’m <br className="hidden lg:block" />
+             <span className="inline-block relative mt-2">
+               <span className="absolute -inset-1 blur-xl bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 opacity-40 animate-pulse"></span>
+               <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-400">
+                 Kenenisa Beyan,
+               </span>
+             </span>
+              a Full-Stack Software Engineer focused on building scalable, high-performance digital solutions that deliver real-world results.
           </p>
 
           {/* Action Buttons */}

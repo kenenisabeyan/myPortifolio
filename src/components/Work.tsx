@@ -40,13 +40,13 @@ const categoriesInfo = [
 ]
 
 const highlightsTech = [
-  { name: "React.js", icon: <SiReact size={28} color="#61DAFB" /> },
+  { name: "Python", icon: <SiPython size={46} className="text-[#3776AB]" /> },
+  { name: "Java", icon: <FaJava size={46} className="text-[#007396]" /> },
   { name: "Next.js", icon: <SiNextdotjs size={28} className="text-black dark:text-white" /> },
   { name: "Node.js", icon: <SiNodedotjs size={28} color="#339933" /> },
   { name: "Express", icon: <SiExpress size={28} className="text-black dark:text-white" /> },
   { name: "JavaScript", icon: <SiJavascript size={28} color="#F7DF1E" /> },
   { name: "TypeScript", icon: <SiTypescript size={28} color="#3178C6" /> },
-  { name: "Python", icon: <SiPython size={28} color="#3776AB" /> },
   { name: "Django", icon: <SiDjango size={28} color="#092E20" /> },
   { name: "HTML", icon: <SiHtml5 size={28} color="#E34F26" /> },
   { name: "CSS", icon: <SiCss size={28} color="#1572B6" /> },
@@ -65,44 +65,44 @@ const Work = () => {
       <div className="max-w-7xl mx-auto flex flex-col relative z-10">
         
         {/* Core Tech Header */}
-        <div className="w-full text-center flex flex-col items-center mb-16">
-          <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-gray-200 dark:border-cyan-500/20 mb-4 bg-gray-50 dark:bg-cyan-950/30 text-gray-500 dark:text-cyan-100 text-xs font-bold uppercase tracking-widest shadow-sm dark:shadow-[0_0_20px_rgba(34,211,238,0.15)] dark:backdrop-blur-md transition-colors hover:dark:bg-cyan-900/40">
+        <div className="w-full flex justify-center items-center gap-4 mb-16 flex-wrap">
+          <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-blue-200 dark:border-blue-500/30 bg-[#EAF7FD] dark:bg-blue-900/20 text-[#00A8E8] dark:text-cyan-300 text-xs font-bold uppercase tracking-widest shadow-sm">
             MY EXPERTISE
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white inline-block">
-            Technical Skills
+          <h2 className="text-3xl md:text-4xl font-bold border-b-[3px] border-[#7209B7] dark:border-purple-500 pb-1">
+             <span className="text-[#00B4D8] dark:text-cyan-400">Technical</span> <span className="text-[#7209B7] dark:text-purple-400">Skills</span>
           </h2>
         </div>
 
         {/* Core Tech Categorized Sections - Vertical Cards Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-24 w-full items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-24 w-full items-start">
           
           {categoriesInfo.map((cat, idx) => (
             <div 
               key={idx} 
-              className="group flex flex-col bg-gray-50 dark:bg-[#050A14]/80 rounded-2xl border border-gray-100 dark:border-white/[0.05] p-8 shadow-sm relative transform hover:-translate-y-2 hover:shadow-xl dark:hover:shadow-[0_0_30px_rgba(34,211,238,0.1)] transition-all duration-300 h-auto overflow-hidden dark:backdrop-blur-xl"
+              className="group flex flex-col bg-white dark:bg-[#050A14]/80 rounded-[1.5rem] border border-gray-100 dark:border-white/5 p-6 md:p-8 shadow-sm relative transition-all duration-300 h-auto overflow-hidden hover:shadow-lg dark:hover:shadow-[0_0_30px_rgba(34,211,238,0.1)] dark:backdrop-blur-xl"
             >
-              {/* Dark mode internal glow */}
-              <div className={`absolute top-0 right-0 w-32 h-32 ${cat.cornerColor} rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden dark:block`} />
+              {/* Corner Blob */}
+              <div className={`absolute top-[-30px] right-[-30px] w-28 h-28 ${cat.cornerColor} rounded-full opacity-50 dark:opacity-100`} />
 
               {/* Title & Icon Header */}
-              <div className="relative z-10 flex flex-col items-start mb-8">
-                <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 mb-4 text-gray-600 dark:text-cyan-400 transition-colors duration-300">
+              <div className="relative z-10 flex flex-col items-start mb-6 mt-2">
+                <div className={`w-14 h-14 flex items-center justify-center rounded-2xl bg-[#F6F8FA] dark:bg-white/5 mb-6 text-gray-800 dark:text-gray-200 shadow-sm transition-colors duration-300`}>
                   {cat.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                   {cat.name}
+                <h3 className="text-[20px] lg:text-[22px] font-bold text-gray-900 dark:text-white leading-snug">
+                   {cat.name.split(' ').map((w,i)=><React.Fragment key={i}>{w}<br/></React.Fragment>)}
                 </h3>
               </div>
 
               {/* List */}
               <div className="relative z-10 flex flex-col gap-4">
                 {categorizedTech[cat.id]?.map((item, i) => (
-                   <div key={i} className="flex items-center gap-4 group/item cursor-default">
-                     <div className="text-gray-400 dark:text-gray-500 dark:group-hover/item:text-cyan-400 transition-colors duration-300">
+                   <div key={i} className="flex items-center gap-4">
+                     <div className="w-[42px] h-[42px] shrink-0 rounded-[12px] border border-gray-100 dark:border-white/10 flex items-center justify-center bg-white dark:bg-black/20 shadow-sm transition-colors duration-300 text-gray-600 dark:text-gray-400">
                         {item.icon}
                      </div>
-                     <span className="text-sm md:text-base font-medium text-gray-700 dark:text-gray-300 dark:group-hover/item:text-white transition-colors duration-300">
+                     <span className="text-[15px] font-medium text-gray-700 dark:text-gray-300 transition-colors duration-300">
                         {item.name}
                      </span>
                    </div>
@@ -139,7 +139,7 @@ const Work = () => {
 
         {/* Let's Discuss Your Project Button */}
         <div className="w-full flex justify-center mb-24 relative z-10">
-           <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#1DA1F2] hover:bg-blue-500 dark:bg-gradient-to-r dark:from-[#1DA1F2] dark:to-blue-600 text-white font-bold tracking-wide rounded-xl transition-all duration-300 shadow-md dark:shadow-[0_0_20px_rgba(29,161,242,0.3)] transform hover:-translate-y-1 hover:shadow-lg dark:hover:shadow-[0_0_30px_rgba(29,161,242,0.5)]">
+           <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="inline-flex items-center justify-center gap-3 px-10 py-4 bg-gray-900 dark:bg-cyan-500 text-white dark:text-black border border-transparent dark:border-transparent rounded-xl font-bold dark:font-black text-sm uppercase tracking-widest hover:bg-gray-800 dark:hover:bg-[#030610] dark:hover:text-cyan-50 dark:hover:border-cyan-400/50 transition-colors shadow-md dark:shadow-[0_0_20px_rgba(34,211,238,0.4)] dark:hover:shadow-[0_0_30px_rgba(34,211,238,0.2)] hover:-translate-y-1">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
               Let's Discuss Your Project
            </button>
