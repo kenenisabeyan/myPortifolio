@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import homePageImg from '../assets/home-page.png'
+import { FaMapMarkerAlt, FaEnvelope, FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa'
+import { FiExternalLink } from 'react-icons/fi'
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' })
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -11,7 +12,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     alert('Message sent! (Demo)')
-    setFormData({ name: '', email: '', message: '' })
+    setFormData({ name: '', email: '', subject: '', message: '' })
   }
 
   return (
@@ -21,92 +22,145 @@ const Contact = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-blue-900/10 via-transparent to-transparent pointer-events-none hidden dark:block" />
       <div className="absolute top-1/2 right-1/4 w-[600px] h-[600px] bg-cyan-600/10 blur-[150px] rounded-full pointer-events-none hidden dark:block" />
 
-      <div className="max-w-7xl mx-auto flex flex-col justify-center relative z-10 transition-all duration-300">
+      <div className="max-w-7xl mx-auto flex flex-col items-center justify-center relative z-10 transition-all duration-300">
         
-        {/* Badge */}
-        <div className="flex w-max mx-auto md:mx-0 items-center gap-3 px-5 py-2.5 rounded-full bg-gray-50 dark:bg-blue-900/20 border border-gray-200 dark:border-blue-500/30 mb-6 shadow-sm dark:shadow-[0_0_20px_rgba(59,130,246,0.15)] dark:backdrop-blur-md">
-          <span className="text-gray-500 dark:text-cyan-400 animate-pulse">❖</span>
-          <span className="text-sm text-gray-500 dark:text-cyan-50 font-semibold tracking-widest uppercase">Contact Matrix</span>
-        </div>
-
-        <h2 className="text-3xl md:text-4xl dark:text-5xl dark:md:text-7xl font-bold dark:font-black text-center md:text-left text-gray-900 dark:text-white mb-16 tracking-tight dark:tracking-tighter dark:drop-shadow-xl w-full transition-all duration-300">
-          Initialize <span className="dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-cyan-400 dark:via-blue-500 dark:to-indigo-500">Connection.</span>
-        </h2>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
           
-          {/* Left Form Container */}
-          <div className="bg-gray-50 dark:bg-[#050A14]/80 rounded-3xl dark:rounded-[2.5rem] p-8 md:p-12 border border-gray-200 dark:border-white/[0.05] dark:hover:border-cyan-500/30 transition-all duration-300 dark:duration-500 relative group shadow-sm dark:shadow-2xl dark:backdrop-blur-xl transform hover:-translate-y-2 hover:shadow-2xl dark:hover:shadow-[0_0_40px_rgba(34,211,238,0.15)]">
+          {/* Left Container - Contact Info */}
+          <div className="lg:col-span-2 bg-gray-50 dark:bg-[#050A14]/80 rounded-3xl dark:rounded-[2.5rem] p-8 md:p-10 border border-gray-200 dark:border-white/[0.05] dark:hover:border-cyan-500/30 transition-all duration-300 dark:duration-500 flex flex-col gap-10 shadow-sm dark:shadow-2xl dark:backdrop-blur-xl group">
+            
+            {/* Location */}
+            <div className="flex items-start gap-5">
+              <div className="w-14 h-14 rounded-full bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center text-blue-500 dark:text-cyan-400 shrink-0">
+                <FaMapMarkerAlt size={24} />
+              </div>
+              <div className="flex flex-col justify-center h-14 w-full overflow-hidden">
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">Location</h3>
+                <p className="text-gray-600 dark:text-gray-400 text-base flex-1 overflow-hidden">Adama, Ethiopia</p>
+              </div>
+            </div>
+
+            {/* Email */}
+            <div className="flex items-start gap-5">
+              <div className="w-14 h-14 rounded-full bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center text-purple-500 dark:text-purple-400 shrink-0">
+                <FaEnvelope size={22} />
+              </div>
+              <div className="flex flex-col justify-center h-14 w-full overflow-hidden">
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">Email</h3>
+                <a href="mailto:kenenisab05@gmail.com" className="text-blue-600 dark:text-cyan-400 text-base hover:underline transition-all truncate block">
+                  kenenisab05@gmail.com
+                </a>
+              </div>
+            </div>
+
+            {/* Follow Me */}
+            <div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Follow Me</h3>
+              <div className="flex items-center gap-4">
+                <a href="#" className="w-12 h-12 rounded-full bg-white dark:bg-white/10 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-cyan-500 hover:text-gray-900 dark:hover:text-black transition-all duration-300 shadow-sm dark:shadow-none">
+                  <FaGithub size={20} />
+                </a>
+                <a href="#" className="w-12 h-12 rounded-full bg-white dark:bg-white/10 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-cyan-500 hover:text-gray-900 dark:hover:text-black transition-all duration-300 shadow-sm dark:shadow-none">
+                  <FaLinkedin size={20} />
+                </a>
+                <a href="#" className="w-12 h-12 rounded-full bg-white dark:bg-white/10 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-cyan-500 hover:text-gray-900 dark:hover:text-black transition-all duration-300 shadow-sm dark:shadow-none">
+                  <FaYoutube size={20} />
+                </a>
+              </div>
+            </div>
+
+            {/* Map container */}
+            <div className="mt-auto w-full h-[220px] rounded-2xl overflow-hidden relative group/map border border-gray-200 dark:border-white/10 shadow-sm">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126115.11524316931!2d39.188!3d8.54!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b1fe3dafd5785%3A0x6bba8479ba0a5eb5!2sAdama!5e0!3m2!1sen!2set!4v1714470830154!5m2!1sen!2set" 
+                width="100%" 
+                height="100%" 
+                style={{border:0}} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 w-full h-full opacity-80 group-hover/map:opacity-100 transition-opacity duration-300 dark:filter dark:grayscale dark:contrast-125 dark:opacity-70 dark:group-hover/map:opacity-90 z-0"
+              ></iframe>
+              <a href="https://maps.google.com/?q=Adama,Ethiopia" target="_blank" rel="noopener noreferrer" className="absolute top-4 left-4 z-10 bg-white/90 dark:bg-black/80 px-4 py-2 rounded-lg text-sm font-semibold text-blue-600 dark:text-cyan-400 flex items-center gap-2 shadow-lg hover:scale-105 transition-transform backdrop-blur-sm">
+                Open in Maps
+                <FiExternalLink />
+              </a>
+            </div>
+          </div>
+          
+          {/* Right Container - Form */}
+          <div className="lg:col-span-3 bg-gray-50 dark:bg-[#050A14]/80 rounded-3xl dark:rounded-[2.5rem] p-8 md:p-12 border border-gray-200 dark:border-white/[0.05] dark:hover:border-cyan-500/30 transition-all duration-300 dark:duration-500 relative group shadow-sm dark:shadow-2xl dark:backdrop-blur-xl transform hover:-translate-y-2 hover:shadow-2xl dark:hover:shadow-[0_0_40px_rgba(34,211,238,0.15)]">
             {/* Corner glowing accent */}
             <div className="absolute top-0 right-0 w-40 h-40 bg-blue-500/20 rounded-full blur-[80px] opacity-50 group-hover:opacity-100 group-hover:bg-cyan-500/20 transition-all duration-700 pointer-events-none hidden dark:block" />
             
+            <div className="mb-10 text-center md:text-left relative z-10">
+               <h2 className="text-3xl md:text-5xl font-bold dark:font-black text-gray-900 dark:text-white mb-4">Contact <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-cyan-400 dark:to-blue-500">Me</span></h2>
+               <p className="text-gray-600 dark:text-gray-400 text-base md:text-lg">Have a project in mind or want to discuss a collaboration? Feel free to reach out.</p>
+            </div>
+            
             <form onSubmit={handleSubmit} className="flex flex-col gap-6 relative z-10">
               
-              <div className="flex flex-col gap-2">
-                <label className="text-sm font-medium dark:font-semibold text-gray-600 dark:text-cyan-100 ml-1 dark:tracking-wider dark:uppercase">Vessel ID (Name)</label>
-                <input 
-                  type="text" 
-                  name="name" 
-                  value={formData.name} 
-                  onChange={handleChange}
-                  placeholder="Enter your name" 
-                  required
-                  className="w-full px-5 py-4 bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/[0.05] text-base font-normal text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-300 dark:focus:ring-cyan-500/50 transition-all shadow-sm dark:shadow-inner dark:backdrop-blur-md" 
-                />
+              <div className="flex flex-col md:flex-row gap-6">
+                <div className="flex flex-col gap-2 flex-1">
+                  <label className="text-sm font-medium dark:font-semibold text-gray-600 dark:text-gray-300 ml-1">Name</label>
+                  <input 
+                    type="text" 
+                    name="name" 
+                    value={formData.name} 
+                    onChange={handleChange}
+                    placeholder="Your name" 
+                    required
+                    className="w-full px-5 py-4 bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/[0.05] text-base font-normal text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 dark:focus:ring-cyan-500/50 transition-all shadow-sm dark:shadow-inner dark:backdrop-blur-md" 
+                  />
+                </div>
+
+                <div className="flex flex-col gap-2 flex-1">
+                  <label className="text-sm font-medium dark:font-semibold text-gray-600 dark:text-gray-300 ml-1">Email</label>
+                  <input 
+                    type="email" 
+                    name="email" 
+                    value={formData.email} 
+                    onChange={handleChange}
+                    placeholder="Your email" 
+                    required
+                    className="w-full px-5 py-4 bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/[0.05] text-base font-normal text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 dark:focus:ring-cyan-500/50 transition-all shadow-sm dark:shadow-inner dark:backdrop-blur-md" 
+                  />
+                </div>
               </div>
 
-              <div className="flex flex-col gap-2">
-                <label className="text-sm font-medium dark:font-semibold text-gray-600 dark:text-cyan-100 ml-1 dark:tracking-wider dark:uppercase">Commlink (Email)</label>
+              <div className="flex flex-col gap-2 relative">
+                <label className="text-sm font-medium dark:font-semibold text-gray-600 dark:text-gray-300 ml-1">Subject</label>
                 <input 
-                  type="email" 
-                  name="email" 
-                  value={formData.email} 
+                  type="text" 
+                  name="subject" 
+                  value={formData.subject} 
                   onChange={handleChange}
-                  placeholder="Enter your email address" 
+                  placeholder="Subject" 
                   required
-                  className="w-full px-5 py-4 bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/[0.05] text-base font-normal text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-300 dark:focus:ring-cyan-500/50 transition-all shadow-sm dark:shadow-inner dark:backdrop-blur-md" 
+                  className="w-full px-5 py-4 bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/[0.05] text-base font-normal text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 dark:focus:ring-cyan-500/50 transition-all shadow-sm dark:shadow-inner dark:backdrop-blur-md" 
                 />
               </div>
 
               <div className="flex flex-col gap-2 relative">
-                <label className="text-sm font-medium dark:font-semibold text-gray-600 dark:text-cyan-100 ml-1 dark:tracking-wider dark:uppercase">Payload (Message)</label>
+                <label className="text-sm font-medium dark:font-semibold text-gray-600 dark:text-gray-300 ml-1">Message</label>
                 <textarea 
                   name="message" 
                   rows={6} 
                   value={formData.message} 
                   onChange={handleChange}
-                  placeholder="Transmit your message here..." 
+                  placeholder="Your message" 
                   required
-                  className="w-full px-5 py-4 bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/[0.05] text-base font-normal text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-300 dark:focus:ring-cyan-500/50 transition-all resize-none shadow-sm dark:shadow-inner dark:backdrop-blur-md"
+                  className="w-full px-5 py-4 bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/[0.05] text-base font-normal text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 dark:focus:ring-cyan-500/50 transition-all resize-none shadow-sm dark:shadow-inner dark:backdrop-blur-md"
                 ></textarea>
-                <p className="text-xs text-gray-400 dark:text-gray-500 ml-1 mt-1">Please include project details if applicable.</p>
               </div>
 
               <button 
                 type="submit" 
-                className="w-full mt-6 py-4 bg-gray-900 hover:bg-gray-800 dark:bg-cyan-500 dark:hover:bg-cyan-400 text-white dark:text-black text-base font-semibold dark:font-black tracking-wide dark:tracking-widest dark:uppercase rounded-xl shadow-md transition-all duration-300 dark:shadow-[0_0_20px_rgba(34,211,238,0.4)] dark:hover:shadow-[0_0_40px_rgba(34,211,238,0.6)] dark:hover:-translate-y-1"
+                className="w-full md:w-max px-10 mt-2 py-4 bg-blue-600 hover:bg-blue-700 dark:bg-gradient-to-r dark:from-blue-600 dark:to-purple-600 text-white text-base font-semibold rounded-xl shadow-md transition-all duration-300 dark:shadow-[0_0_20px_rgba(147,51,234,0.4)] dark:hover:shadow-[0_0_30px_rgba(147,51,234,0.6)] hover:-translate-y-1"
               >
-                Transmit Signal
+                Send Message
               </button>
 
             </form>
-          </div>
-
-          {/* Right Graphic Container */}
-          <div className="bg-gray-100 dark:bg-gradient-to-br dark:from-[#050A14] dark:to-blue-900/20 rounded-3xl dark:rounded-[2.5rem] min-h-[500px] flex justify-center items-center relative overflow-hidden border border-gray-200 dark:border-white/[0.05] group shadow-sm dark:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl dark:hover:shadow-[0_0_40px_rgba(34,211,238,0.15)]">
-            {/* Animated glowing backdrops */}
-            <div className="absolute inset-0 bg-cyan-500/10 blur-[120px] scale-150 transform opacity-30 group-hover:opacity-70 transition-opacity duration-700 pointer-events-none hidden dark:block" />
-            
-            <div className="absolute inset-0 z-10 w-full h-full overflow-hidden">
-               {/* Vignette overly to blend the image into the sci-fi theme */}
-               <div className="absolute inset-0 bg-blue-900/20 mix-blend-overlay z-20 pointer-events-none group-hover:bg-transparent transition-colors duration-700 hidden dark:block"></div>
-               <img 
-                 src={homePageImg} 
-                 alt="Interactive Showcase" 
-                 className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-[1.03] dark:group-hover:scale-110"
-               />
-            </div>
-            
           </div>
         </div>
         

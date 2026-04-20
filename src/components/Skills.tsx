@@ -11,7 +11,7 @@ const services = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-16 md:py-24 px-6 relative z-10 bg-white dark:bg-[#030610] dark:border-t dark:border-white/[0.05]">
+    <section id="skills" className="py-16 md:py-24 px-6 relative z-10 bg-white dark:bg-transparent dark:border-t dark:border-white/[0.05]">
       
       {/* Deep space ambient glow map */}
       <div className="absolute inset-0 bg-gradient-to-t from-blue-900/10 via-transparent to-transparent pointer-events-none hidden dark:block" />

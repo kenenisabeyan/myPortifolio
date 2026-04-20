@@ -1,5 +1,6 @@
 import React from 'react'
 import { HiOutlineLightBulb, HiOutlineUsers, HiOutlineSparkles } from 'react-icons/hi'
+import homePageImg from '../assets/home-page.png'
 
 const stats = [
   {
@@ -31,23 +32,47 @@ const Overview = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         
-        {/* Header container */}
-        <div className="flex flex-col items-center justify-center text-center mb-24">
-          <div className="flex items-center gap-3 bg-gray-200 dark:bg-cyan-950/30 py-2.5 px-6 rounded-full mb-8 dark:border dark:border-cyan-500/20 dark:shadow-[0_0_25px_rgba(34,211,238,0.15)] dark:backdrop-blur-md transition-colors hover:dark:bg-cyan-900/40">
-            <span className="text-gray-500 dark:text-cyan-400 animate-pulse">❖</span>
-            <span className="text-lg font-medium text-gray-500 uppercase dark:text-cyan-100 dark:tracking-widest">About Me</span>
+        {/* Top Split Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20 lg:mb-24">
+          
+          {/* Left: Text Content */}
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
+            <div className="flex items-center gap-3 bg-gray-200 dark:bg-cyan-950/30 py-2.5 px-6 rounded-full mb-8 dark:border dark:border-cyan-500/20 dark:shadow-[0_0_25px_rgba(34,211,238,0.15)] dark:backdrop-blur-md transition-colors hover:dark:bg-cyan-900/40">
+              <span className="text-gray-500 dark:text-cyan-400 animate-pulse">❖</span>
+              <span className="text-lg font-medium text-gray-500 uppercase dark:text-cyan-100 dark:tracking-widest">About Me</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 dark:drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+              Who I <span className="dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-cyan-300 dark:via-blue-400 dark:to-indigo-400">Am.</span>
+            </h2>
+            <div className="text-base md:text-lg font-normal leading-relaxed text-gray-600 dark:text-gray-300 space-y-6">
+              <p>
+                I engineer robust, end-to-end web applications that bridge the gap between complex business requirements and seamless user experiences. With a foundation in Computer Science and Engineering and a dual focus on Management, I bring a unique perspective that combines technical precision with business logic.
+              </p>
+              <p>
+                My journey is defined by building production-ready solutions—from education ecosystems to automated performance management systems. I don't just write code; I design scalable workflows that optimize productivity. Currently, I am evolving my vision through my company, EDOT, where I focus on developing digital learning resources that empower users.
+              </p>
+              <p>I am a perpetual learner, actively architecting systems that are secure, responsive, and performance-optimized. I thrive in environments that challenge me to solve real-world problems through clean code and innovative system design.</p>
+        
+
+            </div>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 dark:drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
-            Who I <span className="dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-cyan-300 dark:via-blue-400 dark:to-indigo-400">Am.</span>
-          </h2>
-          <div className="mx-auto max-w-2xl text-base md:text-lg font-normal leading-relaxed text-gray-600 dark:text-gray-300 space-y-6">
-            <p>
-              I am a Computer Science and Engineering student at ASTU focused on full-stack development. I build scalable web applications with modern technologies, turning ideas into real, user-focused systems.
-            </p>
-            <p>
-              Through projects like the EDOT Platform, CRM dashboards, and performance evaluation systems, I’ve gained hands-on experience in system design, backend development, and responsive UI. I continuously improve by building real-world solutions and solving practical problems.
-            </p>
+
+          {/* Right: Graphic */}
+          <div className="bg-gray-100 dark:bg-gradient-to-br dark:from-[#050A14] dark:to-blue-900/20 rounded-3xl dark:rounded-[2.5rem] min-h-[400px] flex justify-center items-center relative overflow-hidden border border-gray-200 dark:border-white/[0.05] group shadow-sm dark:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl dark:hover:shadow-[0_0_40px_rgba(34,211,238,0.15)] w-full">
+            {/* Animated glowing backdrops */}
+            <div className="absolute inset-0 bg-cyan-500/10 blur-[120px] scale-150 transform opacity-30 group-hover:opacity-70 transition-opacity duration-700 pointer-events-none hidden dark:block" />
+            
+            <div className="absolute inset-0 z-10 w-full h-full overflow-hidden">
+               {/* Vignette overly to blend the image into the sci-fi theme */}
+               <div className="absolute inset-0 bg-blue-900/20 mix-blend-overlay z-20 pointer-events-none group-hover:bg-transparent transition-colors duration-700 hidden dark:block"></div>
+               <img 
+                 src={homePageImg} 
+                 alt="About Me Graphic" 
+                 className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-[1.03] dark:group-hover:scale-110"
+               />
+            </div>
           </div>
+
         </div>
 
         {/* Feature Grid */}
