@@ -1,5 +1,5 @@
 import React from 'react'
-import { SiReact, SiPython, SiNodedotjs, SiTailwindcss, SiMongodb, SiTypescript, SiJavascript, SiHtml5, SiCss, SiDocker, SiNextdotjs, SiExpress, SiDjango, SiMysql, SiPostgresql, SiCplusplus, SiGit, SiGithub, SiFastapi, SiTensorflow, SiPytorch, SiKeras, SiScikitlearn, SiSelenium, SiBootstrap } from 'react-icons/si'
+import { SiReact, SiPython, SiNodedotjs, SiTailwindcss, SiMongodb, SiTypescript, SiJavascript, SiHtml5, SiCss, SiDocker, SiNextdotjs, SiExpress, SiDjango, SiMysql, SiPostgresql, SiCplusplus, SiGit, SiGithub, SiFastapi, SiTensorflow, SiPytorch, SiKeras, SiScikitlearn, SiSelenium, SiBootstrap, SiFramer } from 'react-icons/si'
 import { FaJava, FaServer, FaDatabase, FaTools, FaLayerGroup, FaAws, FaBrain, FaRobot, FaSyncAlt, FaMicrochip, FaNetworkWired } from 'react-icons/fa'
 import { projects } from '../data/data'
 
@@ -20,13 +20,15 @@ const categorizedTech = {
   Databases: [
     { name: "PostgreSQL", icon: <SiPostgresql size={20} /> },
     { name: "MongoDB", icon: <SiMongodb size={20} /> },
+    { name: "MySQL", icon: <SiMysql size={20} /> },
     { name: "AWS", icon: <FaAws size={20} /> },
   ],
   DevTools: [
+    { name: "Git", icon: <SiGit size={20} /> },
+    { name: "REST APIs", icon: <FaNetworkWired size={20} /> },
+    { name: "NextAuth", icon: <SiNextdotjs size={20} /> },
+    { name: "Framer Motion", icon: <SiFramer size={20} /> },
     { name: "Docker", icon: <SiDocker size={20} /> },
-    { name: "CI/CD Pipelines", icon: <FaSyncAlt size={20} /> },
-    { name: "Automation", icon: <FaRobot size={20} /> },
-    { name: "Web-Scraping", icon: <SiSelenium size={20} /> },
   ],
 }
 
@@ -34,7 +36,7 @@ const categoriesInfo = [
   { name: "Frontend Development", id: "Frontend", icon: <FaLayerGroup size={22} />, cornerColor: "bg-blue-500/20" },
   { name: "Backend Development", id: "Backend", icon: <FaServer size={22} />, cornerColor: "bg-purple-500/20" },
   { name: "Database & Cloud", id: "Databases", icon: <FaDatabase size={22} />, cornerColor: "bg-teal-500/20" },
-  { name: "DevOps & Automation", id: "DevTools", icon: <FaTools size={22} />, cornerColor: "bg-orange-500/20" },
+  { name: "🛠 Tools & DevOps", id: "DevTools", icon: <FaTools size={22} />, cornerColor: "bg-orange-500/20" },
 ]
 
 const highlightsTech = [
@@ -200,7 +202,7 @@ const Work = () => {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-3 text-cyan-400 font-bold uppercase tracking-widest hover:text-white transition-colors duration-300 w-max group/btn"
                   >
-                    <span>Deploy Link</span>
+                    <span> See Details on my Github</span>
                     <span className="w-10 h-10 rounded-full border border-cyan-400/30 flex items-center justify-center group-hover/btn:bg-cyan-500 group-hover/btn:border-cyan-500 group-hover/btn:shadow-[0_0_20px_rgba(34,211,238,0.5)] transition-all duration-300">
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

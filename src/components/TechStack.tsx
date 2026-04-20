@@ -18,7 +18,7 @@ const rowOne = [
 ]
 
 const rowTwo = [
-  { name: 'JavaScript', icon: <SiJavascript className={`group-hover:text-[#F7DF1E] ${iconClass}`} size={38} /> },
+  { name: 'JavaScript(ES6+)', icon: <SiJavascript className={`group-hover:text-[#F7DF1E] ${iconClass}`} size={38} /> },
   { name: 'TypeScript', icon: <SiTypescript className={`group-hover:text-[#3178C6] ${iconClass}`} size={38} /> },
   { name: 'HTML5', icon: <SiHtml5 className={`group-hover:text-[#E34F26] ${iconClass}`} size={38} /> },
   { name: 'CSS3', icon: <SiCss className={`group-hover:text-[#1572B6] ${iconClass}`} size={38} /> },

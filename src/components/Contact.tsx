@@ -93,7 +93,7 @@ const Contact = () => {
             <div className="absolute top-0 right-0 w-40 h-40 bg-blue-500/20 rounded-full blur-[80px] opacity-50 group-hover:opacity-100 group-hover:bg-cyan-500/20 transition-all duration-700 pointer-events-none hidden dark:block" />
             
             <div className="mb-10 text-center md:text-left relative z-10">
-               <h2 className="text-3xl md:text-5xl font-bold dark:font-black text-gray-900 dark:text-white mb-4">Contact <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-cyan-400 dark:to-blue-500">Me</span></h2>
+               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white inline-block mb-4">Contact <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-cyan-400 dark:to-blue-500">Me</span></h2>
                <p className="text-gray-600 dark:text-gray-400 text-base md:text-lg">Have a project in mind or want to discuss a collaboration? Feel free to reach out.</p>
             </div>
             
