@@ -67,8 +67,8 @@ const Education = () => {
       <div className="max-w-6xl mx-auto flex flex-col items-center relative z-10">
         
         <div className="flex flex-col items-center text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold border-b-4 border-indigo-500 dark:border-purple-500 pb-2 inline-block">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Education</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight border-b-4 border-cyan-500/30 pb-3 inline-block mb-6">
+            <span className="text-cyan-400">Education</span>
           </h2>
         </div>
 

@@ -2,35 +2,36 @@ import React, { useState, useEffect } from 'react'
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa'
 
 const ScrollArrow = () => {
-  const [showUp, setShowUp] = useState(false)
-  const [showDown, setShowDown] = useState(true)
+  const [direction, setDirection] = useState<'up' | 'down'>('down')
 
   useEffect(() => {
     const handleScroll = () => {
-      const heroHeight = document.getElementById('hero')?.offsetHeight || 0
-      setShowDown(window.scrollY < heroHeight - 100)
-      setShowUp(window.scrollY > 300)
+      if (window.scrollY > 300) {
+        setDirection('up')
+      } else {
+        setDirection('down')
+      }
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
-  const scrollToWork = () => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })
+  const handleClick = () => {
+    if (direction === 'up') {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    } else {
+      document.getElementById('overview')?.scrollIntoView({ behavior: 'smooth' }) || document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
-    <>
-      {showDown && (
-        <button onClick={scrollToWork} className="fixed bottom-8 right-8 z-40 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg animate-bounce">
-          <FaArrowDown size={20} />
-        </button>
-      )}
-      {showUp && (
-        <button onClick={scrollToTop} className="fixed bottom-8 right-8 z-40 bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg">
-          <FaArrowUp size={20} />
-        </button>
-      )}
-    </>
+    <button 
+      onClick={handleClick} 
+      className={`fixed bottom-6 right-6 sm:bottom-10 sm:right-10 z-[100] ${direction === 'down' ? 'bg-cyan-500/20 text-cyan-400 animate-bounce' : 'bg-[#030610]/80 text-cyan-400'} p-3.5 sm:p-4 rounded-full shadow-[0_0_20px_rgba(34,211,238,0.3)] border border-cyan-500/30 hover:bg-cyan-500 hover:text-black transition-all duration-300 backdrop-blur-md dark:shadow-[0_0_25px_rgba(34,211,238,0.4)]`}
+      aria-label={direction === 'up' ? "Scroll to Top" : "Scroll to Content"}
+    >
+      {direction === 'up' ? <FaArrowUp size={22} /> : <FaArrowDown size={22} />}
+    </button>
   )
 }
 

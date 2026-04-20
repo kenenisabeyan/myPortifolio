@@ -1,18 +1,44 @@
 import React, { useState } from 'react'
-import { FaMapMarkerAlt, FaEnvelope, FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa'
+import { FaMapMarkerAlt, FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { FiExternalLink } from 'react-icons/fi'
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' })
+  const [status, setStatus] = useState('idle') // idle, sending, success, error
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    alert('Message sent! (Demo)')
-    setFormData({ name: '', email: '', subject: '', message: '' })
+    setStatus('sending')
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/kenenisab05@gmail.com", {
+        method: "POST",
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        })
+      })
+
+      if (response.ok) {
+        setStatus('success')
+        setFormData({ name: '', email: '', subject: '', message: '' })
+        setTimeout(() => setStatus('idle'), 5000)
+      } else {
+        setStatus('error')
+      }
+    } catch (error) {
+      setStatus('error')
+    }
   }
 
   return (
@@ -54,17 +80,17 @@ const Contact = () => {
             </div>
 
             {/* Follow Me */}
-            <div>
+            <div className="relative z-50 pointer-events-auto">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Follow Me</h3>
               <div className="flex items-center gap-4">
-                <a href="#" className="w-12 h-12 rounded-full bg-white dark:bg-white/10 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-cyan-500 hover:text-gray-900 dark:hover:text-black transition-all duration-300 shadow-sm dark:shadow-none">
-                  <FaGithub size={20} />
+                <a href="https://github.com/kenenisabeyan" target="_blank" rel="noopener noreferrer" className="relative z-50 w-12 h-12 rounded-xl bg-white dark:bg-[#1a1f2e] flex items-center justify-center hover:scale-110 transition-transform duration-300 shadow-sm dark:shadow-md border border-gray-100 dark:border-gray-800">
+                  <FaGithub size={24} className="text-[#181717] dark:text-white" />
                 </a>
-                <a href="#" className="w-12 h-12 rounded-full bg-white dark:bg-white/10 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-cyan-500 hover:text-gray-900 dark:hover:text-black transition-all duration-300 shadow-sm dark:shadow-none">
-                  <FaLinkedin size={20} />
+                <a href="https://www.linkedin.com/in/kenenisa/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BIRSH8H%2FpRiWfMypD2meSJA%3D%3D" target="_blank" rel="noopener noreferrer" className="relative z-50 w-12 h-12 rounded-xl bg-white dark:bg-[#1a1f2e] flex items-center justify-center hover:scale-110 transition-transform duration-300 shadow-sm dark:shadow-md border border-gray-100 dark:border-gray-800">
+                  <FaLinkedin size={24} className="text-[#0A66C2]" />
                 </a>
-                <a href="#" className="w-12 h-12 rounded-full bg-white dark:bg-white/10 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-cyan-500 hover:text-gray-900 dark:hover:text-black transition-all duration-300 shadow-sm dark:shadow-none">
-                  <FaYoutube size={20} />
+                <a href="https://twitter.com/kenenisa94931" target="_blank" rel="noopener noreferrer" className="relative z-50 w-12 h-12 rounded-xl bg-white dark:bg-[#1a1f2e] flex items-center justify-center hover:scale-110 transition-transform duration-300 shadow-sm dark:shadow-md border border-gray-100 dark:border-gray-800">
+                  <FaTwitter size={24} className="text-[#1DA1F2]" />
                 </a>
               </div>
             </div>
@@ -93,7 +119,7 @@ const Contact = () => {
             <div className="absolute top-0 right-0 w-40 h-40 bg-blue-500/20 rounded-full blur-[80px] opacity-50 group-hover:opacity-100 group-hover:bg-cyan-500/20 transition-all duration-700 pointer-events-none hidden dark:block" />
             
             <div className="mb-10 text-center md:text-left relative z-10">
-               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white inline-block mb-4">Contact <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-cyan-400 dark:to-blue-500">Me</span></h2>
+               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight border-b-4 border-cyan-500/30 pb-3 inline-block mb-6">Contact <span className="text-cyan-400">Me</span></h2>
                <p className="text-gray-600 dark:text-gray-400 text-base md:text-lg">Have a project in mind or want to discuss a collaboration? Feel free to reach out.</p>
             </div>
             
@@ -155,10 +181,18 @@ const Contact = () => {
 
               <button 
                 type="submit" 
-                className="w-full md:w-max px-10 mt-2 py-4 bg-gray-900 dark:bg-cyan-500 text-white dark:text-black border border-transparent dark:border-transparent rounded-xl font-bold dark:font-black text-sm uppercase tracking-widest hover:bg-gray-800 dark:hover:bg-[#030610] dark:hover:text-cyan-50 dark:hover:border-cyan-400/50 transition-colors shadow-md dark:shadow-[0_0_20px_rgba(34,211,238,0.4)] dark:hover:shadow-[0_0_30px_rgba(34,211,238,0.2)] hover:-translate-y-1"
+                disabled={status === 'sending' || status === 'success'}
+                className="w-full md:w-max px-10 mt-2 py-4 bg-gray-900 dark:bg-cyan-500 text-white dark:text-black border border-transparent dark:border-transparent rounded-xl font-bold dark:font-black text-sm uppercase tracking-widest hover:bg-gray-800 dark:hover:bg-[#030610] dark:hover:text-cyan-50 dark:hover:border-cyan-400/50 transition-colors shadow-md dark:shadow-[0_0_20px_rgba(34,211,238,0.4)] dark:hover:shadow-[0_0_30px_rgba(34,211,238,0.2)] hover:-translate-y-1 disabled:opacity-70 disabled:hover:translate-y-0"
               >
-                Send Message
+                {status === 'sending' ? 'Sending...' : status === 'success' ? 'Message Sent!' : 'Send Message'}
               </button>
+              
+              {status === 'error' && (
+                <p className="text-red-500 text-sm mt-2">Failed to send message. Please try emailing directly!</p>
+              )}
+              {status === 'success' && (
+                <p className="text-cyan-400 text-sm mt-2">Thanks for reaching out! Your message was sent properly.</p>
+              )}
 
             </form>
           </div>

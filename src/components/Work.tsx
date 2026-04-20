@@ -1,34 +1,34 @@
 import React from 'react'
-import { SiReact, SiPython, SiNodedotjs, SiTailwindcss, SiMongodb, SiTypescript, SiJavascript, SiHtml5, SiCss, SiDocker, SiNextdotjs, SiExpress, SiDjango, SiMysql, SiPostgresql, SiCplusplus, SiGit, SiGithub, SiFastapi, SiTensorflow, SiPytorch, SiKeras, SiScikitlearn, SiSelenium, SiBootstrap, SiFramer } from 'react-icons/si'
-import { FaJava, FaServer, FaDatabase, FaTools, FaLayerGroup, FaAws, FaBrain, FaRobot, FaSyncAlt, FaMicrochip, FaNetworkWired } from 'react-icons/fa'
+import { SiReact, SiPython, SiNodedotjs, SiTailwindcss, SiMongodb, SiTypescript, SiJavascript, SiHtml5, SiCss, SiDocker, SiNextdotjs, SiExpress, SiDjango, SiMysql, SiPostgresql, SiCplusplus, SiGit, SiGithub, SiFastapi, SiTensorflow, SiPytorch, SiKeras, SiScikitlearn, SiSelenium, SiBootstrap, SiFramer, SiThreedotjs } from 'react-icons/si'
+import { FaJava, FaServer, FaDatabase, FaTools, FaLayerGroup, FaAws, FaBrain, FaRobot, FaSyncAlt, FaMicrochip, FaNetworkWired, FaSitemap } from 'react-icons/fa'
 import { projects } from '../data/data'
 
 const categorizedTech = {
   Frontend: [
-    { name: "Next.js", icon: <SiNextdotjs size={20} /> },
-    { name: "React.js", icon: <SiReact size={20} /> },
-    { name: "JavaScript", icon: <SiJavascript size={20} /> },
-    { name: "TypeScript", icon: <SiTypescript size={20} /> },
-    { name: "Tailwind CSS", icon: <SiTailwindcss size={20} /> },
+    { name: "Next.js", icon: <SiNextdotjs size={20} className="text-black dark:text-white" /> },
+    { name: "React.js", icon: <SiReact size={20} className="text-[#61DAFB]" /> },
+    { name: "JavaScript", icon: <SiJavascript size={20} className="text-[#F7DF1E]" /> },
+    { name: "TypeScript", icon: <SiTypescript size={20} className="text-[#3178C6]" /> },
+    { name: "Tailwind CSS", icon: <SiTailwindcss size={20} className="text-[#38B2AC]" /> },
   ],
   Backend: [
-    { name: "Node.js", icon: <SiNodedotjs size={20} /> },
-    { name: "Express", icon: <SiExpress size={20} /> },
-    { name: "Django", icon: <SiDjango size={20} /> },
-    { name: "Python", icon: <SiPython size={20} /> },
+    { name: "Node.js", icon: <SiNodedotjs size={20} className="text-[#339933]" /> },
+    { name: "Express", icon: <SiExpress size={20} className="text-black dark:text-white" /> },
+    { name: "Django", icon: <SiDjango size={20} className="text-[#092E20] dark:text-[#44B78B]" /> },
+    { name: "Python", icon: <SiPython size={20} className="text-[#3776AB]" /> },
   ],
   Databases: [
-    { name: "PostgreSQL", icon: <SiPostgresql size={20} /> },
-    { name: "MongoDB", icon: <SiMongodb size={20} /> },
-    { name: "MySQL", icon: <SiMysql size={20} /> },
-    { name: "AWS", icon: <FaAws size={20} /> },
+    { name: "PostgreSQL", icon: <SiPostgresql size={20} className="text-[#4169E1]" /> },
+    { name: "MongoDB", icon: <SiMongodb size={20} className="text-[#47A248]" /> },
+    { name: "MySQL", icon: <SiMysql size={20} className="text-[#4479A1]" /> },
+    { name: "AWS", icon: <FaAws size={20} className="text-[#FF9900]" /> },
   ],
   DevTools: [
-    { name: "Git", icon: <SiGit size={20} /> },
-    { name: "REST APIs", icon: <FaNetworkWired size={20} /> },
-    { name: "NextAuth", icon: <SiNextdotjs size={20} /> },
-    { name: "Framer Motion", icon: <SiFramer size={20} /> },
-    { name: "Docker", icon: <SiDocker size={20} /> },
+    { name: "Git", icon: <SiGit size={20} className="text-[#F05032]" /> },
+    { name: "REST APIs", icon: <FaNetworkWired size={20} className="text-gray-500" /> },
+    { name: "NextAuth", icon: <SiNextdotjs size={20} className="text-black dark:text-white" /> },
+    { name: "Framer Motion", icon: <SiFramer size={20} className="text-[#0055FF]" /> },
+    { name: "Docker", icon: <SiDocker size={20} className="text-[#2496ED]" /> },
   ],
 }
 
@@ -56,11 +56,17 @@ const highlightsTech = [
   { name: "MySQL", icon: <SiMysql size={28} color="#4479A1" /> },
   { name: "GIT", icon: <SiGit size={28} color="#F05032" /> },
   { name: "GITHUB", icon: <SiGithub size={28} className="text-black dark:text-white" /> },
+  { name: "React", icon: <SiReact size={32} color="#61DAFB" /> },
+  { name: "Tailwind CSS", icon: <SiTailwindcss size={32} color="#38B2AC" /> },
+  { name: "Three.js", icon: <SiThreedotjs size={32} className="text-black dark:text-white" /> },
+  { name: "Algorithms", icon: <FaSitemap size={32} color="#44B78B" /> },
+  { name: "Data Structures", icon: <FaLayerGroup size={32} color="#F05032" /> },
+  { name: "C++", icon: <SiCplusplus size={32} color="#00599C" /> },
 ]
 
 const Work = () => {
   return (
-    <section id="work" className="py-16 md:py-24 px-6 relative z-10 bg-white dark:bg-transparent">
+    <section id="skills" className="py-16 md:py-24 px-6 relative z-10 bg-white dark:bg-transparent">
       
       <div className="max-w-7xl mx-auto flex flex-col relative z-10">
         
@@ -69,18 +75,18 @@ const Work = () => {
           <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-blue-200 dark:border-blue-500/30 bg-[#EAF7FD] dark:bg-blue-900/20 text-[#00A8E8] dark:text-cyan-300 text-xs font-bold uppercase tracking-widest shadow-sm">
             MY EXPERTISE
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold border-b-[3px] border-[#7209B7] dark:border-purple-500 pb-1">
-             <span className="text-[#00B4D8] dark:text-cyan-400">Technical</span> <span className="text-[#7209B7] dark:text-purple-400">Skills</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight border-b-4 border-cyan-500/30 pb-3 inline-block mb-4">
+             <span className="text-cyan-400">Technical</span> Skills
           </h2>
         </div>
 
         {/* Core Tech Categorized Sections - Vertical Cards Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-24 w-full items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-24 w-full items-stretch">
           
           {categoriesInfo.map((cat, idx) => (
             <div 
               key={idx} 
-              className="group flex flex-col bg-white dark:bg-[#050A14]/80 rounded-[1.5rem] border border-gray-100 dark:border-white/5 p-6 md:p-8 shadow-sm relative transition-all duration-300 h-auto overflow-hidden hover:shadow-lg dark:hover:shadow-[0_0_30px_rgba(34,211,238,0.1)] dark:backdrop-blur-xl"
+              className="group flex flex-col bg-white dark:bg-[#050A14]/80 rounded-[1.5rem] border border-gray-100 dark:border-white/5 p-6 md:p-8 shadow-sm relative transition-all duration-300 h-full overflow-hidden hover:shadow-lg dark:hover:shadow-[0_0_30px_rgba(34,211,238,0.1)] dark:backdrop-blur-xl"
             >
               {/* Corner Blob */}
               <div className={`absolute top-[-30px] right-[-30px] w-28 h-28 ${cat.cornerColor} rounded-full opacity-50 dark:opacity-100`} />
@@ -90,8 +96,8 @@ const Work = () => {
                 <div className={`w-14 h-14 flex items-center justify-center rounded-2xl bg-[#F6F8FA] dark:bg-white/5 mb-6 text-gray-800 dark:text-gray-200 shadow-sm transition-colors duration-300`}>
                   {cat.icon}
                 </div>
-                <h3 className="text-[20px] lg:text-[22px] font-bold text-gray-900 dark:text-white leading-snug">
-                   {cat.name.split(' ').map((w,i)=><React.Fragment key={i}>{w}<br/></React.Fragment>)}
+                <h3 className="text-[20px] lg:text-[22px] font-bold text-white leading-snug">
+                   {cat.name}
                 </h3>
               </div>
 
@@ -120,21 +126,49 @@ const Work = () => {
           </h3>
         </div>
         
-        {/* Highlights Grid */}
-        <div className="w-full flex flex-wrap justify-center gap-4 sm:gap-6 max-w-4xl mx-auto mb-16 relative z-10 px-4">
-           {highlightsTech.map((item, idx) => (
-             <div 
-               key={idx} 
-               className="flex flex-col items-center justify-center p-4 w-[110px] sm:w-[130px] h-[110px] sm:h-[130px] bg-white dark:bg-[#050A14] border border-gray-100 dark:border-white/10 rounded-2xl hover:border-gray-300 dark:hover:border-cyan-500/50 transition-all duration-300 shadow-sm hover:shadow-md dark:shadow-2xl flex-shrink-0 group"
-             >
-               <div className="mb-3 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)] flex-1 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
-                 {item.icon}
-               </div>
-               <span className="text-[13px] text-gray-600 dark:text-gray-300 font-medium tracking-wide text-center group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
-                 {item.name}
-               </span>
-             </div>
-           ))}
+        {/* Infinite Marquee Highlights Grid - Multi-row Parallel */}
+        <div className="w-full flex justify-center overflow-hidden relative z-10 mb-16 px-4">
+          <div className="flex flex-col gap-6">
+            <div className="animate-marquee-left hover:animation-play-state-paused w-max flex items-center">
+              {[0, 1, 2].map(iteration => (
+                 <div key={`r1-${iteration}`} className="flex items-center gap-4 sm:gap-6 pr-4 sm:pr-6">
+                   {highlightsTech.slice(0, Math.ceil(highlightsTech.length / 2)).map((item, idx) => (
+                     <div 
+                       key={`${iteration}-${idx}`} 
+                       className="flex flex-col items-center justify-center p-4 w-[110px] sm:w-[130px] h-[110px] sm:h-[130px] bg-[#050A14] border border-white/10 rounded-2xl hover:border-cyan-500/50 transition-all duration-300 shadow-2xl flex-shrink-0 group"
+                     >
+                       <div className="mb-3 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)] flex-1 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                         {item.icon}
+                       </div>
+                       <span className="text-[13px] text-gray-300 font-medium tracking-wide text-center group-hover:text-white transition-colors">
+                         {item.name}
+                       </span>
+                     </div>
+                   ))}
+                 </div>
+              ))}
+            </div>
+
+            <div className="animate-marquee-right hover:animation-play-state-paused w-max flex items-center">
+              {[0, 1, 2].map(iteration => (
+                 <div key={`r2-${iteration}`} className="flex items-center gap-4 sm:gap-6 pr-4 sm:pr-6">
+                   {highlightsTech.slice(Math.ceil(highlightsTech.length / 2)).map((item, idx) => (
+                     <div 
+                       key={`${iteration}-${idx}`} 
+                       className="flex flex-col items-center justify-center p-4 w-[110px] sm:w-[130px] h-[110px] sm:h-[130px] bg-[#050A14] border border-white/10 rounded-2xl hover:border-cyan-500/50 transition-all duration-300 shadow-2xl flex-shrink-0 group"
+                     >
+                       <div className="mb-3 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)] flex-1 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                         {item.icon}
+                       </div>
+                       <span className="text-[13px] text-gray-300 font-medium tracking-wide text-center group-hover:text-white transition-colors">
+                         {item.name}
+                       </span>
+                     </div>
+                   ))}
+                 </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Let's Discuss Your Project Button */}
@@ -146,13 +180,13 @@ const Work = () => {
         </div>
 
         {/* Projects Header */}
-        <div className="w-full text-center md:text-left mb-16 flex flex-col items-center md:items-start">
+        <div id="work" className="w-full text-center md:text-left mb-16 flex flex-col items-center md:items-start pt-24 -mt-12">
           <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-gray-100 dark:bg-cyan-950/30 border border-gray-200 dark:border-cyan-500/20 mb-6 shadow-sm dark:shadow-[0_0_25px_rgba(34,211,238,0.15)] dark:backdrop-blur-md transition-colors hover:dark:bg-cyan-900/40">
             <span className="text-gray-500 dark:text-cyan-400 animate-pulse">❖</span>
             <span className="text-sm text-gray-500 font-semibold tracking-widest uppercase dark:text-cyan-100">My Work</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 dark:drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
-            Featured <span className="dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-cyan-300 dark:via-blue-400 dark:to-indigo-400">Deployments.</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight border-b-4 border-cyan-500/30 pb-3 inline-block mb-6">
+            Featured <span className="text-cyan-400">Deployments.</span>
           </h2>
           <p className="text-base md:text-lg font-normal leading-relaxed text-gray-600 dark:text-gray-400 max-w-2xl text-center md:text-left">
             The following projects showcase my ability to solve complex problems, build dynamic user interfaces, and deliver production-ready software efficiently using modern high-tech stacks.
@@ -174,7 +208,7 @@ const Work = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-contain dark:opacity-90 dark:group-hover:opacity-100 transition-opacity duration-300 transform group-hover:scale-105"
+                  className="w-full h-full object-cover dark:opacity-90 dark:group-hover:opacity-100 transition-opacity duration-300 transform group-hover:scale-105"
                 />
               </div>
 

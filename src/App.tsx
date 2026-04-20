@@ -27,7 +27,7 @@ function App() {
   }, [isDarkMode])
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-[#030610] text-gray-900 dark:text-white font-sans selection:bg-cyan-500/30 selection:text-cyan-50 relative overflow-x-hidden transition-colors duration-500">
+    <div className="min-h-screen bg-[#030610] text-white font-sans selection:bg-cyan-500/30 selection:text-cyan-50 relative overflow-x-hidden transition-colors duration-500">
       <div className="relative w-full">
         <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
         <Hero />

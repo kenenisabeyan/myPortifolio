@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { FaBars, FaTimes, FaSun, FaMoon, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { FaBars, FaTimes, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { FiArrowUpRight } from 'react-icons/fi'
 
 const Navbar = ({ isDarkMode, toggleDarkMode }: { isDarkMode?: boolean, toggleDarkMode?: () => void }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [activeSection, setActiveSection] = useState('Home')
 
-  const navItems = ['Home', 'Overview', 'Work', 'Experience', 'Skills', 'Contact']
+  const navItems = ['Home', 'Overview', 'Skills', 'Work', 'Experience', 'Education', 'Contact']
 
   const scrollToSection = (section: string) => {
     if (section === 'Home') {
@@ -23,7 +24,29 @@ const Navbar = ({ isDarkMode, toggleDarkMode }: { isDarkMode?: boolean, toggleDa
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10)
+
+      const sections = ['home', 'overview', 'skills', 'work', 'experience', 'education', 'contact']
+      let currentSection = 'Home'
+
+      if (window.scrollY < 150) {
+        currentSection = 'Home'
+      } else {
+        for (const section of sections) {
+          if (section === 'home') continue
+          const element = document.getElementById(section)
+          if (element) {
+            const rect = element.getBoundingClientRect()
+            if (rect.top <= 200 && rect.bottom >= 200) {
+              currentSection = section.charAt(0).toUpperCase() + section.slice(1)
+              break
+            }
+          }
+        }
+      }
+      setActiveSection(currentSection)
     }
+
+    handleScroll() // Call on mount
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -33,11 +56,11 @@ const Navbar = ({ isDarkMode, toggleDarkMode }: { isDarkMode?: boolean, toggleDa
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
       scrolled 
-        ? 'bg-white/80 dark:bg-[#060D1F]/60 backdrop-blur-3xl border-b border-gray-200 dark:border-cyan-500/10 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.8)]' 
-        : 'bg-white/90 dark:bg-gradient-to-b dark:from-[#030610]/95 dark:to-transparent py-5 border-b border-transparent'
+        ? 'bg-[#060D1F]/80 backdrop-blur-3xl border-b border-cyan-500/20 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.8)]' 
+        : 'bg-gradient-to-b from-[#030610]/95 to-transparent py-5 border-b border-transparent'
     } px-6 md:px-12`}>
       {/* Decorative top border gradient line on scroll */}
-      <div className={`absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gray-300 dark:via-cyan-500/50 to-transparent transition-opacity duration-500 ${scrolled ? 'opacity-100' : 'opacity-0'}`}></div>
+      <div className={`absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent transition-opacity duration-500 ${scrolled ? 'opacity-100' : 'opacity-0'}`}></div>
 
       <div className="max-w-[75rem] mx-auto flex justify-between items-center text-sm font-medium relative z-10">
         
@@ -55,7 +78,11 @@ const Navbar = ({ isDarkMode, toggleDarkMode }: { isDarkMode?: boolean, toggleDa
             <li key={item} className="relative group flex flex-col items-center">
               <button 
                 onClick={() => scrollToSection(item)}
-                className={`text-sm md:text-base transition duration-300 py-1 ${item === 'Home' ? 'font-semibold text-gray-900 dark:text-white border-b-2 border-gray-900 dark:border-cyan-400' : 'font-medium text-gray-500 hover:text-gray-900 dark:hover:text-white'}`}
+                className={`text-sm md:text-[15px] transition-all duration-300 py-1.5 ${
+                  activeSection === item 
+                    ? 'font-bold text-cyan-400 border-b-2 border-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)]' 
+                    : 'font-semibold text-gray-300 hover:text-white border-b-2 border-transparent hover:border-white/30'
+                }`}
               >
                 {item}
               </button>
@@ -65,17 +92,6 @@ const Navbar = ({ isDarkMode, toggleDarkMode }: { isDarkMode?: boolean, toggleDa
 
         {/* Right Side */}
         <div className="hidden md:flex items-center space-x-6 text-gray-500 dark:text-gray-400">
-          
-          <div className="flex space-x-4 items-center">
-            <button 
-              onClick={toggleDarkMode} 
-              className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors p-2 rounded-full hover:bg-gray-100 dark:hover:bg-white/10"
-              aria-label="Toggle Dark Mode"
-            >
-              {isDarkMode ? <FaSun className="text-[1.1rem]" /> : <FaMoon className="text-[1.1rem]" />}
-            </button>
-          </div>
-          
         </div>
 
         {/* Mobile Hamburger */}
@@ -98,17 +114,16 @@ const Navbar = ({ isDarkMode, toggleDarkMode }: { isDarkMode?: boolean, toggleDa
             <li key={item} className="w-full">
               <button 
                 onClick={() => scrollToSection(item)}
-                className={`w-full text-left text-lg font-medium transition-colors ${item === 'Home' ? 'text-blue-500' : 'text-gray-300 hover:text-white'}`}
+                className={`w-full text-left text-lg font-medium transition-colors ${
+                  activeSection === item 
+                    ? 'text-cyan-400 font-bold border-l-[3px] border-cyan-400 pl-3' 
+                    : 'text-gray-400 hover:text-white pl-3 border-l-[3px] border-transparent'
+                }`}
               >
                 {item}
               </button>
             </li>
           ))}
-          <li className="w-full pt-6 flex space-x-4 text-gray-400">
-             <button onClick={toggleDarkMode} className="hover:text-white transition-colors p-2 bg-gray-800 rounded-full">
-               {isDarkMode ? <FaSun className="text-lg" /> : <FaMoon className="text-lg" />}
-             </button>
-          </li>
         </ul>
       </div>
     </nav>

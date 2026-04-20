@@ -41,8 +41,8 @@ const Overview = () => {
               <span className="text-gray-500 dark:text-cyan-400 animate-pulse">❖</span>
               <span className="text-lg font-medium text-gray-500 uppercase dark:text-cyan-100 dark:tracking-widest">About Me</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white inline-block mb-6 dark:drop-shadow-[0_0_15px_rgba(255,255,255,0.2)] dark:bg-[#030610]/40 md:dark:bg-transparent p-2 rounded-xl">
-              Who I <span className="dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-cyan-300 dark:via-blue-400 dark:to-indigo-400">Am.</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight border-b-4 border-cyan-500/30 pb-3 inline-block mb-6">
+              Who I <span className="text-cyan-400">Am</span>
             </h2>
             <div className="text-base md:text-xl font-normal leading-relaxed text-gray-600 dark:text-cyan-50/90 space-y-6 dark:bg-[#030610]/60 lg:dark:bg-transparent p-4 lg:p-0 rounded-2xl lg:rounded-none lg:backdrop-blur-none backdrop-blur-md font-medium">
               <p>
