@@ -3,43 +3,10 @@ import { FaMapMarkerAlt, FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'rea
 import { FiExternalLink } from 'react-icons/fi'
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' })
-  const [status, setStatus] = useState('idle') // idle, sending, success, error
+  const [status, setStatus] = useState('idle')
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setStatus('sending')
-
-    try {
-      const response = await fetch("https://formsubmit.co/ajax/kenenisab05@gmail.com", {
-        method: "POST",
-        headers: { 
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message
-        })
-      })
-
-      if (response.ok) {
-        setStatus('success')
-        setFormData({ name: '', email: '', subject: '', message: '' })
-        setTimeout(() => setStatus('idle'), 5000)
-      } else {
-        setStatus('error')
-      }
-    } catch (error) {
-      setStatus('error')
-    }
-  }
+  // We are using a standard HTML form submission required for FormSubmit.co first-time verification.
+  // The action attribute directly handles the POST request.
 
   return (
     <section id="contact" className="py-16 md:py-24 px-6 relative z-10 bg-white dark:bg-transparent border-t border-gray-100 dark:border-white/[0.05]">
@@ -123,7 +90,11 @@ const Contact = () => {
                <p className="text-gray-600 dark:text-gray-400 text-base md:text-lg">Have a project in mind or want to discuss a collaboration? Feel free to reach out.</p>
             </div>
             
-            <form onSubmit={handleSubmit} className="flex flex-col gap-6 relative z-10">
+            <form action="https://formsubmit.co/kenenisab05@gmail.com" method="POST" className="flex flex-col gap-6 relative z-10">
+              
+              {/* FormSubmit Configuration */}
+              <input type="hidden" name="_subject" value="New Portfolio Contact Submission!" />
+              <input type="hidden" name="_captcha" value="false" />
               
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="flex flex-col gap-2 flex-1">
@@ -131,8 +102,6 @@ const Contact = () => {
                   <input 
                     type="text" 
                     name="name" 
-                    value={formData.name} 
-                    onChange={handleChange}
                     placeholder="Your name" 
                     required
                     className="w-full px-5 py-4 bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/[0.05] text-base font-normal text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 dark:focus:ring-cyan-500/50 transition-all shadow-sm dark:shadow-inner dark:backdrop-blur-md" 
@@ -144,8 +113,6 @@ const Contact = () => {
                   <input 
                     type="email" 
                     name="email" 
-                    value={formData.email} 
-                    onChange={handleChange}
                     placeholder="Your email" 
                     required
                     className="w-full px-5 py-4 bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/[0.05] text-base font-normal text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 dark:focus:ring-cyan-500/50 transition-all shadow-sm dark:shadow-inner dark:backdrop-blur-md" 
@@ -157,9 +124,7 @@ const Contact = () => {
                 <label className="text-sm font-medium dark:font-semibold text-gray-600 dark:text-gray-300 ml-1">Subject</label>
                 <input 
                   type="text" 
-                  name="subject" 
-                  value={formData.subject} 
-                  onChange={handleChange}
+                  name="_auto_subject" 
                   placeholder="Subject" 
                   required
                   className="w-full px-5 py-4 bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/[0.05] text-base font-normal text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 dark:focus:ring-cyan-500/50 transition-all shadow-sm dark:shadow-inner dark:backdrop-blur-md" 
@@ -171,8 +136,6 @@ const Contact = () => {
                 <textarea 
                   name="message" 
                   rows={6} 
-                  value={formData.message} 
-                  onChange={handleChange}
                   placeholder="Your message" 
                   required
                   className="w-full px-5 py-4 bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/[0.05] text-base font-normal text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 dark:focus:ring-cyan-500/50 transition-all resize-none shadow-sm dark:shadow-inner dark:backdrop-blur-md"
@@ -181,18 +144,10 @@ const Contact = () => {
 
               <button 
                 type="submit" 
-                disabled={status === 'sending' || status === 'success'}
-                className="w-full md:w-max px-10 mt-2 py-4 bg-gray-900 dark:bg-cyan-500 text-white dark:text-black border border-transparent dark:border-transparent rounded-xl font-bold dark:font-black text-sm uppercase tracking-widest hover:bg-gray-800 dark:hover:bg-[#030610] dark:hover:text-cyan-50 dark:hover:border-cyan-400/50 transition-colors shadow-md dark:shadow-[0_0_20px_rgba(34,211,238,0.4)] dark:hover:shadow-[0_0_30px_rgba(34,211,238,0.2)] hover:-translate-y-1 disabled:opacity-70 disabled:hover:translate-y-0"
+                className="w-full md:w-max px-10 mt-2 py-4 bg-gray-900 dark:bg-cyan-500 text-white dark:text-black border border-transparent dark:border-transparent rounded-xl font-bold dark:font-black text-sm uppercase tracking-widest hover:bg-gray-800 dark:hover:bg-[#030610] dark:hover:text-cyan-50 dark:hover:border-cyan-400/50 transition-colors shadow-md dark:shadow-[0_0_20px_rgba(34,211,238,0.4)] dark:hover:shadow-[0_0_30px_rgba(34,211,238,0.2)] hover:-translate-y-1"
               >
-                {status === 'sending' ? 'Sending...' : status === 'success' ? 'Message Sent!' : 'Send Message'}
+                Send Message
               </button>
-              
-              {status === 'error' && (
-                <p className="text-red-500 text-sm mt-2">Failed to send message. Please try emailing directly!</p>
-              )}
-              {status === 'success' && (
-                <p className="text-cyan-400 text-sm mt-2">Thanks for reaching out! Your message was sent properly.</p>
-              )}
 
             </form>
           </div>
