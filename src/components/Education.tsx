@@ -74,7 +74,7 @@ const Education = () => {
 
         <div className="relative w-full max-w-5xl mx-auto">
           {/* Vertical Center Line */}
-          <div className="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-[2px] bg-blue-100 dark:bg-white/10 z-0"></div>
+          <div className="absolute left-6 md:left-1/2 transform -translate-x-1/2 top-4 bottom-4 w-[4px] rounded-full z-[0]" style={{ backgroundColor: '#00E5FF', boxShadow: '0 0 15px rgba(0, 229, 255, 0.8)' }}></div>
 
           <div className="flex flex-col gap-12 md:gap-20">
             {educationData.map((ed, idx) => {
@@ -103,8 +103,8 @@ const Education = () => {
                     </div>
 
                     {/* Center Node Icon */}
-                    <div className="absolute left-0 md:left-1/2 transform translate-x-[20px] md:-translate-x-1/2 flex items-center justify-center z-20 top-8 md:top-1/2 md:-translate-y-1/2">
-                      <div className={`w-3.5 h-3.5 rounded-full ${ed.nodeColor} border-2 border-white dark:border-[#030610] shadow-[0_0_10px_rgba(0,0,0,0.1)] dark:shadow-[0_0_15px_rgba(34,211,238,0.4)]`}></div>
+                    <div className="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center z-[20] top-8 md:top-1/2 md:-translate-y-1/2">
+                      <div className={`w-4 h-4 rounded-full ${ed.nodeColor} border-[3px] border-white dark:border-[#050A14]`} style={{ boxShadow: '0 0 15px rgba(34,211,238,0.6)' }}></div>
                     </div>
 
                     {/* Title & Info Container (Opposite of Detail Container) */}

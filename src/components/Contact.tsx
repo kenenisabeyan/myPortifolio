@@ -3,10 +3,44 @@ import { FaMapMarkerAlt, FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'rea
 import { FiExternalLink } from 'react-icons/fi'
 
 const Contact = () => {
-  const [status, setStatus] = useState('idle')
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [status, setStatus] = useState('idle');
 
-  // We are using a standard HTML form submission required for FormSubmit.co first-time verification.
-  // The action attribute directly handles the POST request.
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const sendMessage = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+    try {
+      const res = await fetch("http://localhost:5000/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        alert("Message sent successfully!");
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setStatus('idle');
+      } else {
+        alert("Failed to send message");
+        setStatus('idle');
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Failed to send message");
+      setStatus('idle');
+    }
+  };
 
   return (
     <section id="contact" className="py-16 md:py-24 px-6 relative z-10 bg-white dark:bg-transparent border-t border-gray-100 dark:border-white/[0.05]">
@@ -90,18 +124,16 @@ const Contact = () => {
                <p className="text-gray-600 dark:text-gray-400 text-base md:text-lg">Have a project in mind or want to discuss a collaboration? Feel free to reach out.</p>
             </div>
             
-            <form action="https://formsubmit.co/kenenisab05@gmail.com" method="POST" className="flex flex-col gap-6 relative z-10">
-              
-              {/* FormSubmit Configuration */}
-              <input type="hidden" name="_subject" value="New Portfolio Contact Submission!" />
-              <input type="hidden" name="_captcha" value="false" />
-              
+            <form onSubmit={sendMessage} className="flex flex-col gap-6 relative z-10">
+                            
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="flex flex-col gap-2 flex-1">
                   <label className="text-sm font-medium dark:font-semibold text-gray-600 dark:text-gray-300 ml-1">Name</label>
                   <input 
                     type="text" 
                     name="name" 
+                    value={formData.name}
+                    onChange={handleChange}
                     placeholder="Your name" 
                     required
                     className="w-full px-5 py-4 bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/[0.05] text-base font-normal text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 dark:focus:ring-cyan-500/50 transition-all shadow-sm dark:shadow-inner dark:backdrop-blur-md" 
@@ -113,6 +145,8 @@ const Contact = () => {
                   <input 
                     type="email" 
                     name="email" 
+                    value={formData.email}
+                    onChange={handleChange}
                     placeholder="Your email" 
                     required
                     className="w-full px-5 py-4 bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/[0.05] text-base font-normal text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 dark:focus:ring-cyan-500/50 transition-all shadow-sm dark:shadow-inner dark:backdrop-blur-md" 
@@ -124,7 +158,9 @@ const Contact = () => {
                 <label className="text-sm font-medium dark:font-semibold text-gray-600 dark:text-gray-300 ml-1">Subject</label>
                 <input 
                   type="text" 
-                  name="_auto_subject" 
+                  name="subject" 
+                  value={formData.subject}
+                  onChange={handleChange}
                   placeholder="Subject" 
                   required
                   className="w-full px-5 py-4 bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/[0.05] text-base font-normal text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 dark:focus:ring-cyan-500/50 transition-all shadow-sm dark:shadow-inner dark:backdrop-blur-md" 
@@ -135,6 +171,8 @@ const Contact = () => {
                 <label className="text-sm font-medium dark:font-semibold text-gray-600 dark:text-gray-300 ml-1">Message</label>
                 <textarea 
                   name="message" 
+                  value={formData.message}
+                  onChange={handleChange}
                   rows={6} 
                   placeholder="Your message" 
                   required
@@ -144,9 +182,10 @@ const Contact = () => {
 
               <button 
                 type="submit" 
-                className="w-full md:w-max px-10 mt-2 py-4 bg-gray-900 dark:bg-cyan-500 text-white dark:text-black border border-transparent dark:border-transparent rounded-xl font-bold dark:font-black text-sm uppercase tracking-widest hover:bg-gray-800 dark:hover:bg-[#030610] dark:hover:text-cyan-50 dark:hover:border-cyan-400/50 transition-colors shadow-md dark:shadow-[0_0_20px_rgba(34,211,238,0.4)] dark:hover:shadow-[0_0_30px_rgba(34,211,238,0.2)] hover:-translate-y-1"
+                disabled={status === 'loading'}
+                className="w-full md:w-max px-10 mt-2 py-4 bg-gray-900 dark:bg-cyan-500 text-white dark:text-black border border-transparent dark:border-transparent rounded-xl font-bold dark:font-black text-sm uppercase tracking-widest hover:bg-gray-800 dark:hover:bg-[#030610] dark:hover:text-cyan-50 dark:hover:border-cyan-400/50 transition-colors shadow-md dark:shadow-[0_0_20px_rgba(34,211,238,0.4)] dark:hover:shadow-[0_0_30px_rgba(34,211,238,0.2)] hover:-translate-y-1 disabled:opacity-50 disabled:hover:translate-y-0"
               >
-                Send Message
+                {status === 'loading' ? 'Sending...' : 'Send Message'}
               </button>
 
             </form>

@@ -29,7 +29,7 @@ const Hero = () => {
                <span className="inline-block relative mt-2">
                  <span className="absolute -inset-1 blur-xl bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 opacity-40 animate-pulse"></span>
                  <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-400">
-                   Production
+                   Production 
                  </span>
                </span>
                <br className="hidden lg:block" />
